@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:metadata>
+    <f:viewParam name="user" value="#{user}"/>
+</f:metadata>
+    <h:body>
+
+        <h:form>
+            <h:outputLabel value="Hello #{user.logged} "/><br/><br/>
+
+            <ui:remove>
+            <h:panelGroup rendered="#{user.logged == 0}">
+                <h:commandLink action="login" value="Sign in"/><br/>
+                <h:commandLink action="registration" value="Sign up"/><br/>
+            </h:panelGroup><br/>
+            </ui:remove>
+
+            <h:panelGroup >
+                <h:commandLink action="login" value="Sign in"/><br/>
+                <h:commandLink action="registration" value="Sign up"/><br/>
+            </h:panelGroup><br/>
+
+            <h:outputLabel value="user: #{user.fname}"/>
+       </h:form>
+    </h:body>
+
+</html>
