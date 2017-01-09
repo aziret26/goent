@@ -15,6 +15,7 @@ public class DbConnection {
 	//ResultSet result = statement.executeQuery(query);
 	public ResultSet getResult(String rows,String clause,String table){
 		String query = "SELECT " + rows+ " FROM " + table + " WHERE "+clause;
+
 		return __getResult(query);
 	}
 
@@ -24,27 +25,67 @@ public class DbConnection {
 	}
 
 	private ResultSet __getResult(String query){
-		Statement statement;
 		try {
 			DriverManager.getDrivers();
+			Class.forName("com.mysql.jdbc.Driver");
 			connection = DriverManager.getConnection(dbURL,username,pswd);
-			statement = connection.createStatement();
+			Statement statement = connection.createStatement();
 			ResultSet result = statement.executeQuery(query);
 			return result;
 		}catch (Exception ex){
+			//ex.getMessage();
 			ex.printStackTrace();
 		}
 		return null;
 	}
 
-	private int insertToTable(String table,String cols,String vals){
-		String query="INSERT INTO " + table + "("+cols+" values("+vals+")";
+	public boolean insertToTable(String table,String cols,String vals){
+		String query="INSERT INTO " + table + "("+cols+") values("+vals+")";
 
-
-		return 0;
+		return __insertToTable(query) == 1?true:false;
 	}
 
 	private int __insertToTable(String query){
+		try {
+			DriverManager.getDrivers();
+			Class.forName("com.mysql.jdbc.Driver");
+			connection = DriverManager.getConnection(dbURL,username,pswd);
+			Statement statement = connection.createStatement();
+			return statement.executeUpdate(query);
+
+		}catch (Exception ex){
+			ex.getMessage();
+			ex.printStackTrace();
+		}
 		return 0;
 	}
+
+	public static boolean hasColumn(ResultSet rs, String columnName) throws SQLException {
+		ResultSetMetaData rsmd = rs.getMetaData();
+		int columns = rsmd.getColumnCount();
+		for (int x = 1; x <= columns; x++) {
+			if (columnName.equals(rsmd.getColumnName(x))) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public boolean hasValue(ResultSet rs,String col,String val){
+		try {
+			if (hasColumn(rs, col)) {
+				int c=0;
+				while (rs.next()){
+					c++;
+				}
+				System.out.println("c = "+c);
+				return !(c == 0);
+			}
+		}catch (Exception ex){
+			ex.printStackTrace();
+			return false;
+		}
+		return false;
+	}
+
 }

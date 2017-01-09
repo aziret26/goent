@@ -1,5 +1,7 @@
 package kg.goent.bean;
 
+import kg.goent.dbc.DbConnection;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import java.io.Serializable;
@@ -17,6 +19,7 @@ public class User implements Serializable{
 	private String email;
 	private String phone;
 	private String login;
+	private String password;
 	private int logged;
 
 
@@ -87,15 +90,12 @@ public class User implements Serializable{
 		this.login = login;
 	}
 
-	public String toString(){
-		String ans;
-		ans = "ID\t= "+getId()+"\n";
-		ans += "login\t="+getLogin()+"\n";
-		ans += "first name\t= "+getFname()+"\n";
-		ans += "last name\t= "+getLname()+"\n";
-		ans += "email\t= "+getEmail()+"\n";
-		ans += "phone\t= "+getPhone()+"\n\n";
-		return ans;
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public void setLogged(int logged) {
@@ -106,26 +106,42 @@ public class User implements Serializable{
 
 		return logged != 0 ? 1:0;
 	}
-
+	public String toString(){
+		String ans = "";
+		if(getId()!=-1)
+		ans = "ID\t= "+getId()+"\n";
+		if(getLogin() != null)
+		ans += "login\t= "+getLogin()+"\n";
+		if(getFname()!=null)
+			ans += "first name\t= "+getFname()+"\n";
+		if(getLname()!=null)
+			ans += "last name\t= "+getLname()+"\n";
+		if(getEmail()!=null)
+			ans += "email\t= "+getEmail()+"\n";
+		if(getPhone()!=null)
+			ans += "phone\t= "+getPhone()+"\n\n";
+		return ans;
+	}
 	public void setFromSet(ResultSet set){
+		DbConnection dbConnection = new DbConnection();
 		try {
-			if (hasColumn(set, "id")) {
+			if (dbConnection.hasColumn(set, "id")) {
 				id = set.getInt("id");
 			}
-			if (hasColumn(set, "first_name")) {
+			if (dbConnection.hasColumn(set, "first_name")) {
 				fname = set.getString("first_name");
 			}
 
-			if(hasColumn(set,"last_name")){
+			if(dbConnection.hasColumn(set,"last_name")){
 				lname = set.getString("last_name");
 			}
-			if(hasColumn(set,"phone")){
+			if(dbConnection.hasColumn(set,"phone")){
 				phone = set.getString("phone");
 			}
-			if(hasColumn(set,"email")){
+			if(dbConnection.hasColumn(set,"email")){
 				email = set.getString("email");
 			}
-			if(hasColumn(set,"login")){
+			if(dbConnection.hasColumn(set,"login")){
 				login = set.getString("login");
 			}
 		}catch (Exception ex){
@@ -134,14 +150,55 @@ public class User implements Serializable{
 		}
 	}
 
-	public static boolean hasColumn(ResultSet rs, String columnName) throws SQLException {
-		ResultSetMetaData rsmd = rs.getMetaData();
-		int columns = rsmd.getColumnCount();
-		for (int x = 1; x <= columns; x++) {
-			if (columnName.equals(rsmd.getColumnName(x))) {
-				return true;
-			}
-		}
-		return false;
+	public String getInsertColumns(){
+		String cols = "";
+		if(fname!=null) cols += "first_name";
+
+		if(cols.length()!=0) cols += ",";
+		if(lname!=null) cols += "last_name";
+
+		if(cols.length()!=0) cols += ",";
+		if(phone!=null) cols += "phone";
+
+		if(cols.length()!=0) cols += ",";
+		if(email!=null) cols += "email";
+
+		if(cols.length()!=0) cols += ",";
+		if(login!=null) cols += "login";
+
+		if(cols.length()!=0) cols += ",";
+		if(password!=null) cols += "password";
+
+		return cols;
+	}
+	public String getInsertValues(){
+		String values = "";
+		if(fname!=null)
+			values += "'"+fname+"'";
+
+		if(values.length()!=0)
+			values +=",";
+		if(lname != null)
+			values += "'"+lname+"'";
+
+		if(values.length()!=0)
+			values +=",";
+		if(phone != null)
+			values += "'"+phone+"'";
+
+		if(values.length()!=0)
+			values +=",";
+		if(email != null)
+			values += "'"+email+"'";
+
+		if(values.length()!=0)
+			values +=",";
+		if(login != null)
+			values += "'"+login+"'";
+
+		if(values.length()!=0) values += ",";
+		if(password!=null) values += "'"+password+"'";
+
+		return values;
 	}
 }

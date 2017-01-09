@@ -10,16 +10,18 @@
 </h:head>
     <h:body>
         <h:form >
-            fname:  <h:inputText value="#{user.fname}"/><br/>
-            lanme:  <h:inputText value="#{user.lname}"/><br/>
-            login:  <h:inputText value="#{user.login}"/><br/>
-            email:  <h:inputText value="#{user.email}" id="email" event="onblur"><br/>
+            fname:  <h:inputText value="#{registerUser.user.fname}"/><br/>
+            lanme:  <h:inputText value="#{registerUser.user.lname}"/><br/>
+            login:  <h:inputText value="#{registerUser.user.login}"/><br/>
+            password:  <h:inputText value="#{registerUser.user.password}"/><br/>
+            email:  <h:inputText value="#{registerUser.user.email}" id="email" event="onblur"><br/>
                         <f:validateRegex pattern="[a-zA-Z0-9]+@+[a-z]+.+[a-z]"/>
                         <f:validateRequired/>
                     </h:inputText>
             <h:message for="email"  style="color:red;"/><br/>
-            phone: <h:inputText value="#{user.phone}"/><br/>
-            <h:commandButton value="register" action="#{test.reg(user)}"/>
+            phone: <h:inputText value="#{registerUser.user.phone}"/><br/>
+            <h:commandButton value="register" action="#{registerUser.register}"/>
         </h:form>
+        <h:link value="index" outcome="index"/>
     </h:body>
 </html>
