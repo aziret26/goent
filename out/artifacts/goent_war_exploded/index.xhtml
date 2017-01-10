@@ -13,17 +13,38 @@
         <h:form>
             <h:outputLabel value="Hello  "/><br/><br/>
 
-            <ui:remove>
-            <h:panelGroup rendered="#{user.logged == 0}">
+            <h:panelGroup rendered="#{user == null}">
                 <h:commandLink action="login" value="Sign in"/><br/>
                 <h:commandLink action="registration" value="Sign up"/><br/>
             </h:panelGroup><br/>
-            </ui:remove>
 
-            <h:panelGroup >
-                <h:commandLink action="login" value="Sign in"/><br/>
-                <h:commandLink action="registration" value="Sign up"/><br/>
+            <h:panelGroup rendered="#{user != null}">
+                <h:panelGrid columns="2">
+                    <h:outputText value="Id"/>
+                    <h:outputText value="#{user.id}"/>
+
+                    <h:outputText value="login"/>
+                    <h:outputText value="#{user.login}"/>
+
+                    <h:outputText value="First name"/>
+                    <h:outputText value="#{user.fname}"/>
+
+                    <h:outputText value="Last name"/>
+                    <h:outputText value="#{user.lname}"/>
+
+                    <h:outputText value="email"/>
+                    <h:outputText value="#{user.email}"/>
+
+                    <h:outputText value="phone"/>
+                    <h:outputText value="#{user.phoneF()}"/>
+
+                </h:panelGrid>
+            </h:panelGroup>
+
+            <h:panelGroup rendered="#{user != null}">
+                <h:commandLink action="#{login.logout}" value="Sign out"/><br/>
             </h:panelGroup><br/>
+
 
             <h:panelGroup>
                 <h:link value="Test" outcome="test"/>

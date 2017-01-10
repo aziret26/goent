@@ -58,19 +58,19 @@ public class User implements Serializable{
 		return phone;
 	}
 
-	public String getPhoneFromatted() {
+	public String phoneF() {
 		String temp = "";
 		if(phone != null)
 		if(phone.length() == 13) {
 			temp = phone.substring(0,4);
-			temp += "-"+phone.substring(4,7);
-			temp += "-"+phone.substring(7,10);
-			temp += "-"+phone.substring(10,13);
+			temp += " "+phone.substring(4,7);
+			temp += " "+phone.substring(7,10);
+			temp += " "+phone.substring(10,13);
 		}else
 		if(phone.length() == 10){
 			temp = phone.substring(0,4);
-			temp += "-"+phone.substring(4,7);
-			temp += "-"+phone.substring(7,10);
+			temp += " "+phone.substring(4,7);
+			temp += " "+phone.substring(7,10);
 		}else{
 			temp = phone;
 		}
@@ -113,6 +113,7 @@ public class User implements Serializable{
 			ans += "phone\t= "+getPhone()+"\n\n";
 		return ans;
 	}
+
 	public void setFromSet(ResultSet set){
 		DbConnection dbConnection = new DbConnection();
 		try {

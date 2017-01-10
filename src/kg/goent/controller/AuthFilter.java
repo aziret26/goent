@@ -1,12 +1,7 @@
 package kg.goent.controller;
 
 import java.io.IOException;
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -36,19 +31,20 @@ public class AuthFilter implements Filter {
 			HttpServletRequest reqt = (HttpServletRequest) request;
 			HttpServletResponse resp = (HttpServletResponse) response;
 			HttpSession ses = reqt.getSession(false);
-
 			String reqURI = reqt.getRequestURI();
 			if(reqURI.contains("/login.xhtml") &&
 				ses != null && ses.getAttribute("user") != null){
 				resp.sendRedirect(reqt.getContextPath() + "/index.xhtml");
 			}
+			chain.doFilter(request, response);
+			/*else
 			if (reqURI.indexOf("/login.xhtml") >= 0
 				|| (ses != null && ses.getAttribute("user") != null)
 				|| reqURI.indexOf("/public/") >= 0
 				|| reqURI.contains("javax.faces.resource"))
 				chain.doFilter(request, response);
 			else
-				resp.sendRedirect(reqt.getContextPath() + "/login.xhtml");
+				resp.sendRedirect(reqt.getContextPath() + "/login.xhtml");*/
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

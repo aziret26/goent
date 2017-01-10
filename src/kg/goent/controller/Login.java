@@ -40,10 +40,11 @@ public class Login implements Serializable{
 		ResultSet rs = db.getResult("*",clause,"user");
 		boolean login = false;
 		if(user.getLogin().length() > 3
-			|| user.getPassword().length()>3)
+			&& user.getPassword().length()>3)
 		try {
 			while (rs.next()) {
 				user.setFromSet(rs);
+				System.out.println(user);
 				login = true;
 			}
 		}catch (Exception ex){
@@ -64,4 +65,8 @@ public class Login implements Serializable{
 		}
 	}
 
+	public void logout(){
+		HttpSession session = SessionTools.getSession();
+		session.invalidate();
+	}
 }

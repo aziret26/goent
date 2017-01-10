@@ -38,10 +38,10 @@ public class RegisterUser {
 		this.dbConnection = dbConnection;
 	}
 
-	public Boolean register(){
+	public String register(){
 		if(user.getLogin()==null){
 			System.out.println("login can't be empty.");
-			return false;
+			return "index";
 		}
 		dbConnection = new DbConnection();
 		ResultSet set = dbConnection.getResult("login","login='"+user.getLogin()+"'	","user");
@@ -49,13 +49,13 @@ public class RegisterUser {
 		if(!dbConnection.hasValue(set,"login",user.getLogin())){
 			if(dbConnection.insertToTable("user",user.getInsertColumns(),user.getInsertValues())){
 				System.out.println("Successfully registered.");
-				return true;
+				return "index";
 			}
 		}else{
 			System.out.println("user with login " + user.getLogin()+" already exists.");
 		}
-		System.out.println("Failed registartion.");
-		return false;
+
+		return "registration";
 	}
 
 }
