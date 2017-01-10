@@ -10,7 +10,7 @@ import java.sql.*;
 /**
  * Created by Azriret on 01.01.2017.
  */
-@ManagedBean(name = "user")
+@ManagedBean(name = "userBean")
 @ViewScoped
 public class User implements Serializable{
 	private int id = -1;
@@ -20,7 +20,6 @@ public class User implements Serializable{
 	private String phone;
 	private String login;
 	private String password;
-	private int logged;
 
 
 	public int getId() {
@@ -98,14 +97,6 @@ public class User implements Serializable{
 		this.password = password;
 	}
 
-	public void setLogged(int logged) {
-		this.logged = logged;
-	}
-
-	public int getLogged() {
-
-		return logged != 0 ? 1:0;
-	}
 	public String toString(){
 		String ans = "";
 		if(getId()!=-1)

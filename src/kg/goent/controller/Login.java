@@ -8,7 +8,6 @@ import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 import java.io.Serializable;
@@ -37,16 +36,19 @@ public class Login implements Serializable{
 
 	public String login(){
 		DbConnection db = new DbConnection();
-		ResultSet rs = db.getResult("*","login='"+user.getLogin()+"' AND password='"+user.getPassword()+"'","user");
+		String clause = "login='"+user.getLogin()+"' AND password='"+user.getPassword()+"'";
+		ResultSet rs = db.getResult("*",clause,"user");
 		boolean login = false;
+		if(user.getLogin().length() > 3
+			|| user.getPassword().length()>3)
 		try {
 			while (rs.next()) {
+				user.setFromSet(rs);
 				login = true;
 			}
 		}catch (Exception ex){
 			ex.printStackTrace();
 		}
-
 		if(login) {
 			HttpSession session = SessionTools.getSession();
 			session.setAttribute("user", user);

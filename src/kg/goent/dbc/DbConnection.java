@@ -13,8 +13,8 @@ public class DbConnection {
 	final String pswd = "goent";
 
 	//ResultSet result = statement.executeQuery(query);
-	public ResultSet getResult(String rows,String clause,String table){
-		String query = "SELECT " + rows+ " FROM " + table + " WHERE "+clause;
+	public ResultSet getResult(String selectingColumns,String clause,String table){
+		String query = "SELECT " + selectingColumns + " FROM " + table + " WHERE "+clause;
 
 		return __getResult(query);
 	}
@@ -87,5 +87,20 @@ public class DbConnection {
 		}
 		return false;
 	}
+	/*
+	private String mactchValues(String columns,String values){
+		String[] cols = columns.split(",");
+		String[] vals = values.split(",");
+		if(cols.length != vals.length){
+			System.out.println("length don't match");
+			return null;
+		}
+		String out = "";
+		for(int i = 0;i< columns.length();i++){
+			out
+		}
+		return "";
+	}
+	*/
 
 }
