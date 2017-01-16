@@ -2,14 +2,16 @@ package kg.goent.controller;
 
 import kg.goent.bean.SessionTools;
 import kg.goent.bean.User;
+import kg.goent.bean.UserSession;
 import kg.goent.dbc.DbConnection;
 
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
-import javax.servlet.http.HttpSession;
 import java.io.Serializable;
 import java.sql.ResultSet;
 
@@ -17,9 +19,11 @@ import java.sql.ResultSet;
  * Created by root on 1/10/17.
  */
 @ManagedBean
-@SessionScoped
 public class Login implements Serializable{
 	private User user;
+
+	@ManagedProperty(value="#{user}")
+	private UserSession userSession;
 
 	@PostConstruct
 	public void init(){
@@ -34,6 +38,14 @@ public class Login implements Serializable{
 		this.user = user;
 	}
 
+	public UserSession getUserSession() {
+		return userSession;
+	}
+
+	public void setUserSession(UserSession userSession) {
+		this.userSession = userSession;
+	}
+
 	public String login(){
 		DbConnection db = new DbConnection();
 		String clause = "login='"+user.getLogin()+"' AND password='"+user.getPassword()+"'";
@@ -44,15 +56,13 @@ public class Login implements Serializable{
 		try {
 			while (rs.next()) {
 				user.setFromSet(rs);
-				System.out.println(user);
 				login = true;
 			}
 		}catch (Exception ex){
 			ex.printStackTrace();
 		}
 		if(login) {
-			HttpSession session = SessionTools.getSession();
-			session.setAttribute("user", user);
+			userSession.setUser(user);
 			return "index";
 		}else{
 			FacesContext.getCurrentInstance().addMessage(
@@ -66,7 +76,6 @@ public class Login implements Serializable{
 	}
 
 	public void logout(){
-		HttpSession session = SessionTools.getSession();
-		session.invalidate();
+		userSession.setUser(null);
 	}
 }

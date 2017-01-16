@@ -1,6 +1,11 @@
 package kg.goent.controller;
 
+import kg.goent.bean.UserSession;
+
 import java.io.IOException;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +19,17 @@ import javax.servlet.http.HttpSession;
 
 @WebFilter(filterName = "AuthFilter", urlPatterns = { "*.xhtml" })
 public class AuthFilter implements Filter {
+
+	@ManagedProperty(value="#{user}")
+	private UserSession userSession;
+
+	public void setUserSession(UserSession userSession) {
+		this.userSession = userSession;
+	}
+
+	public UserSession getUserSession() {
+		return userSession;
+	}
 
 	public AuthFilter() {
 	}
@@ -32,11 +48,15 @@ public class AuthFilter implements Filter {
 			HttpServletResponse resp = (HttpServletResponse) response;
 			HttpSession ses = reqt.getSession(false);
 			String reqURI = reqt.getRequestURI();
-			if(reqURI.contains("/login.xhtml") &&
-				ses != null && ses.getAttribute("user") != null){
-				resp.sendRedirect(reqt.getContextPath() + "/index.xhtml");
+			if(reqURI.contains("/login.xhtml") || reqURI.contains("/signup.xhtml")){
+
+//				if(userSession.getLogged() == 1){
+//					resp.sendRedirect(reqt.getContextPath() + "/index.xhtml");
+//				}
 			}
 			chain.doFilter(request, response);
+			System.out.println("user "+userSession.getUser());
+
 			/*else
 			if (reqURI.indexOf("/login.xhtml") >= 0
 				|| (ses != null && ses.getAttribute("user") != null)

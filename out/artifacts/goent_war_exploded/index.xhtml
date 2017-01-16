@@ -5,52 +5,91 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:metadata>
-    <f:viewParam name="user" value="#{user}"/>
-</f:metadata>
+<ui:remove>
+    <h:form>
+    <h:outputLabel value="Hello  "/><br/><br/>
+
+    <h:panelGroup rendered="#{user == null}">
+        <h:commandLink action="login" value="Sign in"/><br/>
+        <h:commandLink action="signup" value="Sign up"/><br/>
+    </h:panelGroup><br/>
+
+    <h:panelGroup rendered="#{user != null}">
+        <h:panelGrid columns="2">
+            <h:outputText value="Id"/>
+            <h:outputText value="#{user.id}"/>
+
+            <h:outputText value="login"/>
+            <h:outputText value="#{user.login}"/>
+
+            <h:outputText value="First name"/>
+            <h:outputText value="#{user.fname}"/>
+
+            <h:outputText value="Last name"/>
+            <h:outputText value="#{user.lname}"/>
+
+            <h:outputText value="email"/>
+            <h:outputText value="#{user.email}"/>
+
+            <h:outputText value="phone"/>
+            <h:outputText value="#{user.phoneF()}"/>
+
+        </h:panelGrid>
+    </h:panelGroup>
+
+    <h:panelGroup rendered="#{user != null}">
+        <h:commandLink action="#{login.logout}" value="Sign out"/><br/>
+    </h:panelGroup><br/>
+
+    <h:panelGroup>
+        <h:link value="Test" outcome="test"/>
+    </h:panelGroup><br/>
+    <h:outputLabel value="user: #{user.fname}"/>
+</h:form>
+</ui:remove>
+<f:view>
     <h:body>
+        <ui:composition template="template/template.xhtml">
+            <ui:param name="pageTitle" value="Home"/>
+            <ui:define name="content">
 
-        <h:form>
-            <h:outputLabel value="Hello  "/><br/><br/>
+                <div class="center">
+                    <h:link value="Hello" outcome="index"/><br/>
+                    <h:panelGroup rendered="#{user.logged == 1}">
+                        <h:panelGrid columns="2">
+                            <h:outputText value="Id"/>
+                            <h:outputText value="#{user.user.id}"/>
 
-            <h:panelGroup rendered="#{user == null}">
-                <h:commandLink action="login" value="Sign in"/><br/>
-                <h:commandLink action="registration" value="Sign up"/><br/>
-            </h:panelGroup><br/>
+                            <h:outputText value="login"/>
+                            <h:outputText value="#{user.user.login}"/>
 
-            <h:panelGroup rendered="#{user != null}">
-                <h:panelGrid columns="2">
-                    <h:outputText value="Id"/>
-                    <h:outputText value="#{user.id}"/>
+                            <h:outputText value="First name"/>
+                            <h:outputText value="#{user.user.fname}"/>
 
-                    <h:outputText value="login"/>
-                    <h:outputText value="#{user.login}"/>
+                            <h:outputText value="Last name"/>
+                            <h:outputText value="#{user.user.lname}"/>
 
-                    <h:outputText value="First name"/>
-                    <h:outputText value="#{user.fname}"/>
+                            <h:outputText value="email"/>
+                            <h:outputText value="#{user.user.email}"/>
 
-                    <h:outputText value="Last name"/>
-                    <h:outputText value="#{user.lname}"/>
+                            <h:outputText value="phone"/>
+                            <h:outputText value="#{user.user.phoneF()}"/>
+                        </h:panelGrid>
+                        <h:link value="Send Mail" outcome="sendMail"/><br/>
+                    </h:panelGroup>
 
-                    <h:outputText value="email"/>
-                    <h:outputText value="#{user.email}"/>
+                    <h:panelGroup rendered="#{user.logged == 1 and user.user.activationKey.length() != 0}">
+                        <h:link value="Activate" outcome="activate"/>
+                        <br/>
+                    </h:panelGroup>
 
-                    <h:outputText value="phone"/>
-                    <h:outputText value="#{user.phoneF()}"/>
+                    <h:link value="Test" outcome="test"/><br/>
 
-                </h:panelGrid>
-            </h:panelGroup>
+                    <h:outputLabel value="user: #{user.user.login}"/>
+                </div>
+            </ui:define>
+        </ui:composition>
 
-            <h:panelGroup rendered="#{user != null}">
-                <h:commandLink action="#{login.logout}" value="Sign out"/><br/>
-            </h:panelGroup><br/>
-
-
-            <h:panelGroup>
-                <h:link value="Test" outcome="test"/>
-            </h:panelGroup><br/>
-            <h:outputLabel value="user: #{user.fname}"/>
-       </h:form>
     </h:body>
-
+</f:view>
 </html>

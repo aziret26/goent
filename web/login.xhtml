@@ -9,27 +9,40 @@
 
 </h:head>
 <h:body>
+    <ui:composition template="/template/template.xhtml">
+        <ui:param name="pageTitle" value="Sign in"/>
+        <ui:define name="content">
+            <div class="center">
+                <div class="center">
+                    <h3>JSF Login</h3>
+                </div>
+                <h:form>
 
-    <h:form>
+                    <h:panelGrid columns="2">
+                        <h:outputText value="Username" />
+                        <h:panelGroup>
 
-        <h:form>
-            <h3>JSF Login Logout</h3>
-            <h:outputText value="Username" />
-            <h:inputText id="login" value="#{login.user.login}"></h:inputText>
-            <h:message for="login"></h:message>
-            <br></br><br></br>
+                            <h:inputText id="login" value="#{login.user.login}"/>
+                            <h:message for="login"/>
+                        </h:panelGroup>
+                        <h:outputText value="Password" />
+                        <h:panelGroup>
+                            <h:inputSecret id="password" value="#{login.user.password}">
+                                <f:validateLength minimum="3"/>
+                            </h:inputSecret>
+                            <h:message for="password"/>
+                        </h:panelGroup>
+                    </h:panelGrid>
+                    <h:messages errorClass="errorMessage" infoClass="infoMessage"
+                                layout="table" globalOnly="true" showDetail="false" showSummary="true"/>
 
-            <h:outputText value="Password" />
-            <h:inputSecret id="password" value="#{login.user.password}">
-                <f:validateLength minimum="3"/>
-            </h:inputSecret>
-            <h:message for="password"></h:message>
-            <br></br><br></br>
+                    <h:commandButton action="#{login.login}"
+                                     value="Login"/>
+                </h:form>
+                <h:link value="Click here" outcome="index"/>
+            </div>
+        </ui:define>
+    </ui:composition>
 
-            <h:commandButton action="#{login.login}"
-                             value="Login"></h:commandButton>
-        </h:form>
-    </h:form>
-    <h:link value="Click here" outcome="index"/>
 </h:body>
 </html>

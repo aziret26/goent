@@ -1,11 +1,15 @@
 package kg.goent.bean;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 /**
  * Created by root on 1/10/17.
  */
+@ManagedBean
+@SessionScoped
 public class SessionTools {
 
 	public static HttpSession getSession() {
@@ -18,17 +22,20 @@ public class SessionTools {
 			.getExternalContext().getRequest();
 	}
 
-	public static String getUserName() {
-		HttpSession session = (HttpSession) FacesContext.getCurrentInstance()
-			.getExternalContext().getSession(false);
-		return session.getAttribute("username").toString();
+	public static void setSession(String str,Object obj){
+		HttpSession session = SessionTools.getSession();
+		session.setAttribute(str, obj);
 	}
 
-	public static String getUserId() {
-		HttpSession session = getSession();
-		if (session != null)
-			return (String) session.getAttribute("userid");
-		else
-			return null;
+	public static void setSession(String str,int i){
+		HttpSession session = SessionTools.getSession();
+		session.setAttribute(str, i);
+	}
+	public static void setSession(String str,double i){
+		HttpSession session = SessionTools.getSession();
+		session.setAttribute(str, i);
+	}public static void setSession(String str,boolean i){
+		HttpSession session = SessionTools.getSession();
+		session.setAttribute(str, i);
 	}
 }

@@ -15,7 +15,6 @@ public class DbConnection {
 	//ResultSet result = statement.executeQuery(query);
 	public ResultSet getResult(String selectingColumns,String clause,String table){
 		String query = "SELECT " + selectingColumns + " FROM " + table + " WHERE "+clause;
-
 		return __getResult(query);
 	}
 
@@ -42,22 +41,27 @@ public class DbConnection {
 	public boolean insertToTable(String table,String cols,String vals){
 		String query="INSERT INTO " + table + "("+cols+") values("+vals+")";
 
-		return __insertToTable(query) == 1?true:false;
+		return __insertToTable(query) ;
 	}
 
-	private int __insertToTable(String query){
+	private boolean __insertToTable(String query){
 		try {
 			DriverManager.getDrivers();
 			Class.forName("com.mysql.jdbc.Driver");
 			connection = DriverManager.getConnection(dbURL,username,pswd);
 			Statement statement = connection.createStatement();
-			return statement.executeUpdate(query);
+			return statement.executeUpdate(query) == 1;
 
 		}catch (Exception ex){
-			ex.getMessage();
+			System.out.println(ex.getMessage());
 			ex.printStackTrace();
 		}
-		return 0;
+		return false;
+	}
+
+	public boolean updateTable(String table,String dataToChange, String clause){
+		String query = "UPDATE "+table+" SET "+dataToChange+" WHERE "+clause;
+		return __insertToTable(query);
 	}
 
 	public static boolean hasColumn(ResultSet rs, String columnName) throws SQLException {
@@ -78,7 +82,7 @@ public class DbConnection {
 				while (rs.next()){
 					c++;
 				}
-				System.out.println("c = "+c);
+
 				return !(c == 0);
 			}
 		}catch (Exception ex){
