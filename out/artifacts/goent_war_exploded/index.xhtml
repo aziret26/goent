@@ -55,7 +55,7 @@
 
                 <div class="center">
                     <h:link value="Hello" outcome="index"/><br/>
-                    <h:panelGroup rendered="#{user.logged == 1}">
+                    <h:panelGroup rendered="#{user.user != null and user.user.activationKey == ''}">
                         <h:panelGrid columns="2">
                             <h:outputText value="Id"/>
                             <h:outputText value="#{user.user.id}"/>
@@ -78,7 +78,7 @@
                         <h:link value="Send Mail" outcome="sendMail"/><br/>
                     </h:panelGroup>
 
-                    <h:panelGroup rendered="#{user.logged == 1 and user.user.activationKey.length() != 0}">
+                    <h:panelGroup rendered="#{user.user != null and user.user.activationKey.length() != 0}">
                         <h:link value="Activate" outcome="activate"/>
                         <br/>
                     </h:panelGroup>

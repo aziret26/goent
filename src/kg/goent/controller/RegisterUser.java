@@ -6,6 +6,7 @@ import kg.goent.dbc.DbConnection;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import java.io.UnsupportedEncodingException;
@@ -23,6 +24,9 @@ public class RegisterUser {
 	private DbConnection dbConnection;
 	private String activationKey;
 
+	@ManagedProperty(value = "#{user}")
+	UserSession userSession;
+
 	@PostConstruct
 	public void initialize(){
 		user = new User();
@@ -34,6 +38,10 @@ public class RegisterUser {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public void setUserSession(UserSession u){
+		this.userSession = u;
 	}
 
 	public DbConnection getDbConnection() {
@@ -58,7 +66,6 @@ public class RegisterUser {
 			if(dbConnection.insertToTable("user",user.getInsertColumns(),user.getInsertValues())){
 				Mail m = new Mail(user,activationURL);
 				m.sendMail();
-				SessionTools.setSession("infoMessageSession","Activate Successfully");
 				return "index";
 			}
 		}else{FacesContext.getCurrentInstance().addMessage(
@@ -106,9 +113,9 @@ public class RegisterUser {
 
 		return "";
 	}
-	public String activateByKey(User user){
+	public String activateByKey(){
 		dbConnection = new DbConnection();
-		ResultSet set = dbConnection.getResult("*","id='"+user.getId()+"'","user");
+		ResultSet set = dbConnection.getResult("*","id='"+userSession.getUser().getId()+"'","user");
 		User u = new User();
 		boolean updated = false;
 		try {
@@ -116,12 +123,10 @@ public class RegisterUser {
 				u.setFromSet(set);
 				if(u.getActivationKey().equals(activationKey)){
 					updated = dbConnection.updateTable(
-						"user","activation_key=\"\"","id="+user.getId());
+						"user","activation_key=\"\"","id="+userSession.getUser().getId());
 
 					SessionTools.setSession("infoMessageSession","Activated Successfully");
-
-					user.setActivationKey("");
-					SessionTools.setSession("user", user);
+					userSession.getUser().setActivationKey("");
 					break;
 				}
 			}

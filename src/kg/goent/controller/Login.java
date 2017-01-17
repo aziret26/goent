@@ -1,6 +1,7 @@
 package kg.goent.controller;
 
 import kg.goent.bean.SessionTools;
+import kg.goent.bean.Tools;
 import kg.goent.bean.User;
 import kg.goent.bean.UserSession;
 import kg.goent.dbc.DbConnection;
@@ -9,7 +10,6 @@ import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import java.io.Serializable;
@@ -19,6 +19,7 @@ import java.sql.ResultSet;
  * Created by root on 1/10/17.
  */
 @ManagedBean
+@ViewScoped
 public class Login implements Serializable{
 	private User user;
 
@@ -63,6 +64,7 @@ public class Login implements Serializable{
 		}
 		if(login) {
 			userSession.setUser(user);
+			SessionTools.setSession("userLogged","1");
 			return "index";
 		}else{
 			FacesContext.getCurrentInstance().addMessage(
@@ -77,5 +79,8 @@ public class Login implements Serializable{
 
 	public void logout(){
 		userSession.setUser(null);
+		SessionTools.setSession("userLogged","0");
+		Tools.killInfoSession();
+
 	}
 }

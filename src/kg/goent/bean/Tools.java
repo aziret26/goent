@@ -12,7 +12,7 @@ import java.io.Serializable;
 @ManagedBean
 @ViewScoped
 public class Tools implements Serializable {
-	public void killInfoSession(){
+	public static void killInfoSession(){
 		SessionTools.setSession("infoMessageSession", null);
 	}
 }

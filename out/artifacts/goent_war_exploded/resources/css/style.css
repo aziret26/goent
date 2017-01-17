@@ -20,11 +20,13 @@ a{
 	height: 100px;
 	background: #da3;
 }
+
 .clear{
 	clear: both;
 }
+
 .infoMessage{
-	border: solid black 1px;
-	border-right: 0px;
-	border-left: 1px;
+	border-top: solid black 1px;
+	border-bottom: solid black 1px;
+	background: lightskyblue;
 }

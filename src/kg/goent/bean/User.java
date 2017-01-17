@@ -13,7 +13,6 @@ import java.sql.*;
  * Created by Azriret on 01.01.2017.
  */
 @ManagedBean(name = "userBean")
-@SessionScoped
 public class User implements Serializable{
 	private int id = -1;
 	private String fname;
@@ -24,11 +23,6 @@ public class User implements Serializable{
 	private String password;
 	private int type = 3;
 	private String activationKey;
-
-	@PostConstruct
-	public void postConstruct(){
-
-	}
 
 	public int getId() {
 		return id;
