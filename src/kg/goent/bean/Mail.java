@@ -12,8 +12,7 @@ import java.util.Properties;
 /**
  * Created by Aziret on 13.01.2017.
  */
-@ManagedBean
-@ViewScoped
+
 public class Mail {
 	private String mailTo;
 	private String mailSubject;
@@ -25,21 +24,15 @@ public class Mail {
 		mailText = "";
 	}
 
-	public Mail(User u,String url){
+
+	public void register(User u,String url){
 		mailTo = u.getEmail();
 		mailSubject = "Accout activation";
 
-		mailText = "Please activate your account by entering following acitvation key <b>" + u.getActivationKey();
+		mailText = "Please activate your account by entering following activation key " + u.getActivationKey();
 		String link = "http://localhost:8080/account/activate.xhtml/"+url;
-		mailText += "</b>.\nOr follow given link bellow "+link+"\nto activate your account.";
+		mailText += ".\n\nOr follow given link bellow "+link+"\nto activate your account.";
 
-	}
-
-	@PostConstruct
-	public void postConstruct(){
-		mailTo = "";
-		mailSubject="";
-		mailText="";
 	}
 
 	public String getMailTo() {

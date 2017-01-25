@@ -54,7 +54,7 @@
             <ui:define name="content">
 
                 <div class="center">
-                    <h:link value="Hello" outcome="index"/><br/>
+                    <ui:remove>
                     <h:panelGroup rendered="#{user.user != null and user.user.activationKey == ''}">
                         <h:panelGrid columns="2">
                             <h:outputText value="Id"/>
@@ -82,7 +82,9 @@
                         <h:link value="Activate" outcome="activate"/>
                         <br/>
                     </h:panelGroup>
+                    </ui:remove>
 
+                    <h2><h:link value="Create Project" outcome="new-project"/></h2>
                     <h:link value="Test" outcome="test"/><br/>
 
                     <h:outputLabel value="user: #{user.user.login}"/>

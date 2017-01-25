@@ -29,12 +29,13 @@
                             <h:inputText value="#{registerUser.user.login}"/>
 
                             <h:outputText value="Password:"/>
-                            <h:inputText value="#{registerUser.user.password}"/>
+                            <h:inputSecret value="#{registerUser.user.password}"/>
 
                             <h:outputText value="E-mail:"/>
                             <h:panelGroup>
                                 <h:inputText value="#{registerUser.user.email}" id="email" event="onblur">
                                     <f:validateRegex pattern="[a-zA-Z0-9]+@+[a-z]+.+[a-z]"/>
+
                                     <f:validateRequired/>
                                 </h:inputText>
                                 <h:message for="email"  style="color:red;"/>
@@ -45,6 +46,8 @@
 
                             <h:commandButton value="Register" action="#{registerUser.register}"/>
                         </h:panelGrid>
+                        <h:messages errorClass="errorMessage" infoClass="infoMessage"
+                                                  layout="table" globalOnly="true" showDetail="false" showSummary="true"/>
                     </h:form>
                 </div>
             </ui:define>

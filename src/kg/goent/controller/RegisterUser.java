@@ -64,11 +64,14 @@ public class RegisterUser {
 			String activationURL = encode("activation_key/"+user.getLogin()+user.getEmail());
 			user.setActivationKey(generateRandomKey());
 			if(dbConnection.insertToTable("user",user.getInsertColumns(),user.getInsertValues())){
-				Mail m = new Mail(user,activationURL);
+				Mail m = new Mail();
+				m.register(user,activationURL);
 				m.sendMail();
 				return "index";
 			}
-		}else{FacesContext.getCurrentInstance().addMessage(
+		}else{
+
+			FacesContext.getCurrentInstance().addMessage(
 			null,
 			new FacesMessage(FacesMessage.SEVERITY_WARN,
 				"User with login '"+user.getLogin()+"' already exists.",
