@@ -78,14 +78,17 @@
                         <h:link value="Send Mail" outcome="sendMail"/><br/>
                     </h:panelGroup>
 
-                    <h:panelGroup rendered="#{user.user != null and user.user.activationKey.length() != 0}">
-                        <h:link value="Activate" outcome="activate"/>
-                        <br/>
-                    </h:panelGroup>
                     </ui:remove>
 
-                    <h2><h:link value="Create Project" outcome="new-project"/></h2>
-                    <h:link value="Test" outcome="test"/><br/>
+                    <h:panelGroup rendered="#{user.user != null and user.user.activationKey.length() == 0}">
+                        <h2><h:link value="Create Project" outcome="new-project"/></h2>
+                        <h:link value="Test" outcome="test"/><br/>
+                    </h:panelGroup>
+
+                    <h:panelGroup rendered="#{user.user != null and user.user.activationKey.length() != 0}">
+                        <h:link value="Activate account" outcome="activate"/>
+                        <br/>
+                    </h:panelGroup>
 
                     <h:outputLabel value="user: #{user.user.login}"/>
                 </div>

@@ -61,7 +61,7 @@ public class RegisterUser {
 		ResultSet set = dbConnection.getResult("login","login='"+user.getLogin()+"'	","user");
 
 		if(!dbConnection.hasValue(set,"login",user.getLogin())){
-			String activationURL = encode("activation_key/"+user.getLogin()+user.getEmail());
+			String activationURL = "activate="+Tools.encode(user.getEmail());
 			user.setActivationKey(generateRandomKey());
 			if(dbConnection.insertToTable("user",user.getInsertColumns(),user.getInsertValues())){
 				Mail m = new Mail();
@@ -71,27 +71,13 @@ public class RegisterUser {
 			}
 		}else{
 
-			FacesContext.getCurrentInstance().addMessage(
-			null,
-			new FacesMessage(FacesMessage.SEVERITY_WARN,
+			Tools.faceMessageWarn(
 				"User with login '"+user.getLogin()+"' already exists.",
-				"Please choose another login."));
+				"Please choose another login.");
 		}
 		return "registration";
 	}
 
-	public String encode(String s){
-		try{
-			return Base64.getUrlEncoder().encodeToString(s.getBytes("utf-8"));
-		}catch (UnsupportedEncodingException ex){
-			System.out.println(ex.getMessage());
-		}
-		return null;
-	}
-
-	public String decode(String s){
-		return new String(Base64.getUrlDecoder().decode(s));
-	}
 
 	public String getActivationKey() {
 		return activationKey;
@@ -112,9 +98,12 @@ public class RegisterUser {
 		return key;
 	}
 
-	public String activate(){
-
-		return "";
+	public boolean activateByLink(String email){
+		dbConnection = new DbConnection();
+		if(dbConnection.updateTable("user","activation_key=''","WHERE email='"+email+"'")){
+			return true;
+		}
+		return true;
 	}
 	public String activateByKey(){
 		dbConnection = new DbConnection();
@@ -136,11 +125,9 @@ public class RegisterUser {
 			if(updated){
 				return "index";
 			}else{
-				FacesContext.getCurrentInstance().addMessage(
-					null,
-					new FacesMessage(FacesMessage.SEVERITY_WARN,
-						"Wrong activation key",
-						"Please check try again."));
+				Tools.faceMessageWarn(
+					"Wrong activation key",
+						"Please check try again.");
 				return "";
 			}
 		}catch (Exception ex){

@@ -30,7 +30,7 @@ public class Mail {
 		mailSubject = "Accout activation";
 
 		mailText = "Please activate your account by entering following activation key " + u.getActivationKey();
-		String link = "http://localhost:8080/account/activate.xhtml/"+url;
+		String link = "http://localhost:8080/account/activate.xhtml?"+url;
 		mailText += ".\n\nOr follow given link bellow "+link+"\nto activate your account.";
 
 	}

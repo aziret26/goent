@@ -6,27 +6,38 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
-    <h:body>
+<f:metadata>
+    <f:viewParam name="activate" value="#{link}"/>
+</f:metadata>
         <ui:composition template="/template/template.xhtml">
             <ui:param name="pageTitle" value="Activation"/>
+            <ui:define name="metadata">
+            </ui:define>
+
             <ui:define name="content">
                 <div class="center">
-                    <h:form>
-                        <h:panelGrid columns="2">
-                            <h:outputText value="Activation Key"/>
-                            <h:panelGroup>
-                                <h:inputText value="#{registerUser.activationKey}" immediate="true">
-                                    <f:validateLength minimum="3"/>
-                                </h:inputText>
-                            </h:panelGroup>
-                        </h:panelGrid>
-                            <h:messages errorClass="errorMessage" />
-                            <h:commandButton value="Activate" action="#{registerUser.activateByKey()}"/>
+                    <h:panelGroup rendered="#{link == null}">
+                        <h:outputText value="activate = #{link}"/>
+                        <h:form>
+                            <h:panelGrid columns="2">
+                                <h:outputText value="Activation Key"/>
+                                <h:panelGroup>
+                                    <h:inputText value="#{registerUser.activationKey}" immediate="true">
+                                        <f:validateLength minimum="3"/>
+                                    </h:inputText>
+                                </h:panelGroup>
+                            </h:panelGrid>
+                                <h:messages errorClass="errorMessage" />
+                                <h:commandButton value="Activate" action="#{registerUser.activateByKey()}"/>
+                        </h:form>
+                    </h:panelGroup>
+                    <h:panelGroup rendered="#{link != null}">
+                        <h:messages errorClass="errorMessage" infoClass="infoMessage"
+                                    layout="table" globalOnly="true" showDetail="false" showSummary="true"/>
 
-                    </h:form>
+                    </h:panelGroup>
                 </div>
             </ui:define>
         </ui:composition>
-    </h:body>
 </f:view>
 </html>

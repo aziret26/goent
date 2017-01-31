@@ -5,8 +5,16 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <h:body>
+    
+    <ui:insert name="metadata">
+        <ui:include src="../sections/metadata.xhtml"/>
+    </ui:insert>
 
+    <ui:insert name="head">
+        <ui:include src="../sections/head.xhtml"/>
+    </ui:insert>
+
+    <h:body>
         <ui:insert name="header">
             <ui:include src="../sections/header.xhtml">
                 <ui:param name="pageTitle" value="#{pageTitle}"/>
@@ -20,6 +28,5 @@
         <ui:insert name="footer">
             <ui:include src="../sections/footer.xhtml"/>
         </ui:insert>
-
     </h:body>
 </html>
