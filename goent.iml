@@ -33,11 +33,11 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="file://$MODULE_DIR$/../../tomcat/lib" />
+          <root url="file://$MODULE_DIR$/../tomcat/lib" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://$MODULE_DIR$/../../tomcat/lib" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/../tomcat/lib" recursive="false" />
       </library>
     </orderEntry>
   </component>

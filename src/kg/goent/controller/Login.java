@@ -49,7 +49,9 @@ public class Login implements Serializable{
 
 	public String login(){
 		DbConnection db = new DbConnection();
+
 		String clause = "login='"+user.getLogin()+"' AND password='"+user.getPassword()+"'";
+
 		ResultSet rs = db.getResult("*",clause,"user");
 		boolean login = false;
 		if(user.getLogin().length() > 3

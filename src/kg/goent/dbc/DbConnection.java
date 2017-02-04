@@ -91,20 +91,5 @@ public class DbConnection {
 		}
 		return false;
 	}
-	/*
-	private String mactchValues(String columns,String values){
-		String[] cols = columns.split(",");
-		String[] vals = values.split(",");
-		if(cols.length != vals.length){
-			System.out.println("length don't match");
-			return null;
-		}
-		String out = "";
-		for(int i = 0;i< columns.length();i++){
-			out
-		}
-		return "";
-	}
-	*/
 
 }

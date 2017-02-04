@@ -7,6 +7,36 @@
         <element id="directory" name="classes">
           <element id="module-output" name="goent" />
         </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jsf-api-2.2.13.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jsf-impl-2.2.13.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/mysql-connector-java-5.1.38-bin.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../tomcat/lib/el-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../tomcat/lib/jasper.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../tomcat/lib/jsp-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../tomcat/lib/catalina.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../tomcat/lib/ecj-4.6.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../tomcat/lib/jasper-el.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../tomcat/lib/jaspic-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../tomcat/lib/tomcat-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../tomcat/lib/tomcat-jni.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../tomcat/lib/catalina-ha.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../tomcat/lib/servlet-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../tomcat/lib/tomcat-dbcp.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../tomcat/lib/tomcat-jdbc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../tomcat/lib/tomcat-util.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../tomcat/lib/catalina-ant.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../tomcat/lib/tomcat-coyote.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../tomcat/lib/websocket-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../tomcat/lib/tomcat-i18n-es.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../tomcat/lib/tomcat-i18n-fr.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../tomcat/lib/tomcat-i18n-ja.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../tomcat/lib/annotations-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../tomcat/lib/catalina-tribes.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../tomcat/lib/tomcat-util-scan.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../tomcat/lib/tomcat-websocket.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../tomcat/lib/catalina-storeconfig.jar" />
+        </element>
       </element>
     </root>
   </artifact>
