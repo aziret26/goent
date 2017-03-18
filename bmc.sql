@@ -1,96 +1,18 @@
-CREATE TABLE project(
-	id int primary key auto_increment,
-	project_title varchar(25),
-	description varchar(25),
-	project_date date
-);
 
-CREATE TABLE customer_segment(
+CREATE TABLE segment_type(
 	id int primary key auto_increment,
-	c_title varchar(25),
-	s_title varchar(25),
-	repsonsibility varchar(25),
-	c_hash varchar(4),
-	s_hash varchar(4)
-);
-
-CREATE TABLE value_proposition(
-	id int primary key auto_increment,
-	c_title varchar(25),
-	s_title varchar(25),
-	repsonsibility varchar(25),
-	c_hash varchar(4),
-	s_hash varchar(4)
-);
-
-CREATE TABLE distribution_channels(
-	id int primary key auto_increment,
-	c_title varchar(25),
-	s_title varchar(25),
-	repsonsibility varchar(25),
-	c_hash varchar(4),
-	s_hash varchar(4)
-);
-
-CREATE TABLE customer_relationship(
-	id int primary key auto_increment,
-	c_title varchar(25),
-	s_title varchar(25),
-	repsonsibility varchar(25),
-	c_hash varchar(4),
-	s_hash varchar(4)
-);
-
-CREATE TABLE revenue_streams(
-	id int primary key auto_increment,
-	c_title varchar(25),
-	s_title varchar(25),
-	repsonsibility varchar(25),
-	c_hash varchar(4),
-	s_hash varchar(4)
-);
-
-CREATE TABLE key_resources(
-	id int primary key auto_increment,
-	c_title varchar(25),
-	s_title varchar(25),
-	repsonsibility varchar(25),
-	c_hash varchar(4),
-	s_hash varchar(4)
-);
-
-CREATE TABLE key_activities(
-	id int primary key auto_increment,
-	c_title varchar(25),
-	s_title varchar(25),
-	repsonsibility varchar(25),
-	c_hash varchar(4),
-	s_hash varchar(4)
-);
-
-CREATE TABLE key_partners(
-	id int primary key auto_increment,
-	c_title varchar(25),
-	s_title varchar(25),
-	repsonsibility varchar(25),
-	c_hash varchar(4),
-	s_hash varchar(4)
-);
-
-CREATE TABLE cost_structure(
-	id int primary key auto_increment,
-	c_title varchar(25),
-	s_title varchar(25),
-	repsonsibility varchar(25),
-	c_hash varchar(4),
-	s_hash varchar(4)
+	name varchar(25),
+	order int
 );
 
 CREATE TABLE segment(
 	id int primary key auto_increment,
-	name varchar(25)
+	title varchar(25),
+	repsonsibility varchar(25),
+	hash varchar(4),
+	type int,
+	FOREIGN KEY(type) REFERENCES segment_type(id)
 );
-
 CREATE TABLE history(
 	id int primary key auto_increment,
 	project_id int,
@@ -126,14 +48,23 @@ CREATE TABLE bmc(
 	key_activities_id int,
 	key_partners_id int,
 	cost_structure_id int,
-	FOREIGN KEY(project_id) REFERENCES project(id),
-	FOREIGN KEY(customer_segment_id) REFERENCES customer_segment(id),
-	FOREIGN KEY(value_proposition_id) REFERENCES value_proposition(id),
-	FOREIGN KEY(distribution_channels_id) REFERENCES distribution_channels(id),
-	FOREIGN KEY(customer_relationship_id) REFERENCES customer_relationship(id),
-	FOREIGN KEY(revenue_streams_id) REFERENCES revenue_streams(id),
-	FOREIGN KEY(key_resources_id) REFERENCES key_resources(id),
-	FOREIGN KEY(key_activities_id) REFERENCES key_activities(id),
-	FOREIGN KEY(key_partners_id) REFERENCES key_partners(id),
-	FOREIGN KEY(cost_structure_id) REFERENCES cost_structure(id)
+	FOREIGN KEY(project_id) 				REFERENCES project(id),
+	FOREIGN KEY(customer_segment_id) 		REFERENCES segment(id),
+	FOREIGN KEY(value_proposition_id) 		REFERENCES segment(id),
+	FOREIGN KEY(distribution_channels_id) 	REFERENCES segment(id),
+	FOREIGN KEY(customer_relationship_id) 	REFERENCES segment(id),
+	FOREIGN KEY(revenue_streams_id) 		REFERENCES segment(id),
+	FOREIGN KEY(key_resources_id) 			REFERENCES segment(id),
+	FOREIGN KEY(key_activities_id) 			REFERENCES segment(id),
+	FOREIGN KEY(key_partners_id)			REFERENCES segment(id),
+	FOREIGN KEY(cost_structure_id) 			REFERENCES segment(id)
+);
+
+CREATE TABLE project(
+	id int primary key auto_increment,
+	project_title varchar(25),
+	description varchar(25),
+	project_date date,
+	bmc_id int,
+	FOREIGN KEY bmc_id REFERENCES bmc(id)
 );
