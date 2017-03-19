@@ -12,7 +12,9 @@ import java.util.List;
 @Table(name = "segment_type")
 @NamedQueries({
         @NamedQuery(name = "SegmentType.findAll",
-                query = "SELECT st FROM SegmentType st")
+                query = "SELECT st FROM SegmentType st"),
+        @NamedQuery(name = "SegmentType.findAllOrdered",
+                query = "SELECT st FROM SegmentType st ORDER BY st.segmentOrder")
 })
 public class SegmentType implements Serializable{
     @Id
@@ -22,7 +24,7 @@ public class SegmentType implements Serializable{
     @Column
     private String name;
 
-    @Column(name = "segment_order")
+    @Column
     private int segmentOrder;
 
     @OneToMany(mappedBy = "type")

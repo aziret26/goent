@@ -15,7 +15,7 @@
                 <h:form method="post">
                     <h:panelGrid columns="2">
                         <ui:remove>
-                            <ui:repeat value="#{segmentTypeManager.segmentType}" var="segmentType">
+                            <ui:repeat value="#{segmentTypeBean.segmentType}" var="segmentType">
                                 <h:outputText value="id"/>
                                 <h:inputText value="#{segmentType.segmentTypeId}"/>
 
@@ -28,12 +28,12 @@
                         </ui:remove>
 
                         <h:outputText value="name"/>
-                        <h:inputText value="#{segmentTypeManager.segmentType.name}"/>
+                        <h:inputText value="#{segmentTypeBean.segmentType.name}"/>
 
                         <h:outputText value="order"/>
-                        <h:inputText value="#{segmentTypeManager.segmentType.segmentOrder}"/>
+                        <h:inputText value="#{segmentTypeBean.segmentType.segmentOrder}"/>
                     </h:panelGrid>
-                    <h:commandButton value="Save" action="#{segmentTypeManager.createSegmentType()}"/>
+                    <h:commandButton value="Save" action="#{segmentTypeBean.createSegmentType()}"/>
                 </h:form>
 
             </div>

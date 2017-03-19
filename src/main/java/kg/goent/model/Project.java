@@ -1,20 +1,18 @@
-/*
 package kg.goent.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-
-*/
-/**
+/*
+ *
  * Created by azire on 3/17/2017.
- *//*
+ */
 
 @Entity
 public class Project implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int projectId;
     @Column
     private String title;
     @Column
@@ -24,14 +22,17 @@ public class Project implements Serializable {
     @Column
     private Date projectDate;
 
+    @OneToOne(mappedBy = "bmcId")
+    private Bmc bmc;
+
     public Project(){}
 
-    public int getId() {
-        return id;
+    public int getProjectId() {
+        return projectId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setProjectId(int projectId) {
+        this.projectId = projectId;
     }
 
     public String getTitle() {
@@ -65,5 +66,12 @@ public class Project implements Serializable {
     public void setProjectDate(Date projectDate) {
         this.projectDate = projectDate;
     }
+
+    public Bmc getBmc() {
+        return bmc;
+    }
+
+    public void setBmc(Bmc bmc) {
+        this.bmc = bmc;
+    }
 }
-*/

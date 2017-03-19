@@ -16,6 +16,10 @@ a{
 	margin: 0 15%;
 }
 
+.center-button{
+	margin-left: 50%;
+}
+
 .header{
 	height: 100px;
 	background: #da3;
@@ -29,4 +33,13 @@ a{
 	border-top: solid black 1px;
 	border-bottom: solid black 1px;
 	background: lightskyblue;
+}
+
+#admin-panel{
+	position: absolute;
+	width: 10%;
+	background: mediumturquoise;
+}
+.admin-menu{
+
 }

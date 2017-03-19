@@ -11,62 +11,95 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "Segment")
+@NamedQueries(
+		@NamedQuery(name = "findAll",
+		query = "SELECT s FROM Segment s")
+)
 public class Segment implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int segmentId;
 	@Transient
-	private String c_title;
+	private String cachedTitle;
     @Column
-	private String s_title;
+	private String title;
 
 	@Transient
-	private String c_hash;
+	private int cachedHash;
     @Column
-	private String s_hash;
+	private int hash;
 
     @ManyToOne
 	@JoinColumn(name="segmentTypeId")
     private SegmentType type;
 
+    @ManyToOne
+	@JoinColumn(name = "segmentContainerId")
+	private SegmentContainer segmentContainer;
+
+    @Column
+	private int segmentGroup;
+
+	public Segment() {}
+
+	public Segment(SegmentType type) {
+		this.type = type;
+	}
+
 	public int getSegmentId() {
 		return segmentId;
 	}
 
-	public void setSegmentId(int segmentTd) {
-		this.segmentId = segmentTd;
+	public void setSegmentId(int segmentId) {
+		this.segmentId = segmentId;
 	}
 
-	public String getC_title() {
-		return c_title;
+	public String getCachedTitle() {
+		return cachedTitle;
 	}
 
-	public void setC_title(String c_title) {
-		this.c_title = c_title;
+	public void setCachedTitle(String cachedTitle) {
+		this.cachedTitle = cachedTitle;
 	}
 
-	public String getS_title() {
-		return s_title;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setS_title(String s_title) {
-		this.s_title = s_title;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public String getC_hash() {
-		return c_hash;
+	public int getCachedHash() {
+		return cachedHash;
 	}
 
-	public void setC_hash(String c_hash) {
-		this.c_hash = c_hash;
+	public void setCachedHash(int cachedHash) {
+		this.cachedHash = cachedHash;
 	}
 
-	public String getS_hash() {
-		return s_hash;
+	public int getHash() {
+		return hash;
 	}
 
-	public void setS_hash(String s_hash) {
-		this.s_hash = s_hash;
+	public void setHash(int hash) {
+		this.hash = hash;
+	}
+
+	public int getSegmentGroup() {
+		return segmentGroup;
+	}
+
+	public void setSegmentGroup(int segmentGroup) {
+		this.segmentGroup = segmentGroup;
+	}
+
+	public SegmentContainer getSegmentContainer() {
+		return segmentContainer;
+	}
+
+	public void setSegmentContainer(SegmentContainer segmentContainer) {
+		this.segmentContainer = segmentContainer;
 	}
 
 	public SegmentType getType() {

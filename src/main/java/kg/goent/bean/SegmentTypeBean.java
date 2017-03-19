@@ -14,7 +14,7 @@ import java.util.List;
  * Created by azire on 3/18/2017.
  */
 @ManagedBean
-public class SegmentTypeManager {
+public class SegmentTypeBean {
     private List<SegmentType> segmentTypeList = new ArrayList<SegmentType>();
     private SegmentType segmentType = new SegmentType();
 
@@ -22,7 +22,7 @@ public class SegmentTypeManager {
     private SegmentTypeFacade segmentTypeFacade = new SegmentTypeFacade();
     @PostConstruct
     void init(){
-        segmentTypeList = segmentTypeFacade.findAll();
+        segmentTypeList = segmentTypeFacade.findAllOrdered();
     }
 
     public List<SegmentType> getSegmentTypeList() {

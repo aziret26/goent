@@ -42,4 +42,11 @@ public class SegmentTypeFacade {
         segmentDao.commitAndCloseTransaction();
         return typesList;
     }
+    public List<SegmentType> findAllOrdered(){
+        List<SegmentType> typesList = new ArrayList<SegmentType>();
+        segmentDao.beginTransaction();
+        typesList = segmentDao.getEntityManager().createNamedQuery("SegmentType.findAllOrdered",SegmentType.class).getResultList();
+        segmentDao.commitAndCloseTransaction();
+        return typesList;
+    }
 }

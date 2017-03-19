@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head><title>Manage Segment Type</title></h:head>
+<h:body>
+    <ui:composition template="/template/template.xhtml">
+        <ui:param name="pageTitle" value="Test Page"/>
+        <ui:define name="content">
+            <h1>Manage Segment Type</h1>
+            <div class="center">
+                <h:form method="post">
+                    <ui:repeat value="#{segmentTypeBean.segmentTypeList}" var="stl">
+                        <div style="display: inline-block;margin: 0 30px 10px 0;border-left: solid black 1px; height: 70px">
+                            <h:panelGrid columns="2">
+                                <h:outputText value="id"/>
+                                <h:outputText value="#{stl.segmentTypeId}"/>
+
+                                <h:outputText value="name"/>
+                                <h:inputText value="#{stl.name}"/>
+
+                                <h:outputText value="order"/>
+                                <h:inputText value="#{stl.segmentOrder}"/>
+                                <br/>
+                            </h:panelGrid>
+                        </div>
+                    </ui:repeat>
+                    <h:commandButton value="Save" action="#{segmentTypeBean.save()}" styleClass="center-button"/>
+                </h:form>
+
+            </div>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>
