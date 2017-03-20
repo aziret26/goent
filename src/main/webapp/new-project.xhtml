@@ -14,12 +14,19 @@
                 <div class="center">
                     <h:form>
                         <h:panelGrid columns="2">
+
                             <h:outputText value="Project title"/>
                             <h:panelGroup>
-                                <h:inputText value="">
+                                <h:inputText value="#{projectBean.project.projectTitle}">
 
                                 </h:inputText>
                             </h:panelGroup>
+
+                            <h:outputText value="Description"/>
+                            <h:inputTextarea value="#{projectBean.project.projectDescription}"/>
+
+                            <h:outputText rendered="false"/>
+                            <h:commandButton value="Create project" action="#{projectBean.createProject}"/>
                         </h:panelGrid>
                     </h:form>
                 </div>

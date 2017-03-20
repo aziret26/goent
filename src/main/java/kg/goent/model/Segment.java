@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "Segment")
 @NamedQueries(
-		@NamedQuery(name = "findAll",
+		@NamedQuery(name = "Segment.findAll",
 		query = "SELECT s FROM Segment s")
 )
 public class Segment implements Serializable{
@@ -20,18 +20,18 @@ public class Segment implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int segmentId;
 	@Transient
-	private String cachedTitle;
+	private String segmentCachedTitle;
     @Column
-	private String title;
+	private String segmentTitle;
 
 	@Transient
-	private int cachedHash;
+	private int segmentCachedHash;
     @Column
-	private int hash;
+	private int segmentHash;
 
     @ManyToOne
 	@JoinColumn(name="segmentTypeId")
-    private SegmentType type;
+    private SegmentType segmentType;
 
     @ManyToOne
 	@JoinColumn(name = "segmentContainerId")
@@ -42,10 +42,6 @@ public class Segment implements Serializable{
 
 	public Segment() {}
 
-	public Segment(SegmentType type) {
-		this.type = type;
-	}
-
 	public int getSegmentId() {
 		return segmentId;
 	}
@@ -54,36 +50,44 @@ public class Segment implements Serializable{
 		this.segmentId = segmentId;
 	}
 
-	public String getCachedTitle() {
-		return cachedTitle;
+	public String getSegmentCachedTitle() {
+		return segmentCachedTitle;
 	}
 
-	public void setCachedTitle(String cachedTitle) {
-		this.cachedTitle = cachedTitle;
+	public void setSegmentCachedTitle(String segmentCachedTitle) {
+		this.segmentCachedTitle = segmentCachedTitle;
 	}
 
-	public String getTitle() {
-		return title;
+	public String getSegmentTitle() {
+		return segmentTitle;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setSegmentTitle(String segmentTitle) {
+		this.segmentTitle = segmentTitle;
 	}
 
-	public int getCachedHash() {
-		return cachedHash;
+	public int getSegmentCachedHash() {
+		return segmentCachedHash;
 	}
 
-	public void setCachedHash(int cachedHash) {
-		this.cachedHash = cachedHash;
+	public void setSegmentCachedHash(int segmentCachedHash) {
+		this.segmentCachedHash = segmentCachedHash;
 	}
 
-	public int getHash() {
-		return hash;
+	public int getSegmentHash() {
+		return segmentHash;
 	}
 
-	public void setHash(int hash) {
-		this.hash = hash;
+	public void setSegmentHash(int segmentHash) {
+		this.segmentHash = segmentHash;
+	}
+
+	public SegmentType getSegmentType() {
+		return segmentType;
+	}
+
+	public void setSegmentType(SegmentType segmentType) {
+		this.segmentType = segmentType;
 	}
 
 	public int getSegmentGroup() {
@@ -102,12 +106,5 @@ public class Segment implements Serializable{
 		this.segmentContainer = segmentContainer;
 	}
 
-	public SegmentType getType() {
-		return type;
-	}
-
-	public void setType(SegmentType type) {
-		this.type = type;
-	}
 }
 

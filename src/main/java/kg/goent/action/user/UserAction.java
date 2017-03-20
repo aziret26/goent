@@ -34,7 +34,7 @@ public class UserAction implements Serializable {
     }
 
     public User getUserById() {
-        return userFacade.findById(this.user.getId());
+        return userFacade.findById(this.user.getUserId());
     }
 
     public User getUser() {

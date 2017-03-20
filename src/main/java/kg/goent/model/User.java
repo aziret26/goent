@@ -10,7 +10,6 @@ import java.util.List;
  * Created by azire on 3/16/2017.
  */
 @Entity
-@Table(name = "user")
 @NamedQueries({
         @NamedQuery(name="User.findAll",
                 query="SELECT u FROM User u"),
@@ -22,10 +21,10 @@ import java.util.List;
 public class User implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
-    @Column(name = "first_name")
+    private int userId;
+    @Column
     private String fname;
-    @Column(name = "last_name")
+    @Column
     private String lname;
     @Column
     private String email;
@@ -37,19 +36,28 @@ public class User implements Serializable{
     private String password;
     @Column
     private int type = 3;
-    @Column(name="activation_key")
+    @Column
     private String activationKey;
     @Column
     private Date regDate;
 
+    @ManyToMany(mappedBy = "userList")
+    private List<Project> projectList = new ArrayList<Project>();
 
+    @ManyToOne
+    @JoinColumn(name = "userTypeId")
+    private UserType userType;
 
-    public int getId() {
-        return id;
+    @ManyToOne
+    @JoinColumn(name = "userStatusId")
+    private UserStatus userStatus;
+
+    public int getUserId() {
+        return userId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String getFname() {
@@ -143,10 +151,34 @@ public class User implements Serializable{
         this.regDate = regDate;
     }
 
+    public List<Project> getProjectList() {
+        return projectList;
+    }
+
+    public void setProjectList(List<Project> projectList) {
+        this.projectList = projectList;
+    }
+
+    public UserType getUserType() {
+        return userType;
+    }
+
+    public void setUserType(UserType userType) {
+        this.userType = userType;
+    }
+
+    public UserStatus getUserStatus() {
+        return userStatus;
+    }
+
+    public void setUserStatus(UserStatus userStatus) {
+        this.userStatus = userStatus;
+    }
+
     public String toString(){
         String ans = "";
-        if(getId()!=-1)
-            ans = "ID\t= "+getId()+"\n";
+        if(getUserId()!=-1)
+            ans = "ID\t= "+getUserId()+"\n";
         if(getLogin() != null)
             ans += "login\t= "+getLogin()+"\n";
         if(getFname()!=null)

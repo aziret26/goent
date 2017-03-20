@@ -9,7 +9,11 @@
         <class>kg.goent.model.User</class>
         <class>kg.goent.model.Segment</class>
         <class>kg.goent.model.SegmentType</class>
-
+        <class>kg.goent.model.UserStatus</class>
+        <class>kg.goent.model.UserType</class>
+        <class>kg.goent.model.Project</class>
+        <class>kg.goent.model.Bmc</class>
+        <class>kg.goent.model.SegmentContainer</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/goent" />

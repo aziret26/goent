@@ -9,7 +9,6 @@ import java.util.List;
  * Created by aziret on 3/17/2017.
  */
 @Entity
-@Table(name = "segment_type")
 @NamedQueries({
         @NamedQuery(name = "SegmentType.findAll",
                 query = "SELECT st FROM SegmentType st"),
@@ -22,12 +21,12 @@ public class SegmentType implements Serializable{
     private int segmentTypeId;
 
     @Column
-    private String name;
+    private String segmentTypeName;
 
     @Column
     private int segmentOrder;
 
-    @OneToMany(mappedBy = "type")
+    @OneToMany(mappedBy = "segmentType")
     private List<Segment> listSegment = new ArrayList<Segment>();
 
     public int getSegmentTypeId() {
@@ -38,12 +37,12 @@ public class SegmentType implements Serializable{
         this.segmentTypeId = segmentTypeId;
     }
 
-    public String getName() {
-        return name;
+    public String getSegmentTypeName() {
+        return segmentTypeName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSegmentTypeName(String segmentTypeName) {
+        this.segmentTypeName = segmentTypeName;
     }
 
     public int getSegmentOrder() {

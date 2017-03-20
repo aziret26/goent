@@ -19,6 +19,7 @@ public class SegmentTypeBean {
     private SegmentType segmentType = new SegmentType();
 
     private SegmentTypeDao segmentTypeDao = new SegmentTypeDao();
+
     private SegmentTypeFacade segmentTypeFacade = new SegmentTypeFacade();
     @PostConstruct
     void init(){
