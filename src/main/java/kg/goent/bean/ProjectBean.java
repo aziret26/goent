@@ -3,6 +3,7 @@ package kg.goent.bean;
 import kg.goent.facade.ProjectFacade;
 import kg.goent.model.Project;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import java.text.DateFormat;
@@ -16,6 +17,11 @@ import java.util.Date;
 @SessionScoped
 public class ProjectBean {
     private Project project;
+
+    @PostConstruct
+    public void init(){
+        project = new Project();
+    }
 
     public Project getProject() {
         return project;
@@ -32,4 +38,5 @@ public class ProjectBean {
         pf.createProject(project);
         return "/index";
     }
+
 }

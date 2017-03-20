@@ -15,7 +15,7 @@
                     <h:panelGroup rendered="#{userSession.user != null and userSession.user.activationKey == ''}">
                         <h:panelGrid columns="2">
                             <h:outputText value="Id"/>
-                            <h:outputText value="#{userSession.user.id}"/>
+                            <h:outputText value="#{userSession.user.userId}"/>
 
                             <h:outputText value="login"/>
                             <h:outputText value="#{userSession.user.login}"/>
@@ -36,6 +36,13 @@
                     </h:panelGroup>
 
                     <h:panelGroup rendered="#{userSession.user != null and userSession.user.activationKey.length() == 0}">
+                        <ui:repeat value="#{userSession.user.projectList}" var="project">
+                            <h:panelGrid columns="2" style="margin-left: 10px">
+                                <h:outputText value="#{project.projectTitle}"/>
+                                <h:outputText value="#{project.projectStatus}"/>
+                            </h:panelGrid>
+                        </ui:repeat>
+
                         <h2><h:link value="Create Project" outcome="new-project"/></h2>
                         <h:link value="Test" outcome="test"/><br/>
                     </h:panelGroup>
