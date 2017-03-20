@@ -91,15 +91,6 @@ public class UserAction implements Serializable {
 
     public List<User> getAllUsers(){
         List<User> users = new ArrayList<User>();
-
-        /*
-        UserDao userDao = new UserDao();
-
-        userDao.beginTransaction();
-        EntityManager em =  userDao.getEntityManager();
-        List<User> users = new ArrayList<User>();
-        users = em.createNamedQuery("User.findAll",User.class).getResultList();
-        */
         users = userFacade.getAll();
         return users;
     }

@@ -66,8 +66,8 @@
       <file leaf-file-name="UserAction.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/action/user/UserAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-922">
-              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="132">
+              <caret line="92" column="49" lean-forward="false" selection-start-line="92" selection-start-column="49" selection-end-line="92" selection-end-column="49" />
               <folding>
                 <element signature="method#createUser#0;class#UserAction#0" expanded="false" />
               </folding>
@@ -236,7 +236,6 @@
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/model/SegmentContainer.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/bean/ProjectBean.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/new-project.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/kg/goent/action/user/UserAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/facade/ProjectFacade.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/model/Segment.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/model/Project.java" />
@@ -246,6 +245,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/model/UserStatus.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/model/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kg/goent/action/user/UserAction.java" />
       </list>
     </option>
   </component>
@@ -1439,7 +1439,7 @@
       <workItem from="1489908490591" duration="4367000" />
       <workItem from="1489914249420" duration="9490000" />
       <workItem from="1489929156755" duration="2351000" />
-      <workItem from="1489981851959" duration="9746000" />
+      <workItem from="1489981851959" duration="10054000" />
     </task>
     <task id="LOCAL-00002" summary="Создание объектов;&#10;Тикет #471">
       <created>1428297461221</created>
@@ -1788,7 +1788,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="599442000" />
+    <option name="totallyTimeSpent" value="599750000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -2379,8 +2379,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/action/user/UserAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-922">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state relative-caret-position="132">
+          <caret line="92" column="49" lean-forward="false" selection-start-line="92" selection-start-column="49" selection-end-line="92" selection-end-column="49" />
           <folding>
             <element signature="method#createUser#0;class#UserAction#0" expanded="false" />
           </folding>
