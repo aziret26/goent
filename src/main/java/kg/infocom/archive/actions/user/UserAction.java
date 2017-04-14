@@ -1,7 +1,7 @@
 package kg.infocom.archive.actions.user;
 
 
-import kg.infocom.archive.domain.User;
+import kg.infocom.archive.models.User;
 import kg.infocom.archive.facade.UserFacade;
 
 import javax.faces.bean.ManagedBean;
@@ -23,7 +23,7 @@ public class UserAction implements Serializable {
     }
 
     public User getUserById() {
-        return userFacade.findById(this.user.getId());
+        return userFacade.findById(this.user.getUserId());
     }
 
     public User getUser() {

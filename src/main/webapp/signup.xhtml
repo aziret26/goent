@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:H="http://java.sun.com/jsf/html">
+<f:view>
+    <h:form>
+        <h:panelGroup>
+            <h:panelGrid columns="2">
+                <h:panelGroup>
+                    <h:outputText id="fnameInput" value="First Name:"/>
+                    <h:inputText value="#{user.fname}" required="true">
+                        <f:validateRegex pattern = "[a-zA-Z]+$" />
+                    </h:inputText>
+                    <h:message for="fnameInput" style="color:red"/>
+                </h:panelGroup>
+
+                <h:outputText id="lnameInput" value="Last Name:"/>
+                <h:panelGroup>
+                    <h:inputText value="#{user.lname}" required="true">
+                        <f:validateRegex pattern = "[a-zA-Z]+$" />
+                    </h:inputText>
+                    <h:message for="lnameInput" style="color:red"/>
+                </h:panelGroup>
+
+                <h:outputText value="E-mail:"/>
+                <h:panelGroup>
+                    <h:inputText id="emailInput" value="#{user.email}" required="true">
+                        <f:validator validatorId="emailValidator"/>
+                    </h:inputText>
+                    <h:message for="emailInput" style="color:red" />
+                </h:panelGroup>
+
+                <h:outputText value="Password:"/>
+                <h:panelGroup>
+                    <h:inputSecret id = "passwordInput" value = "#{user.password}"
+                                   label = "password" required="true">
+                        <f:validateRegex pattern = "((? = .*[a-z]).{5,})" />
+                        <f:validator validatorId="password"/>
+                        <f:attribute name="confirm"/>
+                    </h:inputSecret>
+                    <h:message for = "passwordInput" style = "color:red" />
+                </h:panelGroup>
+
+                <h:outputText value="Confirm Password:"/>
+                <h:panelGroup>
+                    <h:inputSecret id="confirm" value="#{user.confirm}" required="true"/>
+                    <h:message for="confirm" style="color:red"/>
+                </h:panelGroup>
+                
+                <h:commandButton value="Submit" action=""/>
+            </h:panelGrid>
+        </h:panelGroup>
+    </h:form>
+</f:view>
+</html>

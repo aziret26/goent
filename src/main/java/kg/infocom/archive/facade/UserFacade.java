@@ -2,7 +2,7 @@ package kg.infocom.archive.facade;
 
 
 import kg.infocom.archive.dao.UserDao;
-import kg.infocom.archive.domain.User;
+import kg.infocom.archive.models.User;
 
 public class UserFacade {
 
