@@ -32,4 +32,20 @@ public class UserFacade {
         userDao.commitAndCloseTransaction();
         return user;
     }
+
+    public User findByEmail(String email){
+        userDao.beginTransaction();
+        User user = userDao.getEntityManager().createNamedQuery("User.findByEmail",User.class)
+                .setParameter("email",email).getSingleResult();
+        userDao.commitAndCloseTransaction();
+        return user;
+    }
+    public User findByEmailPass(String email,String pass){
+        userDao.beginTransaction();
+        User user = userDao.getEntityManager().createNamedQuery("User.findByEmailPass",User.class)
+                .setParameter("email",email).setParameter("password",pass).getSingleResult();
+        userDao.closeTransaction();
+        return user;
+
+    }
 }

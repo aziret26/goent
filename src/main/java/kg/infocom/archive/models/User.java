@@ -11,8 +11,16 @@ import java.util.List;
  * Created by timur on 13-Apr-17.
  */
 @Entity
-@ManagedBean(name="user")
-@SessionScoped
+@NamedQueries({
+        @NamedQuery(name="User.findAll",
+                query="SELECT u FROM User u"),
+        @NamedQuery(name="User.findByPrimaryKey",
+                query="SELECT u FROM User u WHERE u.id = :id"),
+        @NamedQuery(name="User.findByEmail",
+                query="SELECT u FROM User u WHERE u.email = :email"),
+        @NamedQuery(name="User.findByEmailPass",
+        query="SELECT u FROM User u WHERE u.email = :email AND u.password = :password")
+})
 public class User implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

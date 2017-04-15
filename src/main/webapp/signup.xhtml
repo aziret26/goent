@@ -11,7 +11,7 @@
             <h:panelGrid columns="2">
                 <h:panelGroup>
                     <h:outputText id="fnameInput" value="First Name:"/>
-                    <h:inputText value="#{user.fname}" required="true">
+                    <h:inputText value="#{userController.user.fname}" required="true">
                         <f:validateRegex pattern = "[a-zA-Z]+$" />
                     </h:inputText>
                     <h:message for="fnameInput" style="color:red"/>
@@ -19,7 +19,7 @@
 
                 <h:outputText id="lnameInput" value="Last Name:"/>
                 <h:panelGroup>
-                    <h:inputText value="#{user.lname}" required="true">
+                    <h:inputText value="#{userController.user.lname}" required="true">
                         <f:validateRegex pattern = "[a-zA-Z]+$" />
                     </h:inputText>
                     <h:message for="lnameInput" style="color:red"/>
@@ -27,7 +27,7 @@
 
                 <h:outputText value="E-mail:"/>
                 <h:panelGroup>
-                    <h:inputText id="emailInput" value="#{user.email}" required="true">
+                    <h:inputText id="emailInput" value="#{userController.user.email}" required="true">
                         <f:validator validatorId="emailValidator"/>
                     </h:inputText>
                     <h:message for="emailInput" style="color:red" />
@@ -35,7 +35,7 @@
 
                 <h:outputText value="Password:"/>
                 <h:panelGroup>
-                    <h:inputSecret id = "passwordInput" value = "#{user.password}"
+                    <h:inputSecret id = "passwordInput" value = "#{userController.user.password}"
                                    label = "password" required="true">
                         <f:validateRegex pattern = "((? = .*[a-z]).{5,})" />
                         <f:validator validatorId="password"/>
@@ -46,10 +46,10 @@
 
                 <h:outputText value="Confirm Password:"/>
                 <h:panelGroup>
-                    <h:inputSecret id="confirm" value="#{user.confirm}" required="true"/>
+                    <h:inputSecret id="confirm" value="#{userController.user.confirm}" required="true"/>
                     <h:message for="confirm" style="color:red"/>
                 </h:panelGroup>
-                
+
                 <h:commandButton value="Submit" action=""/>
             </h:panelGrid>
         </h:panelGroup>
