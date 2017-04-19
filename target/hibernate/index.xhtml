@@ -11,12 +11,8 @@
 
     <h:body>
 
-        <h:form>
-            <h:inputText value="#{userAction.user.username}"/>
-            <h:inputText value="#{userAction.user.password}"/>
-            <h:commandButton action="#{userAction.createUser}" value="Create User"/>
-        </h:form>
-
+        <h:link outcome="signin" value="sign in"/><br/>
+        <h:link outcome="signup" value="sign up"/>
     </h:body>
 
 </f:view>

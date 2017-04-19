@@ -2,7 +2,7 @@ package kg.infocom.archive.facade;
 
 
 import kg.infocom.archive.dao.UserDao;
-import kg.infocom.archive.models.User;
+import kg.infocom.archive.domain.User;
 
 public class UserFacade {
 
@@ -31,21 +31,5 @@ public class UserFacade {
         User user = userDao.getEntityManager().find(User.class, id);
         userDao.commitAndCloseTransaction();
         return user;
-    }
-
-    public User findByEmail(String email){
-        userDao.beginTransaction();
-        User user = userDao.getEntityManager().createNamedQuery("User.findByEmail",User.class)
-                .setParameter("email",email).getSingleResult();
-        userDao.commitAndCloseTransaction();
-        return user;
-    }
-    public User findByEmailPass(String email,String pass){
-        userDao.beginTransaction();
-        User user = userDao.getEntityManager().createNamedQuery("User.findByEmailPass",User.class)
-                .setParameter("email",email).setParameter("password",pass).getSingleResult();
-        userDao.closeTransaction();
-        return user;
-
     }
 }

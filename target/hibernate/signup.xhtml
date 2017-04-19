@@ -4,30 +4,64 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:H="http://java.sun.com/jsf/html">
 <f:view>
+    <h:link outcome="index" value="home page"/>
     <h:form>
         <h:panelGroup>
-            <h:panelGrid columns="3">
+            <h:panelGrid columns="2">
                 <h:outputText value="First Name:"/>
-                <h:inputText value="#{user.fname}" required="true"/>
+                <h:panelGroup>
+                    <h:inputText id="fnameInput" value="#{userController.user.fname}" required="true">
+                        <f:validateRegex pattern = "[a-zA-Z]{2,50}$" />
+                        <f:ajax/>
+                    </h:inputText>
+                    <h:message for="fnameInput" style="color:red"/>
+                </h:panelGroup>
 
                 <h:outputText value="Last Name:"/>
-                <h:inputText value="#{user.lname}" required="true"/>
+                <h:panelGroup>
+                    <h:inputText id="lnameInput" value="#{userController.user.lname}" required="true">
+                        <f:validateRegex pattern = "[a-zA-Z]{2,50}$" />
+                        <f:validateLength minimum="2"/>
+                        <f:ajax/>
+                    </h:inputText>
+                    <h:message for="lnameInput" style="color:red"/>
+                </h:panelGroup>
 
                 <h:outputText value="E-mail:"/>
-                <h:inputText value="#{user.email}" required="true"/>
+                <h:panelGroup>
+                    <h:inputText id="emailInput" value="#{userController.user.email}" required="true">
+                        <f:validator validatorId="emailValidator"/>
+                        <f:ajax/>
+                    </h:inputText>
+                    <h:message for="emailInput" style="color:red" showSummary="true" showDetail="false"/>
+                </h:panelGroup>
 
                 <h:outputText value="Password:"/>
-                <h:inputText id="pass" value="#{user.password}" required="true">
-                    <f:validateLength minimum="5" maximum="16"/>
-                </h:inputText>
-                <h:message for="pass" style="color:red" />
+                <h:panelGroup>
+                    <h:inputSecret id = "passwordInput" value = "#{userController.user.password}"
+                                   label = "password" required="true" >
+                        <f:validateLength minimum="4" maximum="13"/>
+                        <f:validator validatorId="password"/>
+                        <f:attribute name="confirm" value="#{confirmPassword}"/>
+                        <f:ajax/>
+                    </h:inputSecret>
+                    <h:message for = "passwordInput" style = "color:red" />
+                </h:panelGroup>
 
                 <h:outputText value="Confirm Password:"/>
-                <h:inputText value="" required="true"/>
+                <h:panelGroup>
+                    <h:inputSecret id="confirmPasswordInput" binding="#{confirmPassword}">
+                        <f:ajax/>
+                    </h:inputSecret>
+                    <h:message for="confirmPasswordInput" style="color:red"/>
+                </h:panelGroup>
 
-                <h:commandButton value="Submit" action=""/>
+                <h:outputText value="Phone"/>
+                <h:inputText id="phone" value="#{userController.user.phone}" />
+
+                <h:commandButton value="Submit" action="#{userController.signup}"/>
             </h:panelGrid>
         </h:panelGroup>
     </h:form>
