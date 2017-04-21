@@ -34,7 +34,7 @@ public class Project implements Serializable{
     @JoinColumn(name = "projectStatusId")
     private ProjectStatus projectStatus;
 
-    @OneToMany(mappedBy = "projectMemberId")
+    @OneToMany(mappedBy = "projectMemberId",fetch = FetchType.EAGER)
     private List<ProjectMember> memberList = new ArrayList<ProjectMember>();
 
     public int getProjectId() {

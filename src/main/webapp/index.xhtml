@@ -34,29 +34,31 @@
                     <br/><br/>
                     <h:panelGroup rendered="#{userSession.logged and userSession.user.activationKey.length() == 0}">
 
-                    <h:panelGroup rendered="#{userSession.user.projectMemberList.size() != 0}" var="projectMember">
+                    <h:panelGroup rendered="#{userSession.user.projectMemberList.size() != 0}">
+                        <h:form>
+                            <h:dataTable value="#{userSession.user.projectMemberList}" var="projectMember" border="1">
+                                <h:column headerClass="table-header" footerClass="table-footer">
+                                    <f:facet name="header">
+                                        Название
+                                    </f:facet>
+                                    <h:link value="#{projectMember.project.title}"
+                                            outcome="/pages/project-overview?projectId=#{projectMember.project.projectId}"/>
+                                </h:column>
 
-                        <h:dataTable value="#{userSession.user.projectMemberList}" var="projectMember" border="1">
-                            <h:column headerClass="table-header" footerClass="table-footer">
-                                <f:facet name="header">
-                                    Название
-                                </f:facet>
-                                <h:link value="#{projectMember.project.title}" outcome="/pages/project-overview"/>
-                            </h:column>
-
-                            <h:column headerClass="table-header" footerClass="table-footer">
-                                <f:facet name="header">
-                                    Состояние
-                                </f:facet>
-                                <h:outputText value="#{projectMember.project.description}"/>
-                            </h:column>
-                            <h:column headerClass="table-header" footerClass="table-footer">
-                                <f:facet name="header">
-                                    Удалить
-                                </f:facet>
-                                <h:link value="[X]" outcome="/pages/project-overview"/>
-                            </h:column>
-                        </h:dataTable>
+                                <h:column headerClass="table-header" footerClass="table-footer">
+                                    <f:facet name="header">
+                                        Состояние
+                                    </f:facet>
+                                    <h:outputText value="#{projectMember.project.description}"/>
+                                </h:column>
+                                <h:column headerClass="table-header" footerClass="table-footer">
+                                    <f:facet name="header">
+                                        Удалить
+                                    </f:facet>
+                                    <h:commandLink value="[X]" action="#{projectController.removeProject(projectMember.project)}"/>
+                                </h:column>
+                            </h:dataTable>
+                        </h:form>
                     </h:panelGroup>
                         <h:panelGroup rendered="#{userSession.user.projectMemberList.size() == 0}" var="projectMember">
                             <h:outputText value="No projects to show"/>

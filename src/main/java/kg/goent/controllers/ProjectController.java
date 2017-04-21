@@ -54,6 +54,9 @@ public class ProjectController {
         this.project = project;
     }
 
+    public Project getFromDbProject(int id){
+        return new ProjectFacade().findById(id);
+    }
     public String createProject(){
         if(!userSession.isLogged()){
             Tools.faceMessageWarn("Операция невозможна.","");

@@ -6,12 +6,26 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
+    <f:metadata>
+        <f:viewParam name="projectId" value="#{projectId}"/>
+    </f:metadata>
     <ui:composition template="/template/template.xhtml">
         <ui:param name="pageTitle" value="Activation"/>
         <ui:define name="metadata">
         </ui:define>
         <ui:define name="content-left">
             <div class="content-left">
+                <h:dataTable value="#{projectController.getFromDbProject(projectId).memberList}" var="projectMember" >
+                    <f:facet name="caption">
+                        TEAM
+                    </f:facet>
+                    <h:column headerClass="table-header" footerClass="table-footer">
+                        <f:facet name="header">
+                            ФИО
+                        </f:facet>
+                        <h:outputText value="#{projectMember.user.fname} #{projectMember.user.lname}"/>
+                    </h:column>
+                </h:dataTable>
                 <h:link value="Add member" outcome="project-add-member"/>
             </div>
         </ui:define>
