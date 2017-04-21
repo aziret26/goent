@@ -12,8 +12,19 @@ a{
 	float: right;
 }
 
-.center{
-	margin: 0 15%;
+.content-center{
+	width: 70%;
+	display: inline-block;
+}
+.content-left{
+	width: 15%;
+	display: inline-block;
+}
+
+.content-right{
+	width: 15%;
+	display: inline-block;
+	background-color: yellow;
 }
 
 .center-button{

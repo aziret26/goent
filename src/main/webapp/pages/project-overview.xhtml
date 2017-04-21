@@ -10,9 +10,13 @@
         <ui:param name="pageTitle" value="Activation"/>
         <ui:define name="metadata">
         </ui:define>
-
-        <ui:define name="content">
-            <div class="center">
+        <ui:define name="content-left">
+            <div class="content-left">
+                <h:link value="Add member" outcome="project-add-member"/>
+            </div>
+        </ui:define>
+        <ui:define name="content-center">
+            <div class="content-center">
                 <h:panelGroup styleClass="project-stage-container">
                     <h:panelGroup >
                         <div class="project-stage">

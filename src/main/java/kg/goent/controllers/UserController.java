@@ -66,10 +66,12 @@ public class UserController {
         UserFacade uf = new UserFacade();
         User tempUser = uf.findByEmailPass(email,password);
 
-        if(tempUser != null){
-            userSession.setUser(tempUser);
-            userSession.signin();
+        if(tempUser == null){
+            Tools.faceMessageWarn("Wrong email or password.","Please, check if data are correct.");
+            return "signin";
         }
+        userSession.setUser(tempUser);
+        userSession.signin();
         return "index";
     }
 

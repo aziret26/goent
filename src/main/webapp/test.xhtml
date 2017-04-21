@@ -9,9 +9,9 @@
 <h:body>
     <ui:composition template="/template/template.xhtml">
         <ui:param name="pageTitle" value="Test Page"/>
-        <ui:define name="content">
+        <ui:define name="content-center">
             <h1>Test page</h1>
-            <div class="center">
+            <div class="content-center">
                 <h:panelGroup rendered="#{userSession.logged}">
                     <h:panelGroup rendered="#{(userSession.user.userRole.userRoleId == 1
                                                     or userSession.user.userRole.userRoleId == 2)}">

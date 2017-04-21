@@ -10,8 +10,8 @@
     <h:body>
         <ui:composition template="template/template.xhtml">
             <ui:param name="pageTitle" value="Home"/>
-            <ui:define name="content">
-                <div class="center">
+            <ui:define name="content-center">
+                <div class="content-center">
                     <h:panelGroup rendered="#{userSession.user != null and userSession.user.activationKey == ''}">
                         <h:panelGrid columns="2">
                             <h:outputText value="Id"/>
