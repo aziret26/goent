@@ -57,7 +57,7 @@ public class ProjectMemberFacade {
         return projectMember;
     }
 
-    public List<ProjectMember> findByStatus(Project project){
+    public List<ProjectMember> findByProject(Project project){
         List<ProjectMember> ms;
         try {
             objectDao.beginTransaction();

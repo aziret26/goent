@@ -13,7 +13,7 @@ public class MemberRoleFacade {
 
     public MemberRoleFacade() {
         if(findAll().size() == 0){
-
+            initialize();
         }
     }
 
@@ -61,11 +61,11 @@ public class MemberRoleFacade {
         return memberRole;
     }
 
-    public MemberRole findByStatus(String status){
+    public MemberRole findByRole(String status){
         MemberRole ms;
         try {
             objectDao.beginTransaction();
-            ms = objectDao.getEntityManager().createNamedQuery("MemberStatus.findByMemberStatus",MemberRole.class)
+            ms = objectDao.getEntityManager().createNamedQuery("MemberRole.findByMemberRole",MemberRole.class)
                     .setParameter("status",status).getSingleResult();
         }catch (Exception ex){
             ms = null;
@@ -76,9 +76,11 @@ public class MemberRoleFacade {
     }
 
     private void initialize(){
-        MemberRole mr = new MemberRole("administrator");
+        MemberRole mr = new MemberRole("team leader");
         create(mr);
-        mr = new MemberRole("");
+        mr = new MemberRole("team member");
+        create(mr);
+        mr = new MemberRole("observer");
         create(mr);
     }
 
