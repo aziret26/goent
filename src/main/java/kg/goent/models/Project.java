@@ -12,6 +12,12 @@ import java.util.List;
  * Created by timur on 13-Apr-17.
  */
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "Project.findAll",
+         query = "SELECT p FROM Project p"),
+        @NamedQuery(name = "Project.findByTitle",
+                query = "SELECT p FROM Project p WHERE p.title = :title")
+})
 public class Project implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +30,11 @@ public class Project implements Serializable{
     @Column
     private Date projectDate;
 
-    @OneToMany(mappedBy = "memberDetailId")
+    @ManyToOne
+    @JoinColumn(name = "projectStatusId")
+    private ProjectStatus projectStatus;
+
+    @OneToMany(mappedBy = "projectMemberId")
     private List<ProjectMember> memberList = new ArrayList<ProjectMember>();
 
     public int getProjectId() {
@@ -65,5 +75,13 @@ public class Project implements Serializable{
 
     public void setMemberList(List<ProjectMember> memberList) {
         this.memberList = memberList;
+    }
+
+    public ProjectStatus getProjectStatus() {
+        return projectStatus;
+    }
+
+    public void setProjectStatus(ProjectStatus projectStatus) {
+        this.projectStatus = projectStatus;
     }
 }

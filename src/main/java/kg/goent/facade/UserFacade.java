@@ -4,6 +4,9 @@ package kg.goent.facade;
 import kg.goent.dao.UserDao;
 import kg.goent.models.User;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UserFacade {
 
     private UserDao userDao = new UserDao();
@@ -33,23 +36,43 @@ public class UserFacade {
         return user;
     }
 
+    public List<User> findAll(){
+        List<User> userList;
+        try {
+            userDao.beginTransaction();
+            userList = userDao.getEntityManager().createNamedQuery("User.findAll",User.class).getResultList();
+        }catch (Exception ex){
+            userList = new ArrayList<User>();
+        }finally {
+            userDao.commitAndCloseTransaction();
+        }
+        return userList;
+    }
+
     public User findByEmail(String email){
-        userDao.beginTransaction();
         User user;
         try {
+            userDao.beginTransaction();
             user = userDao.getEntityManager().createNamedQuery("User.findByEmail", kg.goent.models.User.class)
                     .setParameter("email", email).getSingleResult();
         }catch (Exception ex){
             user = null;
+        }finally {
+            userDao.commitAndCloseTransaction();
         }
-        userDao.commitAndCloseTransaction();
         return user;
     }
     public User findByEmailPass(String email,String pass){
-        userDao.beginTransaction();
-        User user = userDao.getEntityManager().createNamedQuery("User.findByEmailPass",User.class)
-                .setParameter("email",email).setParameter("password",pass).getSingleResult();
-        userDao.closeTransaction();
+        User user;
+        try {
+            userDao.beginTransaction();
+            user =userDao.getEntityManager().createNamedQuery("User.findByEmailPass", User.class)
+                    .setParameter("email", email).setParameter("password", pass).getSingleResult();
+        }catch (Exception ex){
+            user = null;
+        }finally {
+            userDao.commitAndCloseTransaction();
+        }
         return user;
 
     }

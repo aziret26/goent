@@ -12,6 +12,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by timur on 13-Apr-17.
@@ -54,6 +55,10 @@ public class UserController {
         this.activationKey = activationKey;
     }
 
+    public List<User> getAllUsers(){
+        return new UserFacade().findAll();
+    }
+
     public String signin(){
         String email=user.getEmail();
         String password=user.getPassword();
@@ -63,7 +68,13 @@ public class UserController {
 
         if(tempUser != null){
             userSession.setUser(tempUser);
+            userSession.signin();
         }
+        return "index";
+    }
+
+    public String signout(){
+        userSession.signout();
         return "index";
     }
 
@@ -87,7 +98,12 @@ public class UserController {
         /*
         * method for account activation by providing activation key from web page
         * */
-        return "infoPage";
+        if(userSession.getUser().getActivationKey().equals(activationKey)){
+            userSession.getUser().setActivationKey("");
+            userSession.getUser().setUserStatus(new UserStatusFacade().findByStatus("activated"));
+            new UserFacade().updateUser(userSession.getUser());
+        }
+        return "index";
     }
     public String activateAutomaticaly(){
         /*
@@ -95,6 +111,5 @@ public class UserController {
         * */
         return "infopage";
     }
-
 
 }

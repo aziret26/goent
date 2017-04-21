@@ -60,8 +60,8 @@ public class User implements Serializable,Validator{
         this.confirm = confirm;
     }
 
-    @OneToMany(mappedBy = "user")
-    private List<ProjectMember> projectMemberList=new ArrayList<ProjectMember>();
+    @OneToMany(mappedBy = "user",fetch = FetchType.EAGER)
+    private List<ProjectMember> projectMemberList = new ArrayList<ProjectMember>();
 
     @ManyToOne
     @JoinColumn(name = "userRoleId")
@@ -110,6 +110,25 @@ public class User implements Serializable,Validator{
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String phoneF() {
+        String temp = "";
+        if(phone != null)
+            if(phone.length() == 13) {
+                temp = phone.substring(0,4);
+                temp += " "+phone.substring(4,7);
+                temp += " "+phone.substring(7,10);
+                temp += " "+phone.substring(10,13);
+            }else
+            if(phone.length() == 10){
+                temp = phone.substring(0,4);
+                temp += " "+phone.substring(4,7);
+                temp += " "+phone.substring(7,10);
+            }else{
+                temp = phone;
+            }
+        return temp;
     }
 
     public String getPhone() {

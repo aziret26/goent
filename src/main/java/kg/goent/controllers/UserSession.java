@@ -12,6 +12,7 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class UserSession {
     private User user = new User();
+    private boolean logged = false;
 
     public User getUser() {
         return user;
@@ -19,5 +20,27 @@ public class UserSession {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public boolean isLogged() {
+        return logged;
+    }
+
+    public void setLogged(boolean logged) {
+        this.logged = logged;
+    }
+
+    public void signin(){
+        /*
+        * called from UserController
+        * */
+        logged = true;
+    }
+    public void signout(){
+        /*
+        * called from UserController
+        * */
+        user = new User();
+        logged = false;
     }
 }

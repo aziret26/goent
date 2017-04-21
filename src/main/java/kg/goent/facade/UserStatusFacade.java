@@ -4,6 +4,7 @@ package kg.goent.facade;
 import kg.goent.dao.ObjectDao;
 import kg.goent.models.UserStatus;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserStatusFacade {
@@ -34,18 +35,44 @@ public class UserStatusFacade {
     }
 
     public List<UserStatus> findAll(){
-        objectDao.beginTransaction();
-        List<UserStatus> userStatusesList = objectDao.getEntityManager().
-                createNamedQuery("UserStatus.findAll",UserStatus.class).getResultList();
-        objectDao.closeTransaction();
+        List<UserStatus> userStatusesList;
+        try {
+            objectDao.beginTransaction();
+            userStatusesList = objectDao.getEntityManager().
+                    createNamedQuery("UserStatus.findAll", UserStatus.class).getResultList();
+        }catch (Exception ex){
+            userStatusesList = new ArrayList<UserStatus>();
+        }finally {
+            objectDao.closeTransaction();
+        }
         return userStatusesList;
     }
     public UserStatus findById(Integer id) {
-        objectDao.beginTransaction();
-        UserStatus userStatus = objectDao.getEntityManager().find(UserStatus.class, id);
-        objectDao.commitAndCloseTransaction();
+        UserStatus userStatus;
+        try {
+            objectDao.beginTransaction();
+            userStatus = objectDao.getEntityManager().find(UserStatus.class, id);
+        }catch (Exception ex){
+            userStatus = null;
+        }finally {
+            objectDao.commitAndCloseTransaction();
+        }
         return userStatus;
     }
+    public UserStatus findByStatus(String status) {
+        UserStatus userStatus;
+        try {
+            objectDao.beginTransaction();
+            userStatus = objectDao.getEntityManager().createNamedQuery("UserStatus.findByStatus",UserStatus.class)
+                    .setParameter("userStatus",status).getSingleResult();
+        }catch (Exception ex){
+            userStatus = null;
+        }finally {
+            objectDao.commitAndCloseTransaction();
+        }
+        return userStatus;
+    }
+
     private void initializeUserStatuses(){
         UserStatus us;
         us = new UserStatus("activated");

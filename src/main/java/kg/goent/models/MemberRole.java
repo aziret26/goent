@@ -9,6 +9,12 @@ import java.util.List;
  * Created by timur on 13-Apr-17.
  */
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "MemberRole.findAll",
+                query = "SELECT ms FROM MemberRole ms"),
+        @NamedQuery(name = "MemberRole.findByMemberRole",
+                query = "SELECT ms FROM MemberRole ms WHERE ms.memberRole = :status")
+})
 public class MemberRole implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +25,13 @@ public class MemberRole implements Serializable {
 
     @Column
     private String memberRole;
+
+    public MemberRole() {
+    }
+
+    public MemberRole(String memberRole) {
+        this.memberRole = memberRole;
+    }
 
     public int getMemberRoleId() {
         return memberRoleId;

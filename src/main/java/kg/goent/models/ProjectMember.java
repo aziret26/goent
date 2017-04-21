@@ -10,10 +10,19 @@ import java.util.List;
  * Created by timur on 13-Apr-17.
  */
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "ProjectMember.findAll",
+                query = "SELECT pm FROM ProjectMember pm"),
+        @NamedQuery(name = "ProjectMember.findByProject",
+                query = "SELECT pm FROM ProjectMember pm WHERE pm.project = :project"),
+        @NamedQuery(name = "ProjectMember.findByUser",
+                query = "SELECT pm FROM ProjectMember pm WHERE pm.user = :user")
+})
+
 public class ProjectMember implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int memberDetailId;
+    private int projectMemberId;
 
     @ManyToOne
     @JoinColumn(name = "projectId")
@@ -36,12 +45,12 @@ public class ProjectMember implements Serializable {
     @JoinColumn(name = "userId")
     private User user;
 
-    public int getMemberDetailId() {
-        return memberDetailId;
+    public int getProjectMemberId() {
+        return projectMemberId;
     }
 
-    public void setMemberDetailId(int memberDetailId) {
-        this.memberDetailId = memberDetailId;
+    public void setProjectMemberId(int memberDetailId) {
+        this.projectMemberId = memberDetailId;
     }
 
     public Project getProject() {

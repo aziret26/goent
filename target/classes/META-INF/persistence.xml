@@ -13,6 +13,7 @@
         <class>kg.goent.models.ProjectMember</class>
         <class>kg.goent.models.UserRole</class>
         <class>kg.goent.models.UserStatus</class>
+        <class>kg.goent.models.ProjectStatus</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />

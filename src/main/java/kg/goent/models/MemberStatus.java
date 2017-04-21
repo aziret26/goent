@@ -1,5 +1,7 @@
 package kg.goent.models;
 
+import kg.goent.facade.MemberStatusFacade;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -9,6 +11,12 @@ import java.util.List;
  * Created by timur on 13-Apr-17.
  */
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "MemberStatus.findAll",
+            query = "SELECT ms FROM MemberStatus ms"),
+        @NamedQuery(name = "MemberStatus.findByMemberStatus",
+                query = "SELECT ms FROM MemberStatus ms WHERE ms.memberStatus = :status")
+})
 public class MemberStatus implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +27,12 @@ public class MemberStatus implements Serializable {
 
     @Column
     private String memberStatus;
+
+    public MemberStatus() {}
+
+    public MemberStatus(String memberStatus) {
+        this.memberStatus = memberStatus;
+    }
 
     public int getMemberStatusId() {
         return memberStatusId;
