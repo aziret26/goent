@@ -1,10 +1,7 @@
 package kg.goent.controllers;
 
 import kg.goent.facade.*;
-import kg.goent.models.MemberRole;
-import kg.goent.models.Project;
-import kg.goent.models.ProjectMember;
-import kg.goent.models.User;
+import kg.goent.models.*;
 import kg.goent.tools.Tools;
 
 import javax.annotation.PostConstruct;
@@ -62,6 +59,7 @@ public class ProjectController {
             Tools.faceMessageWarn("Операция невозможна.","");
         }
         project.setProjectDate(new Date());
+        project.setProjectStatus(new ProjectStatusFacade().findByStatus("active"));
 
         ProjectMember projectMember = new ProjectMember();
         projectMember.setMemberStatus(new MemberStatusFacade().findByStatus("accepted"));
@@ -104,9 +102,9 @@ public class ProjectController {
             Tools.faceMessageWarn("User does not exist.","check if email is correct.");
             return "";
         }
-        ProjectMember pm = new ProjectMember();
-        pm.setUser(user);
-        pm.setMemberRole(new MemberRoleFacade().findByRole("team member"));
+
+
+
 
         return "";
     }

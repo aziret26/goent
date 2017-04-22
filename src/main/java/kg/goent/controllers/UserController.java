@@ -114,4 +114,10 @@ public class UserController {
         return "infopage";
     }
 
+    public List<User> searchByEmailTop5(String email){
+        List<User> userList;
+        userList = new UserFacade().searchByEmailBy5(email);
+        return userList;
+    }
+
 }

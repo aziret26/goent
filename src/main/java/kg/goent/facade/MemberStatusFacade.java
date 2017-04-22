@@ -82,5 +82,7 @@ public class MemberStatusFacade {
         create(ms);
         ms = new MemberStatus("pending");
         create(ms);
+        ms = new MemberStatus("deleted/retired");
+        create(ms);
     }
 }

@@ -1,6 +1,7 @@
 package kg.goent.facade;
 
 import kg.goent.dao.ObjectDao;
+import kg.goent.models.ProjectStatus;
 
 import java.util.List;
 
@@ -10,29 +11,35 @@ import java.util.List;
 public class ProjectStatusFacade {
     private ObjectDao objectDao = new ObjectDao();
 
-    public void create(ProjectFacade projectFacade) {
+    public ProjectStatusFacade() {
+        if(findAll().size() == 0){
+            initialize();
+        }
+    }
+
+    public void create(ProjectStatus projectStatus) {
         objectDao.beginTransaction();
-        objectDao.getEntityManager().persist(projectFacade);
+        objectDao.getEntityManager().persist(projectStatus);
         objectDao.commitAndCloseTransaction();
     }
 
-    public void update(ProjectFacade projectFacade) {
+    public void update(ProjectStatus projectStatus) {
         objectDao.beginTransaction();
-        objectDao.getEntityManager().merge(projectFacade);
+        objectDao.getEntityManager().merge(projectStatus);
         objectDao.commitAndCloseTransaction();
     }
 
-    public void delete(ProjectFacade projectFacade) {
+    public void delete(ProjectStatus projectStatus) {
         objectDao.beginTransaction();
-        objectDao.getEntityManager().remove(projectFacade);
+        objectDao.getEntityManager().remove(projectStatus);
         objectDao.commitAndCloseTransaction();
     }
 
-    public List<ProjectFacade> findAll(){
-        List<ProjectFacade> objectList;
+    public List<ProjectStatus> findAll(){
+        List<ProjectStatus> objectList;
         try {
             objectDao.beginTransaction();
-            objectList = objectDao.getEntityManager().createNamedQuery("ProjectFacade.findAll",ProjectFacade.class).getResultList();
+            objectList = objectDao.getEntityManager().createNamedQuery("ProjectStatus.findAll",ProjectStatus.class).getResultList();
         }catch (Exception ex){
             objectList = null;
         }finally {
@@ -41,24 +48,24 @@ public class ProjectStatusFacade {
         return objectList;
     }
 
-    public ProjectFacade findById(Integer id) {
-        ProjectFacade projectFacade;
+    public ProjectStatus findById(Integer id) {
+        ProjectStatus projectStatus;
         try {
             objectDao.beginTransaction();
-            projectFacade = objectDao.getEntityManager().find(ProjectFacade.class, id);
+            projectStatus = objectDao.getEntityManager().find(ProjectStatus.class, id);
         }catch (Exception ex){
-            projectFacade = null;
+            projectStatus = null;
         }finally {
             objectDao.commitAndCloseTransaction();
         }
-        return projectFacade;
+        return projectStatus;
     }
 
-    public ProjectFacade findByStatus(String status){
-        ProjectFacade ms;
+    public ProjectStatus findByStatus(String status){
+        ProjectStatus ms;
         try {
             objectDao.beginTransaction();
-            ms = objectDao.getEntityManager().createNamedQuery("ProjectStatus.findByMemberStatus",ProjectFacade.class)
+            ms = objectDao.getEntityManager().createNamedQuery("ProjectStatus.findByStatus",ProjectStatus.class)
                     .setParameter("status",status).getSingleResult();
         }catch (Exception ex){
             ms = null;
@@ -68,5 +75,12 @@ public class ProjectStatusFacade {
         return ms;
     }
 
-
+    private void initialize(){
+        ProjectStatus ps = new ProjectStatus("active");
+        create(ps);
+        ps = new ProjectStatus("frozen");
+        create(ps);
+        ps = new ProjectStatus("finished");
+        create(ps);
+    }
 }

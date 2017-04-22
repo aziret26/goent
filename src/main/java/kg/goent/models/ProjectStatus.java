@@ -24,6 +24,13 @@ public class ProjectStatus {
     @OneToMany(mappedBy = "projectStatus")
     private List<Project> projectList;
 
+    public ProjectStatus() {
+    }
+
+    public ProjectStatus(String status) {
+        this.status = status;
+    }
+
     public int getProjectStatusId() {
         return projectStatusId;
     }

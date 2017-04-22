@@ -6,8 +6,11 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
+    <f:metadata>
+        <f:viewParam name="projectId" value="#{projectId}"/>
+    </f:metadata>
     <ui:composition template="/template/template.xhtml">
-        <ui:param name="pageTitle" value="Activation"/>
+        <ui:param name="pageTitle" value="Add members"/>
         <ui:define name="metadata">
         </ui:define>
         <ui:define name="content-left">
@@ -17,7 +20,50 @@
         </ui:define>
         <ui:define name="content-center">
             <div class="content-center">
+                <h:dataTable value="#{projectController.getFromDbProject(projectId).memberList}" var="projectMember" >
+                    <f:facet name="caption">
+                        TEAM
+                    </f:facet>
+                    <h:column headerClass="table-header" footerClass="table-footer">
+                        <f:facet name="header">
+                            ФИО
+                        </f:facet>
+                        <h:outputText value="#{projectMember.user.fname} #{projectMember.user.lname}"/>
+                    </h:column>
+                </h:dataTable>
+                <h:form>
+                    <h:inputText value="#{projectMemberController.userEmail}" onkeyup="showUsers()" onblur="hideUsers()">
 
+                    </h:inputText>
+                    <div id="users" >
+                        <h:selectOneMenu value="#{projectMemberController.userEmail}" required="true" id="year-of-birth"
+                                         styleClass="form-control"> <!--155-->
+                            <f:selectItems value="#{userController.searchByEmailTop5(projectMemberController.userEmail)}"/>
+                            <!--Collection-->
+                        </h:selectOneMenu>
+                        <ul>
+                            <ui:repeat value="#{userController.searchByEmailTop5(projectMemberController.userEmail)}" var="possibleUsers">
+                                <li><h:outputText value="#{possibleUsers.email}" >
+                                    <f:ajax onevent="/>
+                                </h:outputText> </li>
+                            </ui:repeat>
+                        </ul>
+                    </div>
+                </h:form>
+                <script>
+                    var users = document.getElementById("users");
+                    hideUsers();
+                    function showUsers(){
+                        console.log("showing users");
+                        users.style.visibility="visible";
+                    }
+
+                    function hideUsers() {
+                        console.log("hiding users");
+                        users.style.visibility = "hidden";
+                    }
+
+                </script>
             </div>
         </ui:define>
     </ui:composition>
