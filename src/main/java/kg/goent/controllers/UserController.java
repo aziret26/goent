@@ -11,6 +11,7 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -115,8 +116,12 @@ public class UserController {
     }
 
     public List<User> searchByEmailTop5(String email){
+        if(email.length() > 3){
+            return new ArrayList<User>();
+        }
         List<User> userList;
         userList = new UserFacade().searchByEmailBy5(email);
+        System.out.println("Searching for user: "+email);
         return userList;
     }
 

@@ -76,6 +76,7 @@ public class UserFacade {
         return user;
     }
     public List<User> searchByEmailBy5(String email){
+
         List<User> userList;
         try {
             userDao.beginTransaction();

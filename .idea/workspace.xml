@@ -2,36 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bff20c5a-e16e-4a2a-9384-4b36ec171dcd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/pages/project-settings.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/controllers/ProjectController.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/controllers/ProjectController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/facade/MemberStatusFacade.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/facade/MemberStatusFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/facade/ProjectStatusFacade.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/facade/ProjectStatusFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/facade/UserFacade.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/facade/UserFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/models/ProjectStatus.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/models/ProjectStatus.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/models/User.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/models/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/ProjectController.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/ProjectController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/MemberStatusFacade.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/MemberStatusFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/ProjectStatusFacade.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/ProjectStatusFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/UserFacade.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/UserFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/ProjectStatus.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/ProjectStatus.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/User.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/User.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/fields_ru.properties" afterPath="$PROJECT_DIR$/src/main/java/fields_ru.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectController.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectMemberController.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectMemberController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/facade/MemberStatusFacade.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/facade/MemberStatusFacade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/facade/ProjectStatusFacade.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/facade/ProjectStatusFacade.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/facade/UserFacade.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/facade/UserFacade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/models/ProjectStatus.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/models/ProjectStatus.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/models/User.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/models/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/activate.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/activate.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/new-project.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/new-project.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/pages/project-add-member.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/pages/project-add-member.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/pages/project-overview.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/pages/project-overview.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/hibernate/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/activate.xhtml" afterPath="$PROJECT_DIR$/target/hibernate/activate.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/new-project.xhtml" afterPath="$PROJECT_DIR$/target/hibernate/new-project.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/pages/project-add-member.xhtml" afterPath="$PROJECT_DIR$/target/hibernate/pages/project-add-member.xhtml" />
     </list>
     <ignored path="archive.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,11 +38,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="project-add-member.xhtml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="project-add-member.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/project-add-member.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="46" column="53" lean-forward="false" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
+            <state relative-caret-position="387">
+              <caret line="50" column="49" lean-forward="true" selection-start-line="50" selection-start-column="49" selection-end-line="50" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -76,18 +51,18 @@
       <file leaf-file-name="test.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/test.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="442">
+              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="88" column="53" lean-forward="false" selection-start-line="88" selection-start-column="53" selection-end-line="88" selection-end-column="53" />
+            <state relative-caret-position="591">
+              <caret line="119" column="41" lean-forward="false" selection-start-line="119" selection-start-column="41" selection-end-line="119" selection-end-column="41" />
               <folding>
                 <element signature="method#signout#0;class#UserController#0" expanded="false" />
                 <element signature="method#activateByKey#0;class#UserController#0" expanded="false" />
@@ -97,11 +72,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="UserFacade.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/facade/UserFacade.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ProjectController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-136">
-              <caret line="63" column="45" lean-forward="true" selection-start-line="63" selection-start-column="45" selection-end-line="63" selection-end-column="45" />
+            <state relative-caret-position="-863">
+              <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
               <folding>
                 <element signature="method#projectOverView#0;class#ProjectController#0" expanded="false" />
               </folding>
@@ -112,17 +97,10 @@
       <file leaf-file-name="ProjectMemberController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectMemberController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
+            <state relative-caret-position="204">
               <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
               <folding>
-                <element signature="e#581#582#0" expanded="true" />
-                <element signature="e#617#618#0" expanded="true" />
-                <element signature="e#682#683#0" expanded="true" />
-                <element signature="e#732#733#0" expanded="true" />
-                <element signature="e#1087#1088#0" expanded="true" />
-                <element signature="e#1120#1121#0" expanded="true" />
-                <element signature="e#1172#1173#0" expanded="true" />
-                <element signature="e#1216#1217#0" expanded="true" />
+                <element signature="imports" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -131,8 +109,8 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/models/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="27" column="44" lean-forward="true" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+            <state relative-caret-position="303">
+              <caret line="35" column="7" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -142,7 +120,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/project-overview.xhtml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
-              <caret line="23" column="90" lean-forward="true" selection-start-line="23" selection-start-column="90" selection-end-line="23" selection-end-column="90" />
+              <caret line="23" column="90" lean-forward="false" selection-start-line="23" selection-start-column="90" selection-end-line="23" selection-end-column="90" />
               <folding>
                 <marker date="1492860023942" expanded="true" signature="1527:2454" ph="..." />
               </folding>
@@ -154,7 +132,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+              <caret line="14" column="26" lean-forward="false" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -167,7 +145,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/fields_ru.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+              <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -279,10 +257,10 @@
         <option value="$PROJECT_DIR$/src/main/java/fields_ru.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/project-overview.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/models/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kg/goent/facade/UserFacade.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kg/goent/controllers/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectMemberController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/project-add-member.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/kg/goent/facade/UserFacade.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kg/goent/controllers/UserController.java" />
       </list>
     </option>
   </component>
@@ -544,6 +522,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -888,7 +867,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1741,6 +1719,7 @@
       <workItem from="1492789636992" duration="629000" />
       <workItem from="1492841930853" duration="3276000" />
       <workItem from="1492849940151" duration="14186000" />
+      <workItem from="1493028206137" duration="2855000" />
     </task>
     <task id="LOCAL-00002" summary="Создание объектов;&#10;Тикет #471">
       <created>1428297461221</created>
@@ -2089,7 +2068,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="623746000" />
+    <option name="totallyTimeSpent" value="626601000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2128,7 +2107,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3322185" sideWeight="0.49748996" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22922252" sideWeight="0.50070125" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23027718" sideWeight="0.49850747" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24626866" sideWeight="0.49850747" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18552354" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -2490,7 +2469,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2498,7 +2476,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="581">
           <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2507,7 +2484,7 @@
         <state relative-caret-position="387">
           <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding>
-            <element signature="e#978#993#0" expanded="true" />
+            <element signature="e#978#993#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2516,7 +2493,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2524,14 +2500,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+          <caret line="14" column="26" lean-forward="false" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -2550,7 +2525,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/fields_ru.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+          <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -2577,81 +2552,74 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/project-overview.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
-          <caret line="23" column="90" lean-forward="true" selection-start-line="23" selection-start-column="90" selection-end-line="23" selection-end-column="90" />
+          <caret line="23" column="90" lean-forward="false" selection-start-line="23" selection-start-column="90" selection-end-line="23" selection-end-column="90" />
           <folding>
             <marker date="1492860023942" expanded="true" signature="1527:2454" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/facade/UserFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="38" column="22" lean-forward="false" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/test.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="442">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/models/User.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectMemberController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="27" column="44" lean-forward="true" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
-          <folding />
+        <state relative-caret-position="204">
+          <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="63" column="45" lean-forward="true" selection-start-line="63" selection-start-column="45" selection-end-line="63" selection-end-column="45" />
+        <state relative-caret-position="-863">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding>
             <element signature="method#projectOverView#0;class#ProjectController#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/UserController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/models/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="88" column="53" lean-forward="false" selection-start-line="88" selection-start-column="53" selection-end-line="88" selection-end-column="53" />
-          <folding>
-            <element signature="method#signout#0;class#UserController#0" expanded="false" />
-            <element signature="method#activateByKey#0;class#UserController#0" expanded="false" />
-            <element signature="method#activateAutomaticaly#0;class#UserController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectMemberController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-          <folding>
-            <element signature="e#581#582#0" expanded="true" />
-            <element signature="e#617#618#0" expanded="true" />
-            <element signature="e#682#683#0" expanded="true" />
-            <element signature="e#732#733#0" expanded="true" />
-            <element signature="e#1087#1088#0" expanded="true" />
-            <element signature="e#1120#1121#0" expanded="true" />
-            <element signature="e#1172#1173#0" expanded="true" />
-            <element signature="e#1216#1217#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="303">
+          <caret line="35" column="7" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/project-add-member.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="46" column="53" lean-forward="false" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
+        <state relative-caret-position="387">
+          <caret line="50" column="49" lean-forward="true" selection-start-line="50" selection-start-column="49" selection-end-line="50" selection-end-column="49" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/facade/UserFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="119" column="41" lean-forward="false" selection-start-line="119" selection-start-column="41" selection-end-line="119" selection-end-column="41" />
+          <folding>
+            <element signature="method#signout#0;class#UserController#0" expanded="false" />
+            <element signature="method#activateByKey#0;class#UserController#0" expanded="false" />
+            <element signature="method#activateAutomaticaly#0;class#UserController#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

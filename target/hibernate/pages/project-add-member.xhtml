@@ -32,27 +32,29 @@
                     </h:column>
                 </h:dataTable>
                 <h:form>
-                    <h:inputText value="#{projectMemberController.userEmail}" onkeyup="showUsers()" onblur="hideUsers()">
+                    <h:inputText value="#{projectMemberController.userEmail}"  onchange="">
+                        <f:ajax onevent="#{userController.searchByEmailTop5(projectMemberController.userEmail)}">
 
+                        </f:ajax>
                     </h:inputText>
                     <div id="users" >
-                        <h:selectOneMenu value="#{projectMemberController.userEmail}" required="true" id="year-of-birth"
-                                         styleClass="form-control"> <!--155-->
+                        <!--h:selectOneMenu value="#{projectMemberController.userEmail}" required="true" id="year-of-birth"
+                                         styleClass="form-control">
                             <f:selectItems value="#{userController.searchByEmailTop5(projectMemberController.userEmail)}"/>
-                            <!--Collection-->
-                        </h:selectOneMenu>
-                        <ul>
-                            <ui:repeat value="#{userController.searchByEmailTop5(projectMemberController.userEmail)}" var="possibleUsers">
-                                <li><h:outputText value="#{possibleUsers.email}" >
-                                    <f:ajax onevent="/>
-                                </h:outputText> </li>
-                            </ui:repeat>
-                        </ul>
+                        </h:selectOneMenu-->
+
                     </div>
+                    <ul>
+                        <ui:repeat value="#{userController.searchByEmailTop5(projectMemberController.userEmail)}" var="possibleUsers">
+                            <h:outputText value="searching for: '#{projectMemberController.userEmail}'"/>
+                            <li><h:outputText value="#{possibleUsers.email}" >
+                            </h:outputText> </li>
+                        </ui:repeat>
+                    </ul>
                 </h:form>
                 <script>
                     var users = document.getElementById("users");
-                    hideUsers();
+                    //hideUsers();
                     function showUsers(){
                         console.log("showing users");
                         users.style.visibility="visible";
