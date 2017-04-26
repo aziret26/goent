@@ -24,7 +24,7 @@
                                       rendered="#{projectMember.memberRole.memberRoleId == 2}"/>
                     </h:column>
                 </h:dataTable>
-                <h:link value="#{field.addMember}" outcome="project-add-member"/>
+                <h:link value="#{field.addMember}" outcome="project-add-member?projectId=#{projectId}"/>
             </div>
         </ui:define>
         <ui:define name="content-center">

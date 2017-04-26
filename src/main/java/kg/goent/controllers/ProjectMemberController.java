@@ -1,14 +1,13 @@
 package kg.goent.controllers;
 
-import kg.goent.facade.MemberRoleFacade;
-import kg.goent.facade.UserFacade;
-import kg.goent.models.MemberRole;
-import kg.goent.models.ProjectMember;
-import kg.goent.models.User;
+import antlr.Tool;
+import kg.goent.facade.*;
+import kg.goent.models.*;
 import kg.goent.tools.Tools;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import java.lang.reflect.Member;
 
@@ -23,11 +22,18 @@ public class ProjectMemberController {
     private String userEmail;
     private String memberRole;
 
+    @ManagedProperty(value = "#{userSession}")
+    private UserSession userSession;
+
     @PostConstruct
     public void init(){
         projectMember = new ProjectMember();
         userEmail = "";
         memberRole = "";
+    }
+
+    public void setUserSession(UserSession userSession) {
+        this.userSession = userSession;
     }
 
     public ProjectMember getProjectMember() {
@@ -54,23 +60,44 @@ public class ProjectMemberController {
         this.memberRole = memberRole;
     }
 
-    public String addMember(){
+    public String addMember(int projectId){
         User u = new UserFacade().findByEmail(userEmail);
+        System.out.println("searching is user exists");
         if(u == null || u.getEmail() == null){
             Tools.faceMessageWarn("User doesn't exist.","Please, look if email is correct.");
             return "";
         }
+        System.out.println("user exists\n\nif member role correct");
         MemberRole mr = new MemberRoleFacade().findByRole(memberRole);
         if(mr == null || mr.getMemberRole() == null || mr.getMemberRoleId() != 1 || mr.getMemberRoleId() != 0){
-            Tools.faceMessageWarn("User doesn't exist.","Please, look if email is correct.");
+            Tools.faceMessageWarn("Invalid memberole assigned.","");
             return "";
         }
 
+        System.out.println("memberrole correct\n\nsearching for project");
+        Project project = new ProjectFacade().findById(projectId);
+        if(project == null || project.getTitle() == null){
+            Tools.faceMessageWarn("Invalid project id","");
+            return "";
+        }
+
+        System.out.println("project exists\n\nlooking for privileges");
+        ProjectMember pm = new ProjectMemberFacade().findByUserAndProject(userSession.getUser(),project);
+
+        if(pm == null || pm.getMemberRole().getMemberRoleId() != 1){
+            Tools.faceMessageWarn("You do not have privileges","");
+            return "";
+        }
+        System.out.println("adding member is allowed\n\ncreating projectmember");
+
+        projectMember.setProject(project);
         projectMember.setUser(u);
         projectMember.setMemberRole(mr);
-        
+        projectMember.setMemberStatus(new MemberStatusFacade().findByStatus("pending"));
+        System.out.println("\n\n\n\nproject member successfully created.\n\n\n\n");
+        new ProjectMemberFacade().create(projectMember);
 
-
+        Tools.faceMessageWarn("New team member has been added","Success");
         return "";
     }
 }

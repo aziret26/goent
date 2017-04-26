@@ -108,10 +108,11 @@ public class UserController {
         }
         return "index";
     }
+
     public String activateAutomaticaly(){
         /*
         * Method for account activation by following link from email
-        * */
+                * */
         return "infopage";
     }
 
@@ -121,8 +122,7 @@ public class UserController {
         }
         List<User> userList;
         userList = new UserFacade().searchByEmailBy5(email);
-        System.out.println("Searching for user: "+email);
+        //System.out.println("Searching for user: "+email);
         return userList;
     }
-
 }

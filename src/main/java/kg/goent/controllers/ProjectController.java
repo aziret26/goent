@@ -90,6 +90,11 @@ public class ProjectController {
         return "index";
     }
 
+    public boolean existsProject(int projectId){
+        Project p = new ProjectFacade().findById(projectId);
+        return p != null && p.getTitle() != null;
+    }
+
     public String addProjectMember(String email){
         /*
         * check for existing of user

@@ -16,7 +16,9 @@ import java.util.List;
         @NamedQuery(name = "ProjectMember.findByProject",
                 query = "SELECT pm FROM ProjectMember pm WHERE pm.project = :project"),
         @NamedQuery(name = "ProjectMember.findByUser",
-                query = "SELECT pm FROM ProjectMember pm WHERE pm.user = :user")
+                query = "SELECT pm FROM ProjectMember pm WHERE pm.user = :user"),
+        @NamedQuery(name = "ProjectMEmeber.findByUserAndProject",
+                query = "SELECT pm FROM ProjectMember pm  WHERE pm.user = :user AND pm.project = :project")
 })
 
 public class ProjectMember implements Serializable {

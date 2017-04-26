@@ -61,7 +61,7 @@ public class ProjectMemberFacade {
         List<ProjectMember> ms;
         try {
             objectDao.beginTransaction();
-            ms = objectDao.getEntityManager().createNamedQuery("MemberStatus.findByProject",ProjectMember.class)
+            ms = objectDao.getEntityManager().createNamedQuery("ProjectMember.findByProject",ProjectMember.class)
                     .setParameter("project",project).getResultList();
         }catch (Exception ex){
             ms = null;
@@ -71,17 +71,31 @@ public class ProjectMemberFacade {
         return ms;
     }
 
-    public List<ProjectMember> findByStatus(User project){
+    public List<ProjectMember> findByStatus(User user){
         List<ProjectMember> ms;
         try {
             objectDao.beginTransaction();
-            ms = objectDao.getEntityManager().createNamedQuery("MemberStatus.findByUser",ProjectMember.class)
-                    .setParameter("project",project).getResultList();
+            ms = objectDao.getEntityManager().createNamedQuery("ProjectMember.findByUser",ProjectMember.class)
+                    .setParameter("user",user).getResultList();
         }catch (Exception ex){
             ms = null;
         }finally {
             objectDao.commitAndCloseTransaction();
         }
         return ms;
+    }
+
+    public ProjectMember findByUserAndProject(User u,Project p){
+        ProjectMember projectMember;
+        try{
+            objectDao.beginTransaction();
+            projectMember = objectDao.getEntityManager().createNamedQuery("ProjectMEmeber.findByUserAndProject",ProjectMember.class)
+                    .setParameter("user",u).setParameter("project",p).getSingleResult();
+        }catch (Exception ex){
+            projectMember = null;
+        }finally {
+            objectDao.commitAndCloseTransaction();
+        }
+        return projectMember;
     }
 }
