@@ -10,6 +10,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import java.lang.reflect.Member;
+import java.util.List;
 
 /**
  * Created by b-207 on 4/21/2017.
@@ -21,6 +22,7 @@ public class ProjectMemberController {
 
     private String userEmail;
     private String memberRole;
+    private int projectId;
 
     @ManagedProperty(value = "#{userSession}")
     private UserSession userSession;
@@ -34,6 +36,18 @@ public class ProjectMemberController {
 
     public void setUserSession(UserSession userSession) {
         this.userSession = userSession;
+    }
+
+    public int getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(int projectId) {
+        this.projectId = projectId;
+    }
+
+    public UserSession getUserSession() {
+        return userSession;
     }
 
     public ProjectMember getProjectMember() {
@@ -60,7 +74,7 @@ public class ProjectMemberController {
         this.memberRole = memberRole;
     }
 
-    public String addMember(int projectId){
+    public String addMember(){
         User u = new UserFacade().findByEmail(userEmail);
         System.out.println("searching is user exists");
         if(u == null || u.getEmail() == null){
@@ -99,5 +113,9 @@ public class ProjectMemberController {
 
         Tools.faceMessageWarn("New team member has been added","Success");
         return "";
+    }
+
+    public List<MemberRole> findAllSimpleUsers(){
+        return new MemberRoleFacade().findAllSimpleUsers();
     }
 }

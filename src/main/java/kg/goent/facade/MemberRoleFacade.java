@@ -84,4 +84,17 @@ public class MemberRoleFacade {
         create(mr);
     }
 
+    public List<MemberRole> findAllSimpleUsers(){
+        List<MemberRole> memberRoleList;
+        try {
+            objectDao.beginTransaction();
+            memberRoleList = objectDao.getEntityManager().createNamedQuery("MemberRole.findAllSimpleUsers",MemberRole.class).getResultList();
+        }catch (Exception ex){
+            memberRoleList = null;
+        }finally {
+            objectDao.commitAndCloseTransaction();
+        }
+        return memberRoleList;
+    }
+
 }

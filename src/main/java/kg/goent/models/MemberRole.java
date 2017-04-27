@@ -13,7 +13,9 @@ import java.util.List;
         @NamedQuery(name = "MemberRole.findAll",
                 query = "SELECT ms FROM MemberRole ms"),
         @NamedQuery(name = "MemberRole.findByMemberRole",
-                query = "SELECT ms FROM MemberRole ms WHERE ms.memberRole = :status")
+                query = "SELECT ms FROM MemberRole ms WHERE ms.memberRole = :status"),
+        @NamedQuery(name = "MemberRole.findAllSimpleUsers",
+                query = "SELECT ms FROM MemberRole ms WHERE ms.memberRole NOT LIKE 'admin'")
 })
 public class MemberRole implements Serializable {
     @Id
@@ -55,5 +57,10 @@ public class MemberRole implements Serializable {
 
     public void setProjectMemberList(List<ProjectMember> projectMemberList) {
         this.projectMemberList = projectMemberList;
+    }
+
+    @Override
+    public String toString() {
+        return memberRole ;
     }
 }

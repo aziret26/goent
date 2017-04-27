@@ -7,7 +7,7 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
     <f:metadata>
-        <f:viewParam name="projectId" value="#{projectId}"/>
+        <f:viewParam name="projectId" value="#{projectMemberController.projectId}"/>
     </f:metadata>
     <ui:composition template="/template/template.xhtml">
         <ui:param name="pageTitle" value="Add members"/>
@@ -15,14 +15,14 @@
         </ui:define>
         <ui:define name="content-left">
             <div class="content-left">
-                <h:link value="#{field.addMember}" outcome="project-add-member?projectId=#{projectId}"/>
+                <h:link value="#{field.addMember}" outcome="project-add-member?projectId=#{projectMemberController.projectId}"/>
             </div>
         </ui:define>
         <ui:define name="content-center">
             <div class="content-center">
-                <h:outputText value="project: '#{projectId}' - #{projectId == null}"/>
-                <h:panelGroup rendered="#{projectId != null and projectController.existsProject(projectId)}">
-                    <h:dataTable value="#{projectController.getFromDbProject(projectId).memberList}" var="projectMember" >
+                <h:outputText value="project: '#{projectMemberController.projectId}' - #{projectMemberController.projectId == null}"/>
+                <h:panelGroup rendered="#{projectMemberController.projectId != null and projectController.existsProject(projectMemberController.projectId)}">
+                    <h:dataTable value="#{projectController.getFromDbProject(projectMemberController.projectId).memberList}" var="projectMember" >
                         <f:facet name="caption">
                             TEAM
                         </f:facet>
@@ -34,29 +34,39 @@
                         </h:column>
                     </h:dataTable>
                     <h:form>
-                        <h:inputText value="#{projectMemberController.userEmail}"  onchange="">
-                        </h:inputText>
+                        <h:inputText value="#{projectMemberController.userEmail}"/>
+                        <h:selectOneMenu value="#{projectMemberController.memberRole}">
+                            <f:selectItems value="#{projectMemberController.findAllSimpleUsers().}"/>
+                        </h:selectOneMenu>
                         <br/>
-                        <h:commandButton value="Submit" action="#{projectMemberController.addMember(projectId)}"/>
+                        <h:commandButton value="Submit" action="#{projectMemberController.addMember()}"/>
                         <br/>
 
                         <h:messages errorClass="errorMessage" infoClass="infoMessage"
                                     layout="table" globalOnly="true" showDetail="false" showSummary="true"/>
 
-                        <div id="users" >
-                            <!--h:selectOneMenu value="#{projectMemberController.userEmail}" required="true" id="year-of-birth"
-                                             styleClass="form-control">
-                                <f:selectItems value="#{userController.searchByEmailTop5(projectMemberController.userEmail)}"/>
-                            </h:selectOneMenu-->
 
-                        </div>
-                        <ul>
-                            <ui:repeat value="#{userController.searchByEmailTop5(projectMemberController.userEmail)}" var="possibleUsers">
-                                <h:outputText value="searching for: '#{projectMemberController.userEmail}'"/>
-                                <li><h:outputText value="#{possibleUsers.email}" >
-                                </h:outputText> </li>
-                            </ui:repeat>
-                        </ul>
+
+
+                        <ui:remove>
+                            <div id="users" >
+                                <!--h:selectOneMenu value="#{projectMemberController.userEmail}" required="true" id="year-of-birth"
+                                                 styleClass="form-control">
+                                    <f:selectItems value="#{userController.searchByEmailTop5(projectMemberController.userEmail)}"/>
+                                </h:selectOneMenu-->
+
+                            </div>
+                            <ul>
+                                <ui:repeat value="#{userController.searchByEmailTop5(projectMemberController.userEmail)}" var="possibleUsers">
+                                    <h:outputText value="searching for: '#{projectMemberController.userEmail}'"/>
+                                    <li><h:outputText value="#{possibleUsers.email}" >
+                                    </h:outputText> </li>
+                                </ui:repeat>
+                            </ul>
+                        </ui:remove>
+
+
+
                     </h:form>
                     <script>
                         var users = document.getElementById("users");
@@ -73,7 +83,7 @@
 
                     </script>
                 </h:panelGroup>
-                <h:panelGroup rendered="#{projectId == null or projectController.existsProject(projectId)}">
+                <h:panelGroup rendered="#{projectMemberController.projectId == null or !projectController.existsProject(projectMemberController.projectId)}">
                     <h3>Project doesn't exist.</h3>
                 </h:panelGroup>
             </div>
