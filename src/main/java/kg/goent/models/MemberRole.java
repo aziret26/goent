@@ -15,7 +15,7 @@ import java.util.List;
         @NamedQuery(name = "MemberRole.findByMemberRole",
                 query = "SELECT ms FROM MemberRole ms WHERE ms.memberRole = :status"),
         @NamedQuery(name = "MemberRole.findAllSimpleUsers",
-                query = "SELECT ms FROM MemberRole ms WHERE ms.memberRole NOT LIKE 'admin'")
+                query = "SELECT ms FROM MemberRole ms WHERE ms.memberRole NOT LIKE '%leader%'")
 })
 public class MemberRole implements Serializable {
     @Id

@@ -76,19 +76,20 @@ public class ProjectMemberController {
 
     public String addMember(){
         User u = new UserFacade().findByEmail(userEmail);
-        System.out.println("searching is user exists");
+        System.out.println("searching if user exists");
         if(u == null || u.getEmail() == null){
             Tools.faceMessageWarn("User doesn't exist.","Please, look if email is correct.");
             return "";
         }
         System.out.println("user exists\n\nif member role correct");
         MemberRole mr = new MemberRoleFacade().findByRole(memberRole);
-        if(mr == null || mr.getMemberRole() == null || mr.getMemberRoleId() != 1 || mr.getMemberRoleId() != 0){
-            Tools.faceMessageWarn("Invalid memberole assigned.","");
+        if(mr == null || mr.getMemberRole() == null || mr.getMemberRoleId() <= 1){
+            Tools.faceMessageWarn("Invalid memberole assigned: "+memberRole,"");
             return "";
         }
 
-        System.out.println("memberrole correct\n\nsearching for project");
+        System.out.println("member role correct\n\nsearching for project");
+
         Project project = new ProjectFacade().findById(projectId);
         if(project == null || project.getTitle() == null){
             Tools.faceMessageWarn("Invalid project id","");
@@ -102,14 +103,16 @@ public class ProjectMemberController {
             Tools.faceMessageWarn("You do not have privileges","");
             return "";
         }
-        System.out.println("adding member is allowed\n\ncreating projectmember");
+        System.out.println("adding member is allowed\n\ncreating project member");
 
-        projectMember.setProject(project);
         projectMember.setUser(u);
         projectMember.setMemberRole(mr);
         projectMember.setMemberStatus(new MemberStatusFacade().findByStatus("pending"));
-        System.out.println("\n\n\n\nproject member successfully created.\n\n\n\n");
+        new ProjectFacade().update(project);
+        projectMember.setProject(new ProjectFacade().findById(projectId));
+        System.out.println("setting project with id: "+project.getProjectId());
         new ProjectMemberFacade().create(projectMember);
+        System.out.println("\n\n\n\nproject member successfully created.\n\n\n\n");
 
         Tools.faceMessageWarn("New team member has been added","Success");
         return "";
