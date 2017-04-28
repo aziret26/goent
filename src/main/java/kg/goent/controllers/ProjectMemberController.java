@@ -75,6 +75,7 @@ public class ProjectMemberController {
     }
 
     public String addMember(){
+        projectMember = new ProjectMember();
         User u = new UserFacade().findByEmail(userEmail);
         System.out.println("searching if user exists");
         if(u == null || u.getEmail() == null){
@@ -108,8 +109,7 @@ public class ProjectMemberController {
         projectMember.setUser(u);
         projectMember.setMemberRole(mr);
         projectMember.setMemberStatus(new MemberStatusFacade().findByStatus("pending"));
-        new ProjectFacade().update(project);
-        projectMember.setProject(new ProjectFacade().findById(projectId));
+        projectMember.setProject(project);
         System.out.println("setting project with id: "+project.getProjectId());
         new ProjectMemberFacade().create(projectMember);
         System.out.println("\n\n\n\nproject member successfully created.\n\n\n\n");

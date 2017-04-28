@@ -84,4 +84,16 @@ public class Project implements Serializable{
     public void setProjectStatus(ProjectStatus projectStatus) {
         this.projectStatus = projectStatus;
     }
+
+    @Override
+    public String toString() {
+        return "Project{" +
+                "projectId=" + projectId +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", projectDate=" + projectDate +
+                ", projectStatus=" + projectStatus +
+                ", memberList=" + memberList +
+                '}';
+    }
 }

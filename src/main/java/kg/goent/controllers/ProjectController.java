@@ -57,6 +57,11 @@ public class ProjectController {
     public String createProject(){
         if(!userSession.isLogged()){
             Tools.faceMessageWarn("Операция невозможна.","");
+            return "";
+        }
+        if(new ProjectFacade().findByTitle(project.getTitle()) != null){
+            Tools.faceMessageWarn("Операция невозможна.","");
+            return "";
         }
         project.setProjectDate(new Date());
         project.setProjectStatus(new ProjectStatusFacade().findByStatus("active"));
@@ -66,14 +71,17 @@ public class ProjectController {
         projectMember.setMemberRole(new MemberRoleFacade().findByRole("team leader"));
         projectMember.setActivationDate(new Date());
         projectMember.setUser(userSession.getUser());
+        System.out.println(project);
+
         new ProjectFacade().create(project);
+        System.out.print(project);
         projectMember.setProject(project);
 
         new ProjectMemberFacade().create(projectMember);
 
         userSession.setUser(new UserFacade().findById(userSession.getUser().getUserId()));
-
         return "index";
+
     }
 
     public String removeProject(Project project){
