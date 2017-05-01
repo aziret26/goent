@@ -41,8 +41,8 @@
                                     <f:facet name="header">
                                         Название
                                     </f:facet>
-                                    <h:link value="#{projectMember.project.title}"
-                                            outcome="/pages/project-overview?projectId=#{projectMember.project.projectId}"/>
+                                    <h:commandLink value="#{projectMember.project.title}"
+                                            action="#{projectController.projectOverView(projectMember.project)}"/>
                                 </h:column>
 
                                 <h:column headerClass="table-header" footerClass="table-footer">

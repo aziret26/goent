@@ -25,7 +25,7 @@ public class ProjectFacade {
 
     public void delete(Project project) {
         objectDao.beginTransaction();
-        objectDao.getEntityManager().remove(project);
+        objectDao.getEntityManager().remove(objectDao.getEntityManager().contains(project) ? project: objectDao.getEntityManager().merge(project));
         objectDao.commitAndCloseTransaction();
     }
 

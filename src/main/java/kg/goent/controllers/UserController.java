@@ -73,7 +73,7 @@ public class UserController {
         }
         userSession.setUser(tempUser);
         userSession.signin();
-        return "index";
+        return "index?faces-redirect=true";
     }
 
     public String signout(){
@@ -94,7 +94,7 @@ public class UserController {
         uf.createUser(user);
         System.out.println("successfully registered");
 
-        return "signin";
+        return "signin?faces-redirect=true";
     }
 
     public String activateByKey(){
@@ -106,14 +106,14 @@ public class UserController {
             userSession.getUser().setUserStatus(new UserStatusFacade().findByStatus("activated"));
             new UserFacade().updateUser(userSession.getUser());
         }
-        return "index";
+        return "index?faces-redirect=true";
     }
 
     public String activateAutomaticaly(){
         /*
         * Method for account activation by following link from email
                 * */
-        return "infopage";
+        return "infopage?faces-redirect=true";
     }
 
     public List<User> searchByEmailTop5(String email){

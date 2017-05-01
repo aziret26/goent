@@ -31,7 +31,7 @@ public class MemberRoleFacade {
 
     public void delete(MemberRole memberRole) {
         objectDao.beginTransaction();
-        objectDao.getEntityManager().remove(memberRole);
+        objectDao.getEntityManager().remove(objectDao.getEntityManager().contains(memberRole) ? memberRole : objectDao.getEntityManager().merge(memberRole));
         objectDao.commitAndCloseTransaction();
     }
 

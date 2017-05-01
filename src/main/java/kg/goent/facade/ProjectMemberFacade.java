@@ -27,7 +27,8 @@ public class ProjectMemberFacade {
 
     public void delete(ProjectMember projectMember) {
         objectDao.beginTransaction();
-        objectDao.getEntityManager().remove(projectMember);
+//        em.remove(em.contains(entity) ? entity : em.merge(entity));
+        objectDao.getEntityManager().remove(objectDao.getEntityManager().contains(projectMember) ? projectMember : objectDao.getEntityManager().merge(projectMember));
         objectDao.commitAndCloseTransaction();
     }
 
@@ -71,7 +72,7 @@ public class ProjectMemberFacade {
         return ms;
     }
 
-    public List<ProjectMember> findByStatus(User user){
+    public List<ProjectMember> findByUser(User user){
         List<ProjectMember> ms;
         try {
             objectDao.beginTransaction();
@@ -89,7 +90,7 @@ public class ProjectMemberFacade {
         ProjectMember projectMember;
         try{
             objectDao.beginTransaction();
-            projectMember = objectDao.getEntityManager().createNamedQuery("ProjectMEmeber.findByUserAndProject",ProjectMember.class)
+            projectMember = objectDao.getEntityManager().createNamedQuery("ProjectMemeber.findByUserAndProject",ProjectMember.class)
                     .setParameter("user",u).setParameter("project",p).getSingleResult();
         }catch (Exception ex){
             projectMember = null;
@@ -98,4 +99,5 @@ public class ProjectMemberFacade {
         }
         return projectMember;
     }
+
 }

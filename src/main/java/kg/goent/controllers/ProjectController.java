@@ -8,6 +8,7 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -22,6 +23,7 @@ public class ProjectController {
     @ManagedProperty(value = "#{userSession}")
     private UserSession userSession;
 
+    @ManagedProperty(value = "#{projectSession}")
     private ProjectSession projectSession;
 
     private ProjectMember projectMember;
@@ -54,13 +56,14 @@ public class ProjectController {
     public Project getFromDbProject(int id){
         return new ProjectFacade().findById(id);
     }
+
     public String createProject(){
         if(!userSession.isLogged()){
             Tools.faceMessageWarn("Операция невозможна.","");
             return "";
         }
         if(new ProjectFacade().findByTitle(project.getTitle()) != null){
-            Tools.faceMessageWarn("Операция невозможна.","");
+            Tools.faceMessageWarn("Проект с таким названием уже существует.","");
             return "";
         }
         project.setProjectDate(new Date());
@@ -71,7 +74,6 @@ public class ProjectController {
         projectMember.setMemberRole(new MemberRoleFacade().findByRole("team leader"));
         projectMember.setActivationDate(new Date());
         projectMember.setUser(userSession.getUser());
-        System.out.println(project);
 
         new ProjectFacade().create(project);
         System.out.print(project);
@@ -80,22 +82,23 @@ public class ProjectController {
         new ProjectMemberFacade().create(projectMember);
 
         userSession.setUser(new UserFacade().findById(userSession.getUser().getUserId()));
-        return "index";
+        return "index?faces-redirect=true";
 
     }
 
     public String removeProject(Project project){
-        ProjectMemberFacade pmf = new ProjectMemberFacade();
-        List<ProjectMember> pm = pmf.findByProject(project);
+        ProjectMemberFacade pmFacade = new ProjectMemberFacade();
+        List<ProjectMember> pmList = pmFacade.findByProject(project);
 
-        for(ProjectMember member : pm){
-            pmf.delete(member);
+        for(ProjectMember pm : pmList){
+            pmFacade.delete(pmFacade.findById(pm.getProjectMemberId()));
         }
+
         new ProjectFacade().delete(project);
 
-        userSession.setUser(new UserFacade().findById(userSession.getUser().getUserId()));
+        userSession.getUser().setProjectMemberList(pmFacade.findByUser(userSession.getUser()));
 
-        return "index";
+        return "index?faces-redirect=true";
     }
 
     public boolean existsProject(int projectId){
@@ -117,13 +120,11 @@ public class ProjectController {
         }
 
 
-
-
         return "";
     }
 
     public String projectOverView(Project project){
         projectSession.setProject(project);
-        return "/pages/project-overview";
+        return "/pages/project-overview?faces-redirect=true";
     }
 }

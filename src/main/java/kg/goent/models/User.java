@@ -198,4 +198,21 @@ public class User implements Serializable,Validator{
             throw new ValidatorException(msg);
         }
     }
+
+//    @Override
+//    public String toString() {
+//        return "\nUser{" +
+//                "userId=" + userId +
+//                ", fname='" + fname + '\'' +
+//                ", lname='" + lname + '\'' +
+//                ", password='" + password + '\'' +
+//                ", confirm='" + confirm + '\'' +
+//                ", email='" + email + '\'' +
+//                ", phone='" + phone + '\'' +
+//                ", activationKey='" + activationKey + '\'' +
+//                ", projectMemberList=" + projectMemberList +
+//                ", userRole=" + userRole +
+//                ", userStatus=" + userStatus +
+//                "}\n";
+//    }
 }

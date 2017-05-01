@@ -31,7 +31,7 @@ public class MemberStatusFacade {
 
     public void delete(MemberStatus memberStatus) {
         objectDao.beginTransaction();
-        objectDao.getEntityManager().remove(memberStatus);
+        objectDao.getEntityManager().remove(objectDao.getEntityManager().contains(memberStatus) ? memberStatus : objectDao.getEntityManager().merge(memberStatus));
         objectDao.commitAndCloseTransaction();
     }
 

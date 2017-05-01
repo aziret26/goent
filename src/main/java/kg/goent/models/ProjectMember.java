@@ -2,10 +2,7 @@ package kg.goent.models;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-
 /**
  * Created by timur on 13-Apr-17.
  */
@@ -17,8 +14,8 @@ import java.util.List;
                 query = "SELECT pm FROM ProjectMember pm WHERE pm.project = :project"),
         @NamedQuery(name = "ProjectMember.findByUser",
                 query = "SELECT pm FROM ProjectMember pm WHERE pm.user = :user"),
-        @NamedQuery(name = "ProjectMEmeber.findByUserAndProject",
-                query = "SELECT pm FROM ProjectMember pm  WHERE pm.user = :user AND pm.project = :project")
+        @NamedQuery(name = "ProjectMemeber.findByUserAndProject",
+                query = "SELECT pm FROM ProjectMember pm WHERE pm.user = :user AND pm.project = :project")
 })
 
 public class ProjectMember implements Serializable {
@@ -26,9 +23,6 @@ public class ProjectMember implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int projectMemberId;
 
-    @ManyToOne
-    @JoinColumn(name = "projectId")
-    private Project project;
 
     @Column
     private Date activationDate;
@@ -38,6 +32,11 @@ public class ProjectMember implements Serializable {
     @ManyToOne
     @JoinColumn(name = "memberStatusId")
     private MemberStatus memberStatus;
+
+    @ManyToOne
+    @JoinColumn(name = "projectId")
+    private Project project;
+
 
     @ManyToOne
     @JoinColumn(name = "memberRoleId")
@@ -102,4 +101,5 @@ public class ProjectMember implements Serializable {
     public void setUser(User user) {
         this.user = user;
     }
+
 }

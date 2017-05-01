@@ -31,7 +31,7 @@ public class ProjectStatusFacade {
 
     public void delete(ProjectStatus projectStatus) {
         objectDao.beginTransaction();
-        objectDao.getEntityManager().remove(projectStatus);
+        objectDao.getEntityManager().remove(objectDao.getEntityManager().contains(projectStatus) ? projectStatus : objectDao.getEntityManager().merge(projectStatus));
         objectDao.commitAndCloseTransaction();
     }
 

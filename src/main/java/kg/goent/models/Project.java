@@ -1,7 +1,5 @@
 package kg.goent.models;
 
-import org.hibernate.annotations.IndexColumn;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -34,7 +32,7 @@ public class Project implements Serializable{
     @JoinColumn(name = "projectStatusId")
     private ProjectStatus projectStatus;
 
-    @OneToMany(mappedBy = "projectMemberId",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "project",fetch = FetchType.EAGER)
     private List<ProjectMember> memberList = new ArrayList<ProjectMember>();
 
     public int getProjectId() {
@@ -69,14 +67,6 @@ public class Project implements Serializable{
         this.projectDate = projectDate;
     }
 
-    public List<ProjectMember> getMemberList() {
-        return memberList;
-    }
-
-    public void setMemberList(List<ProjectMember> memberList) {
-        this.memberList = memberList;
-    }
-
     public ProjectStatus getProjectStatus() {
         return projectStatus;
     }
@@ -85,15 +75,48 @@ public class Project implements Serializable{
         this.projectStatus = projectStatus;
     }
 
-    @Override
-    public String toString() {
-        return "Project{" +
-                "projectId=" + projectId +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", projectDate=" + projectDate +
-                ", projectStatus=" + projectStatus +
-                ", memberList=" + memberList +
-                '}';
+    public List<ProjectMember> getMemberList() {
+        return memberList;
     }
+
+    public void setMemberList(List<ProjectMember> memberList) {
+        this.memberList = memberList;
+    }
+
+    public ProjectMember getTeamLeader(){
+        for(ProjectMember pm : getMemberList()){
+            if(pm.getMemberRole().getMemberRoleId()==1)
+                return pm;
+        }
+        return new ProjectMember();
+    }
+
+    public List<ProjectMember> getTeamMembers(){
+        List<ProjectMember> pmList = new ArrayList<ProjectMember>();
+        for(ProjectMember pm : getMemberList()){
+            if(pm.getMemberRole().getMemberRoleId() == 2)
+                pmList.add(pm);
+        }
+        return pmList;
+    }
+    public List<ProjectMember> getObservers(){
+        List<ProjectMember> pmList = new ArrayList<ProjectMember>();
+        for(ProjectMember pm : getMemberList()){
+            if(pm.getMemberRole().getMemberRoleId() == 3)
+                pmList.add(pm);
+        }
+        return pmList;
+    }
+
+
+//    @Override
+//    public String toString() {
+//        return "\nProject{" +
+//                "projectId=" + projectId +
+//                ", title='" + title + '\'' +
+//                ", description='" + description + '\'' +
+//                ", projectStatus=" + projectStatus +
+//                ", memberList=" + memberList +
+//                "}\n";
+//    }
 }

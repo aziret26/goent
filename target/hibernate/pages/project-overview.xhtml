@@ -15,13 +15,29 @@
         </ui:define>
         <ui:define name="content-left">
             <div class="content-left">
-                <h:dataTable value="#{projectController.getFromDbProject(projectId).memberList}" var="projectMember" >
+                <h:dataTable value="#{projectSession.project.getTeamLeader()}" var="projectMember" >
                     <f:facet name="caption">
-                        TEAM
+                        <div style="font-weight:600">Team leader</div>
                     </f:facet>
                     <h:column headerClass="table-header" footerClass="table-footer">
-                        <h:outputText value="#{projectMember.user.fname} #{projectMember.user.lname} => #{projectMember.memberRole.memberRoleId}"
+                        <h:outputText value="#{projectMember.user.fname} #{projectMember.user.lname}"/>
+                    </h:column>
+                </h:dataTable>
+                <h:dataTable value="#{projectSession.project.getTeamMembers()}" var="projectMember" >
+                    <f:facet name="caption">
+                        <div style="font-weight:600">Team members</div>
+                    </f:facet>
+                    <h:column headerClass="table-header" footerClass="table-footer">
+                        <h:outputText value="#{projectMember.user.fname} #{projectMember.user.lname}"
                                       rendered="#{projectMember.memberRole.memberRoleId == 2}"/>
+                    </h:column>
+                </h:dataTable>
+                <h:dataTable value="#{projectSession.project.getObservers()}" var="projectMember" >
+                    <f:facet name="caption">
+                        <div style="font-weight:600">Observers</div>
+                    </f:facet>
+                    <h:column headerClass="table-header" footerClass="table-footer">
+                        <h:outputText value="#{projectMember.user.fname} #{projectMember.user.lname}"/>
                     </h:column>
                 </h:dataTable>
                 <h:link value="#{field.addMember}" outcome="project-add-member?projectId=#{projectId}"/>
