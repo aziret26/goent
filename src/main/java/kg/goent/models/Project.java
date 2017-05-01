@@ -35,6 +35,9 @@ public class Project implements Serializable{
     @OneToMany(mappedBy = "project",fetch = FetchType.EAGER)
     private List<ProjectMember> memberList = new ArrayList<ProjectMember>();
 
+    @OneToOne(mappedBy = "project")
+    private Bmc bmc;
+
     public int getProjectId() {
         return projectId;
     }
@@ -107,16 +110,4 @@ public class Project implements Serializable{
         }
         return pmList;
     }
-
-
-//    @Override
-//    public String toString() {
-//        return "\nProject{" +
-//                "projectId=" + projectId +
-//                ", title='" + title + '\'' +
-//                ", description='" + description + '\'' +
-//                ", projectStatus=" + projectStatus +
-//                ", memberList=" + memberList +
-//                "}\n";
-//    }
 }
