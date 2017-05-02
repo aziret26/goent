@@ -60,5 +60,15 @@
     <orderEntry type="library" name="Maven: org.opentest4j:opentest4j:1.0.0-M2" level="project" />
     <orderEntry type="library" name="Maven: org.junit.platform:junit-platform-commons:1.0.0-M4" level="project" />
     <orderEntry type="library" name="Maven: junit:junit:3.8.2" level="project" />
+    <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/javax.mail.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
