@@ -14,6 +14,10 @@
         <class>kg.goent.models.UserRole</class>
         <class>kg.goent.models.UserStatus</class>
         <class>kg.goent.models.ProjectStatus</class>
+        <class>kg.goent.models.Bmc</class>
+        <class>kg.goent.models.Segment</class>
+        <class>kg.goent.models.SegmentContainer</class>
+        <class>kg.goent.models.SegmentType</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
