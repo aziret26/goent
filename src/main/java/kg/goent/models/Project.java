@@ -86,6 +86,14 @@ public class Project implements Serializable{
         this.memberList = memberList;
     }
 
+    public Bmc getBmc() {
+        return bmc;
+    }
+
+    public void setBmc(Bmc bmc) {
+        this.bmc = bmc;
+    }
+
     public ProjectMember getTeamLeader(){
         for(ProjectMember pm : getMemberList()){
             if(pm.getMemberRole().getMemberRoleId()==1)

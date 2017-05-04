@@ -125,6 +125,15 @@ public class ProjectController {
 
     public String projectOverView(Project project){
         projectSession.setProject(project);
-        return "/pages/project-overview?faces-redirect=true";
+        return "/pages/project/project-overview?faces-redirect=true";
+    }
+
+    public String createBmc(){
+
+        return "/pages/bmc/bmcOverview?faces-redirect=true";
+    }
+    public String editBmc(){
+
+        return "/pages/bmc/bmcOverview?faces-redirect=true";
     }
 }
