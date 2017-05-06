@@ -29,6 +29,12 @@ public class SegmentType implements Serializable {
     @OneToMany(mappedBy = "segmentType")
     private List<Segment> listSegment = new ArrayList<Segment>();
 
+    public SegmentType() {}
+
+    public SegmentType(String segmentTypeName) {
+        this.segmentTypeName = segmentTypeName;
+    }
+
     public int getSegmentTypeId() {
         return segmentTypeId;
     }

@@ -3,6 +3,7 @@ package kg.goent.controllers;
 import kg.goent.facade.*;
 import kg.goent.models.*;
 import kg.goent.tools.Tools;
+import kg.goent.tools.ViewPath;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -57,6 +58,11 @@ public class ProjectController {
         return new ProjectFacade().findById(id);
     }
 
+    public String addProject(){
+        //System.out.println("Path: "+ViewPath.ADD_PROJECT);
+        return ViewPath.ADD_PROJECT;
+    }
+
     public String createProject(){
         if(!userSession.isLogged()){
             Tools.faceMessageWarn("Операция невозможна.","");
@@ -82,7 +88,7 @@ public class ProjectController {
         new ProjectMemberFacade().create(projectMember);
 
         userSession.setUser(new UserFacade().findById(userSession.getUser().getUserId()));
-        return "index?faces-redirect=true";
+        return "/index?faces-redirect=true";
 
     }
 
@@ -110,7 +116,7 @@ public class ProjectController {
         /*
         * check for existing of user
         * send invitation to email
-        * add project member to project with pending status and teamMember role
+        * add PROJECT member to PROJECT with pending status and teamMember role
         *
         * */
         User user = new UserFacade().findByEmail(email);
@@ -125,15 +131,11 @@ public class ProjectController {
 
     public String projectOverView(Project project){
         projectSession.setProject(project);
-        return "/pages/project/project-overview?faces-redirect=true";
+        return ViewPath.PROJECT_OVERVIEW + ViewPath.REDIRECT;
     }
 
-    public String createBmc(){
-
-        return "/pages/bmc/bmcOverview?faces-redirect=true";
-    }
-    public String editBmc(){
-
-        return "/pages/bmc/bmcOverview?faces-redirect=true";
+    protected void destroySessions(){
+        //System.out.printf("DESTROYING PROJECT SESSION");
+        projectSession = new ProjectSession();
     }
 }

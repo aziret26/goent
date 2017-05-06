@@ -1,3 +1,4 @@
+/*
 package kg.goent.tools;
 
 import javax.annotation.Resource;
@@ -52,4 +53,4 @@ public class Mail {
         }
     }
 
-}
+}*/

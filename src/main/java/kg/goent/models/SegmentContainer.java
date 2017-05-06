@@ -2,24 +2,38 @@ package kg.goent.models;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by azire on 5/2/2017.
  */
 @Entity
-
+@NamedQueries({
+        @NamedQuery(name = "SegmentContainer.findAll",
+                query = "SELECT sc FROM SegmentContainer sc"),
+        @NamedQuery(name = "SegmentContainer.findByBmc",
+                query = "SELECT sc FROM SegmentContainer sc WHERE sc.bmc = :bmc")
+})
 public class SegmentContainer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int segmentContainerId;
 
-    @OneToMany(mappedBy = "segmentId")
-    private List<Segment> segmentList;
+    @OneToMany(mappedBy = "segmentContainer",fetch = FetchType.EAGER)
+    private List<Segment> segmentList = new ArrayList<Segment>();
 
     @ManyToOne
     @JoinColumn(name = "bmcId")
     private Bmc bmc;
+
+    public Segment getValueProposition(){
+        for (Segment segment: segmentList){
+            if(segment.getSegmentType().getSegmentTypeId()==1)
+                return segment;
+        }
+        return null;
+    }
 
     public int getSegmentContainerId() {
         return segmentContainerId;

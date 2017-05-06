@@ -54,11 +54,11 @@
                     </h:panelGroup>
                     <h:form>
                         <h:panelGroup rendered='#{projectSession.project.bmc == null or projectSession.project.bmc.bmcId == null }'>
-                            <h:commandLink value="#{field.createBmc}" action="#{projectController.createBMC()}"/>
+                            <h:commandLink value="#{field.createBmc}" action="#{bmcController.getBmc()}"/>
                         </h:panelGroup>
 
                         <h:panelGroup rendered='#{projectSession.project.bmc != null and projectSession.project.bmc.bmcId != null }'>
-                            <h:commandLink value="#{field.editBmc}" action="#{projectController.editBMC()}"/>
+                            <h:commandLink value="#{field.editBmc}" action="#{bmcController.getBmc()}"/>
                         </h:panelGroup>
                     </h:form>
                 </h:panelGroup>

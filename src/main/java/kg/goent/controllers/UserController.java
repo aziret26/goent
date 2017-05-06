@@ -5,7 +5,7 @@ import kg.goent.facade.UserRoleFacade;
 import kg.goent.facade.UserStatusFacade;
 import kg.goent.models.User;
 import kg.goent.models.UserStatus;
-import kg.goent.tools.Mail;
+//import kg.goent.tools.Mail;
 import kg.goent.tools.Tools;
 
 import javax.annotation.PostConstruct;
@@ -32,6 +32,7 @@ public class UserController {
 
     @ManagedProperty(value = "#{userSession}")
     private UserSession userSession;
+
 
     public UserSession getUserSession() {
         return userSession;
@@ -78,7 +79,9 @@ public class UserController {
     }
 
     public String signout(){
-        userSession.signout();
+        new ProjectController().destroySessions();
+        new SegmentContainerController().destroySessions();
+        this.destroySession();
         return "index";
     }
 
@@ -93,8 +96,8 @@ public class UserController {
         user.setActivationKey(Tools.generateRandomKey());
         UserFacade uf=new UserFacade();
         uf.createUser(user);
-        Mail m = new Mail();
-        m.sendActivationMail(user.getEmail(),user.getActivationKey());
+//        Mail m = new Mail();
+//        m.sendActivationMail(user.getEmail(),user.getActivationKey());
         //System.out.println("successfully registered");
 
         return "signin?faces-redirect=true";
@@ -127,5 +130,10 @@ public class UserController {
         userList = new UserFacade().searchByEmailBy5(email);
         //System.out.println("Searching for user: "+email);
         return userList;
+    }
+
+    public void destroySession(){
+        //System.out.println("DESTROYING USER SESSION");
+        userSession.signout();
     }
 }

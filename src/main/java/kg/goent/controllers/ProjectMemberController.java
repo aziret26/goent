@@ -95,7 +95,7 @@ public class ProjectMemberController {
 
         Project project = new ProjectFacade().findById(projectSession.getProject().getProjectId());
         if(project == null || project.getTitle() == null){
-            Tools.faceMessageWarn("Invalid project id","");
+            Tools.faceMessageWarn("Invalid PROJECT id","");
             return "";
         }
         ProjectMember tempMember = new ProjectMemberFacade().findByUserAndProject(u,project);
@@ -105,7 +105,7 @@ public class ProjectMemberController {
         }
 
         if(tempMember != null){
-            Tools.faceMessageWarn("User already in project team","");
+            Tools.faceMessageWarn("User already in PROJECT team","");
             return "";
         }
 
