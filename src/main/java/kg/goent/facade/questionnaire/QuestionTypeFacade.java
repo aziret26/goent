@@ -11,6 +11,12 @@ import java.util.List;
 public class QuestionTypeFacade {
     private ObjectDao objectDao = new ObjectDao();
 
+    public QuestionTypeFacade(){
+        if(findAll().size() == 0){
+            initialize();
+        }
+    }
+
     public void create(QuestionType questionType) {
         objectDao.beginTransaction();
         objectDao.getEntityManager().persist(questionType);
@@ -69,5 +75,14 @@ public class QuestionTypeFacade {
 //        return ms;
 //    }
 
+    private void initialize(){
+        QuestionType qt = new QuestionType("Multiple choice");
+        create(qt);
+        qt = new QuestionType("True/False");
+        create(qt);
+        qt = new QuestionType("Scaling");
+        create(qt);
+        
+    }
 
 }

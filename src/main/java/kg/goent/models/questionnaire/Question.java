@@ -1,6 +1,6 @@
 package kg.goent.models.questionnaire;
 
-import kg.goent.models.Segment;
+import kg.goent.models.bmc.Segment;
 
 import javax.persistence.*;
 import java.util.List;

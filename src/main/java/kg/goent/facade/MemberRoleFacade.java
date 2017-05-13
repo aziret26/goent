@@ -1,7 +1,7 @@
 package kg.goent.facade;
 
 import kg.goent.dao.ObjectDao;
-import kg.goent.models.MemberRole;
+import kg.goent.models.project.MemberRole;
 
 import java.util.List;
 

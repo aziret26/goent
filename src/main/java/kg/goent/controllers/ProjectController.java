@@ -1,7 +1,12 @@
 package kg.goent.controllers;
 
 import kg.goent.facade.*;
+import kg.goent.facade.project.ProjectFacade;
+import kg.goent.facade.project.ProjectMemberFacade;
+import kg.goent.facade.project.ProjectStatusFacade;
 import kg.goent.models.*;
+import kg.goent.models.project.Project;
+import kg.goent.models.project.ProjectMember;
 import kg.goent.tools.Tools;
 import kg.goent.tools.ViewPath;
 
@@ -9,7 +14,6 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 

@@ -22,6 +22,13 @@ public class QuestionType {
     @OneToMany(mappedBy = "questionType")
     private List<Question> question = new ArrayList<Question>();
 
+    public QuestionType() {
+    }
+
+    public QuestionType(String questionType) {
+        this.questionType = questionType;
+    }
+
     public int getQuestionTypeId() {
         return questionTypeId;
     }

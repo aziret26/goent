@@ -6,14 +6,9 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
-    <ui:composition template="/template/template.xhtml">
+    <ui:composition template="/template/projectTemplate.xhtml">
         <ui:param name="pageTitle" value="#{field.bmcOverview}"/>
         <ui:define name="metadata">
-        </ui:define>
-        <ui:define name="content-left">
-            <div class="content-left">
-
-            </div>
         </ui:define>
         <ui:define name="content-center">
             <div class="content-center">
@@ -57,7 +52,10 @@
                         <h:outputText value="#{field.nothing}"/>
                     </h:panelGroup>
                     <h:panelGroup>
-                        <h:commandButton value="#{field.save}" action="#{segmentContainerController.addSegmentContainer()}"/>
+                        <h:commandButton value="#{field.add}" action="#{segmentContainerController.addSegmentContainer()}"/>
+                    </h:panelGroup>
+                    <h:panelGroup>
+                        <h:commandButton value="#{field.finish} BMC" action="#{bmcController.finishBmc()}"/>
                     </h:panelGroup>
                 </h:form>
             </div>

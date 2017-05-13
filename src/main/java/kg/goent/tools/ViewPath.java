@@ -13,9 +13,8 @@ public class ViewPath {
     PROJECT_OVERVIEW = PROJECT +"/projectOverview",
     PROJECT_SETTINGS = PROJECT +"/projectSettings",
     ADD_PROJECT = PROJECT +"/addProject",
-    SEGMENT_CONTAINER = "/pages/segmentContainer",
-    ADD_SEGMENT_CONTAINER = SEGMENT_CONTAINER +"/addSegmentContainer",
-    EDIT_SEGMENT_CONTAINER = SEGMENT_CONTAINER +"/editSegmentContainer";
+    ADD_SEGMENT_CONTAINER = BMC_FOLDER +"/addSegmentContainer",
+    EDIT_SEGMENT_CONTAINER = BMC_FOLDER +"/editSegmentContainer";
 
     public static final String REDIRECT = "?faces-redirect=true";
 }

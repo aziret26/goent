@@ -9,46 +9,16 @@
     <f:metadata>
         <f:viewParam name="projectId" value="#{projectId}"/>
     </f:metadata>
-    <ui:composition template="/template/template.xhtml">
+    <ui:composition template="/template/projectTemplate.xhtml">
         <ui:param name="pageTitle" value="Project overview"/>
-        <ui:define name="metadata">
-        </ui:define>
-        <ui:define name="content-left">
-            <div class="content-left">
-                <h:dataTable value="#{projectSession.project.getTeamLeader()}" var="projectMember" >
-                    <f:facet name="caption">
-                        <div style="font-weight:600">Team leader</div>
-                    </f:facet>
-                    <h:column headerClass="table-header" footerClass="table-footer">
-                        <h:outputText value="#{projectMember.user.fname} #{projectMember.user.lname}"/>
-                    </h:column>
-                </h:dataTable>
-                <h:dataTable value="#{projectSession.project.getTeamMembers()}" var="projectMember" >
-                    <f:facet name="caption">
-                        <div style="font-weight:600">Team members</div>
-                    </f:facet>
-                    <h:column headerClass="table-header" footerClass="table-footer">
-                        <h:outputText value="#{projectMember.user.fname} #{projectMember.user.lname}"
-                                      rendered="#{projectMember.memberRole.memberRoleId == 2}"/>
-                    </h:column>
-                </h:dataTable>
-                <h:dataTable value="#{projectSession.project.getObservers()}" var="projectMember" >
-                    <f:facet name="caption">
-                        <div style="font-weight:600">Observers</div>
-                    </f:facet>
-                    <h:column headerClass="table-header" footerClass="table-footer">
-                        <h:outputText value="#{projectMember.user.fname} #{projectMember.user.lname}"/>
-                    </h:column>
-                </h:dataTable>
-                <h:link value="#{field.addMember}" outcome="project-add-member"/>
-            </div>
-        </ui:define>
+
         <ui:define name="content-center">
             <div class="content-center">
                 <h:panelGroup styleClass="project-stage-container">
                     <h:panelGroup >
                         <div class="project-stage">
-                            hello
+                            <h:outputText value="#{}" rendered="#{projectSession.}"/>
+                            <h:outputText value="#{}"/>
                         </div>
 
                     </h:panelGroup>

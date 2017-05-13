@@ -1,6 +1,6 @@
 package kg.goent.models;
 
-import kg.goent.tools.Tools;
+import kg.goent.models.project.ProjectMember;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;

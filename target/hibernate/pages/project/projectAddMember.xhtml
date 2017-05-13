@@ -7,15 +7,11 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
 
-    <ui:composition template="/template/template.xhtml">
+    <ui:composition template="/template/projectTemplate.xhtml">
         <ui:param name="pageTitle" value="Add members"/>
         <ui:define name="metadata">
         </ui:define>
-        <ui:define name="content-left">
-            <div class="content-left">
 
-            </div>
-        </ui:define>
         <ui:define name="content-center">
             <div class="content-center">
                 <h:outputText value="project: '#{projectSession.project.title}'"/>

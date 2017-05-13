@@ -1,6 +1,6 @@
 package kg.goent.controllers;
 
-import kg.goent.models.SegmentContainer;
+import kg.goent.models.bmc.SegmentContainer;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;

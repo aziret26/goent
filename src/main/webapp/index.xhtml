@@ -29,7 +29,9 @@
                             <h:outputText value="phone"/>
                             <h:outputText value="#{userSession.user.phoneF()}"/>
                         </h:panelGrid>
-                        <h:link value="Send Mail" outcome="sendMail"/><br/>
+                        <h:form>
+                            <h:commandButton value="Send Mail" action="#{mailController.sendMail()}"/><br/>
+                        </h:form>
                     </h:panelGroup>
                     <br/><br/>
                     <h:panelGroup rendered="#{userSession.logged and userSession.user.activationKey.length() == 0}">

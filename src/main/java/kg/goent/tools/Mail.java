@@ -1,56 +1,60 @@
-/*
 package kg.goent.tools;
 
-import javax.annotation.Resource;
-import javax.ejb.Stateless;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
+import kg.goent.models.User;
+import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.Properties;
 
-@Stateless
 public class Mail {
+    private Properties props = new Properties();
+    private Session session = Session.getInstance(props,
+            new javax.mail.Authenticator() {
+                final String username = "goentrservice@gmail.com";
+                final String password = "serviceinfo";
+                protected PasswordAuthentication getPasswordAuthentication() {
+                    return new PasswordAuthentication(username, password);
+                }
+            });
 
-    @Resource(name = "java:jboss/mail/gmail")
-    private Session session;
-
-    public void send(String addresses, String topic, String textMessage) {
-
-        try {
-            Message message = new MimeMessage(session);
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(addresses));
-            message.setSubject(topic);
-            message.setText(textMessage);
-
-            Transport.send(message);
-
-        } catch (MessagingException e) {
-            Logger.getLogger(Mail.class.getName()).log(Level.WARNING, "Cannot send mail", e);
-        }
+    public Mail(){
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "587");
     }
-    public void sendActivationMail(String receiver,String activationCode){
 
+    public int sendActivationMail(User user,String url){
+        String mailTo = user.getEmail();
         String mailSubject = "Accout activation";
+        String mailText = "Please activate your account by entering following activation key " + user.getActivationKey();
+        String link = "http://localhost:8080/account/activate.xhtml?"+url;
+        mailText += ".\n\nOr follow given link bellow "+link+"\nto activate your account.";
 
-        String mailText = "Please activate your account by entering following activation key " + activationCode;
-        //String link = "http://localhost:8080/account/activate.xhtml?"+url;
-        mailText += ".\n\nOr follow given link bellow \nto activate your account.";
+        return sendMsg(mailTo, mailSubject, mailText) ? 1:0;
 
+    }
+
+    public void sendTestMail(String receiver){
+        String mailSubject = "Test mail.";
+
+        String text = "This is test mail. If u've received this mail, it means that our mailing service is working properly.";
+
+        sendMsg(receiver,mailSubject,text);
+    }
+
+    private boolean sendMsg(String mailTo,String mailSubject, String mailText){
         try {
             Message message = new MimeMessage(session);
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(receiver));
+            message.setFrom(new InternetAddress("goentrservice@gmail.com"));
+            message.setRecipients(Message.RecipientType.TO,
+                    InternetAddress.parse(mailTo));
             message.setSubject(mailSubject);
             message.setText(mailText);
-
             Transport.send(message);
-
+            return true;
         } catch (MessagingException e) {
-            Logger.getLogger(Mail.class.getName()).log(Level.WARNING, "Cannot send mail", e);
+            throw new RuntimeException(e);
         }
     }
-
-}*/
+}

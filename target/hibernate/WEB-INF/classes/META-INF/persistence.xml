@@ -7,17 +7,18 @@
     <persistence-unit name="hibernate" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>kg.goent.models.User</class>
-        <class>kg.goent.models.MemberRole</class>
-        <class>kg.goent.models.MemberStatus</class>
-        <class>kg.goent.models.Project</class>
-        <class>kg.goent.models.ProjectMember</class>
+        <class>kg.goent.models.project.MemberRole</class>
+        <class>kg.goent.models.project.MemberStatus</class>
+        <class>kg.goent.models.project.Project</class>
+        <class>kg.goent.models.project.ProjectMember</class>
         <class>kg.goent.models.UserRole</class>
         <class>kg.goent.models.UserStatus</class>
-        <class>kg.goent.models.ProjectStatus</class>
-        <class>kg.goent.models.Bmc</class>
-        <class>kg.goent.models.Segment</class>
-        <class>kg.goent.models.SegmentContainer</class>
-        <class>kg.goent.models.SegmentType</class>
+        <class>kg.goent.models.project.ProjectStatus</class>
+        <class>kg.goent.models.bmc.Bmc</class>
+        <class>kg.goent.models.bmc.BmcStatus</class>
+        <class>kg.goent.models.segment.Segment</class>
+        <class>kg.goent.models.segment.SegmentContainer</class>
+        <class>kg.goent.models.segment.SegmentType</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />

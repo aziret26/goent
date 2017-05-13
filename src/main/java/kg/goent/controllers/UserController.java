@@ -4,8 +4,8 @@ import kg.goent.facade.UserFacade;
 import kg.goent.facade.UserRoleFacade;
 import kg.goent.facade.UserStatusFacade;
 import kg.goent.models.User;
-import kg.goent.models.UserStatus;
 //import kg.goent.tools.Mail;
+import kg.goent.tools.Mail;
 import kg.goent.tools.Tools;
 
 import javax.annotation.PostConstruct;
@@ -96,9 +96,9 @@ public class UserController {
         user.setActivationKey(Tools.generateRandomKey());
         UserFacade uf=new UserFacade();
         uf.createUser(user);
-//        Mail m = new Mail();
-//        m.sendActivationMail(user.getEmail(),user.getActivationKey());
-        //System.out.println("successfully registered");
+        Mail m = new Mail();
+        m.sendActivationMail(user,"under_construction");
+        System.out.println("successfully registered");
 
         return "signin?faces-redirect=true";
     }
