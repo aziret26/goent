@@ -23,7 +23,7 @@ public class HypothesisContainer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int hypothesisContainerId;
 
-    @OneToMany(mappedBy = "hypothesisContainer",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "hypothesisContainer")
     private List<Hypothesis> hypothesisList = new ArrayList<Hypothesis>();
 
     @OneToOne

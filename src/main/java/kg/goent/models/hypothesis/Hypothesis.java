@@ -52,6 +52,11 @@ public class Hypothesis {
     }
 
     public void setStatus(int status) {
+        /**
+         * 1 = not approved
+         * 2 = accepted
+         * 3 = rejected
+         */
         this.status = status;
     }
 

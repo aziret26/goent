@@ -3,6 +3,7 @@ package kg.goent.facade.bmc;
 import kg.goent.dao.ObjectDao;
 import kg.goent.models.bmc.Segment;
 import kg.goent.models.bmc.SegmentType;
+import kg.goent.models.hypothesis.Hypothesis;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ public class SegmentFacade {
         objectDao.beginTransaction();
         objectDao.getEntityManager().persist(segment);
         objectDao.commitAndCloseTransaction();
+
     }
 
     public void update(Segment segment) {

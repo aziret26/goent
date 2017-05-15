@@ -17,8 +17,10 @@
                 <h:panelGroup styleClass="project-stage-container">
                     <h:panelGroup >
                         <div class="project-stage">
-                            <h:outputText value="#{}" rendered="#{projectSession.}"/>
-                            <h:outputText value="#{}"/>
+                            <h:outputText value="#{field.ready}"
+                                          rendered="#{projectSession.project.bmc.bmcStatus.bmcStatusId == 1}"/>
+                            <h:outputText value="#{field.finished}"
+                                          rendered="#{projectSession.project.bmc.bmcStatus.bmcStatusId == 0}"/>
                         </div>
 
                     </h:panelGroup>

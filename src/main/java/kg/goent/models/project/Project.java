@@ -44,6 +44,13 @@ public class Project implements Serializable{
     @OneToOne(mappedBy = "project")
     private HypothesisContainer hypothesisContainer;
 
+    public HypothesisContainer getHypothesisContainer() {
+        return hypothesisContainer;
+    }
+
+    public void setHypothesisContainer(HypothesisContainer hypothesisContainer) {
+        this.hypothesisContainer = hypothesisContainer;
+    }
 
     public int getProjectId() {
         return projectId;

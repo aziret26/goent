@@ -23,7 +23,9 @@
                 <ui:param name="pageTitle" value="#{pageTitle}"/>
             </ui:include>
         </ui:insert>
-
+        <ui:insert name="messages">
+            <ui:include src="/sections/messages.xhtml"/>
+        </ui:insert>
         <ui:insert name="content-left">
             <div class="content-left">
                 <div class="content-left">

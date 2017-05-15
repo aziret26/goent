@@ -8,11 +8,52 @@
 <f:view>
     <ui:composition template="/template/projectTemplate.xhtml">
         <ui:param name="pageTitle" value="Hypothesis"/>
-        <ui:define name="metadata">
-        </ui:define>
         <ui:define name="content-center">
             <div class="content-center">
-
+                <ul>
+                    <h3>Customer Segement</h3>
+                    <ui:repeat value="#{hypothesisContainerController.csHypList}" var="hypothesis">
+                        <li>
+                            <h:outputText value="#{hypothesis.segment.segmentTitle}"
+                                          rendered="#{hypothesis.status==0}" style="background-color: yellow"/>
+                            <h:outputText value="#{hypothesis.segment.segmentTitle}"
+                                          rendered="#{hypothesis.status==1}" style="background-color: lime"/>
+                        </li>
+                    </ui:repeat>
+                </ul>
+                <ul>
+                    <h3>Value Prop</h3>
+                    <ui:repeat value="#{hypothesisContainerController.vpHypList}" var="hypothesis">
+                        <li>
+                            <h:outputText value="#{hypothesis.segment.segmentTitle}"
+                                          rendered="#{hypothesis.status==0}" style="background-color: yellow"/>
+                            <h:outputText value="#{hypothesis.segment.segmentTitle}"
+                                          rendered="#{hypothesis.status==1}" style="background-color: lime"/>
+                        </li>
+                    </ui:repeat>
+                </ul>
+                <ul>
+                    <h3>Distribution Channel</h3>
+                    <ui:repeat value="#{hypothesisContainerController.dcHypList}" var="hypothesis">
+                        <li>
+                            <h:outputText value="#{hypothesis.segment.segmentTitle}"
+                                          rendered="#{hypothesis.status==0}" style="background-color: yellow"/>
+                            <h:outputText value="#{hypothesis.segment.segmentTitle}"
+                                          rendered="#{hypothesis.status==1}" style="background-color: lime"/>
+                        </li>
+                    </ui:repeat>
+                </ul>
+                <ul>
+                    <h3>Customer Relationship</h3>
+                    <ui:repeat value="#{hypothesisContainerController.crHypList}" var="hypothesis">
+                        <li>
+                            <h:outputText value="#{hypothesis.segment.segmentTitle}"
+                                          rendered="#{hypothesis.status==0}" style="background-color: yellow"/>
+                            <h:outputText value="#{hypothesis.segment.segmentTitle}"
+                                          rendered="#{hypothesis.status==1}" style="background-color: lime"/>
+                        </li>
+                    </ui:repeat>
+                </ul>
             </div>
         </ui:define>
     </ui:composition>

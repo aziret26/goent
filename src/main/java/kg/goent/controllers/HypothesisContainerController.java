@@ -1,15 +1,23 @@
 package kg.goent.controllers;
 
+import com.sun.org.apache.regexp.internal.RE;
 import kg.goent.facade.hypothesis.HypothesisContainerFacade;
 import kg.goent.facade.hypothesis.HypothesisFacade;
+import kg.goent.models.bmc.Segment;
+import kg.goent.models.bmc.SegmentContainer;
 import kg.goent.models.hypothesis.Hypothesis;
 import kg.goent.models.hypothesis.HypothesisContainer;
+import kg.goent.tools.Tools;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
+
+import static kg.goent.tools.ViewPath.*;
 
 /**
  * Created by azire on 5/13/2017.
@@ -24,6 +32,9 @@ public class HypothesisContainerController {
 
     @ManagedProperty(value = "#{projectSession}")
     private ProjectSession projectSession;
+
+    @ManagedProperty(value = "#{messageViewController}")
+    private MessageViewController messagesViewController;
 
     public HypothesisContainer getHypothesisContainer() {
         return hypothesisContainer;
@@ -86,14 +97,37 @@ public class HypothesisContainerController {
         this.crHypList = ctHypList;
     }
 
-    public String viewHypothesisOverView(){
-/*        if(hypothesisContainer == null){
+    public String initializeHypothesisContainer() {
+        /**
+         *
+         */
+        if (projectSession.getProject().getBmc().getBmcStatus().getBmcStatusId() == 2){
+            messagesViewController.addErrorMessage(Tools.getFieldMsg("bmcIsNotFinished"));
+            return PROJECT_OVERVIEW + REDIRECT;
+        }
+        if(projectSession.getProject().getHypothesisContainer() != null &&
+                projectSession.getProject().getHypothesisContainer().getHypothesisList().size() !=0 ){
+            hypothesisContainer = projectSession.getProject().getHypothesisContainer();
+        }else {
             hypothesisContainer = new HypothesisContainerFacade().findByProject(projectSession.getProject());
+            if (hypothesisContainer == null || hypothesisContainer.getHypothesisList().size() == 0) {
+                createHypothesisList();
+            }
         }
-        if(hypothesisContainer.getHypothesisList().size() == 0){
-            hypothesisContainer.setHypothesisList(new HypothesisFacade().findByPro);
+        return HYPOTHESIS_OVERVIEW+REDIRECT;
+    }
+
+
+    public String viewHypothesisOverView(){
+        /**
+         * initializes hypothesis lists
+         */
+
+        if(hypothesisContainer == null ||
+                hypothesisContainer.getHypothesisList().size() == 0){
+            initializeHypothesisContainer();
         }
-*/
+
         if(csHypList == null || csHypList.size() == 0){
             for (Hypothesis h : hypothesisContainer.getHypothesisList()){
                 if(h.getSegment().getSegmentType().getSegmentTypeId() == 1)
@@ -121,6 +155,23 @@ public class HypothesisContainerController {
         return "";
     }
 
+    public String createHypothesisList(){
+        HypothesisContainer hc = new HypothesisContainer();
+        for(SegmentContainer sc : projectSession.getProject().getBmc().getSegmentContainerList()){
+            for(Segment s : sc.getSegmentList()){
+                if(s.getSegmentType().getSegmentTypeId() <= 4){
+                    Hypothesis hypothesis = new Hypothesis();
+                    hypothesis.setSegment(s);
+                    hypothesis.setStatus(1);
+                    new HypothesisFacade().create(hypothesis);
+                    hc.getHypothesisList().add(hypothesis);
+                }
+            }
+        }
+        new HypothesisContainerFacade().create(hc);
+        projectSession.getProject().setHypothesisContainer(hc);
+        return HYPOTHESIS_OVERVIEW+ REDIRECT;
+    }
 /*
     public List<Hypothesis> getCSHypothesis(){
         List<Hypothesis> list = new ArrayList<Hypothesis>();

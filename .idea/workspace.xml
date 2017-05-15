@@ -2,142 +2,71 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bff20c5a-e16e-4a2a-9384-4b36ec171dcd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/HypothesisContainerController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/HypothesisController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/MailController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/facade/bmc/BmcStatusFacade.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/facade/hypothesis/HypothesisContainerFacade.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/facade/hypothesis/HypothesisFacade.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/models/bmc/BmcStatus.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/models/hypothesis/Hypothesis.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/models/hypothesis/HypothesisContainer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/pages/hypothesis/hypothesisOverview.xhtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/pages/questionnaire/QuestionnaireOverview.xhtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/template/projectTemplate.xhtml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kg/goent/models/Bmc.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kg/goent/models/MemberRole.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kg/goent/models/MemberStatus.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kg/goent/models/Project.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kg/goent/models/ProjectMember.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kg/goent/models/ProjectStatus.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kg/goent/models/Segment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kg/goent/models/SegmentContainer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kg/goent/models/SegmentType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/Bmc.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/MemberRole.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/MemberStatus.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/Project.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/ProjectMember.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/ProjectStatus.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/Segment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/SegmentContainer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/SegmentType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/pages/segmentContainer/addSegmentContainer.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/pages/segmentContainer/editSegmentContainer.xhtml" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/MessageViewController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/models/message/Message.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/sections/messages.xhtml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kg/goent/facade/BmcFacade.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kg/goent/facade/BmcStatusFacade.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kg/goent/facade/ProjectFacade.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kg/goent/facade/ProjectMemberFacade.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kg/goent/facade/ProjectStatusFacade.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kg/goent/facade/SegmentContainerFacade.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kg/goent/facade/SegmentFacade.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kg/goent/facade/SegmentTypeFacade.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kg/goent/models/segment/Segment.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kg/goent/models/segment/SegmentContainer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kg/goent/models/segment/SegmentType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/BmcFacade.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/BmcStatusFacade.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/ProjectFacade.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/ProjectMemberFacade.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/ProjectStatusFacade.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/SegmentContainerFacade.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/SegmentFacade.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/SegmentTypeFacade.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/segment/Segment.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/segment/SegmentContainer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/segment/SegmentType.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/controllers/BmcController.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/controllers/BmcController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/controllers/HypothesisController.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/controllers/HypothesisController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/controllers/ProjectController.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/controllers/ProjectController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/controllers/ProjectMemberController.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/controllers/ProjectMemberController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/controllers/ProjectSession.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/controllers/ProjectSession.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/controllers/SegmentContainerController.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/controllers/SegmentContainerController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/controllers/SegmentContainerSession.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/controllers/SegmentContainerSession.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/controllers/UserController.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/controllers/UserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/facade/BmcFacade.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/facade/BmcFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/facade/MemberRoleFacade.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/facade/MemberRoleFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/facade/MemberStatusFacade.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/facade/MemberStatusFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/facade/ProjectFacade.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/facade/ProjectFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/facade/ProjectMemberFacade.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/facade/ProjectMemberFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/facade/ProjectStatusFacade.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/facade/ProjectStatusFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/facade/SegmentContainerFacade.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/facade/SegmentContainerFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/facade/SegmentFacade.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/facade/SegmentFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/facade/SegmentTypeFacade.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/facade/SegmentTypeFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/facade/questionnaire/QuestionTypeFacade.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/facade/questionnaire/QuestionTypeFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/models/User.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/models/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/models/bmc/Bmc.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/models/bmc/Bmc.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/models/project/Project.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/models/project/Project.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/models/questionnaire/Question.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/models/questionnaire/Question.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/models/questionnaire/QuestionType.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/models/questionnaire/QuestionType.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/tools/Tools.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/tools/Tools.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/tools/ViewPath.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/tools/ViewPath.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/BmcController.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/BmcController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/HypothesisController.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/HypothesisController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/ProjectController.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/ProjectController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/ProjectMemberController.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/ProjectMemberController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/ProjectSession.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/ProjectSession.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/SegmentContainerController.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/SegmentContainerController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/SegmentContainerSession.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/SegmentContainerSession.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/UserController.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/UserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/BmcFacade.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/BmcFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/MemberRoleFacade.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/MemberRoleFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/MemberStatusFacade.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/MemberStatusFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/ProjectFacade.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/ProjectFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/ProjectMemberFacade.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/ProjectMemberFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/ProjectStatusFacade.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/ProjectStatusFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/SegmentContainerFacade.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/SegmentContainerFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/SegmentFacade.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/SegmentFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/SegmentTypeFacade.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/SegmentTypeFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/questionnaire/QuestionTypeFacade.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/questionnaire/QuestionTypeFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/User.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/bmc/Bmc.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/bmc/Bmc.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/project/Project.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/project/Project.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/questionnaire/Question.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/questionnaire/Question.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/questionnaire/QuestionType.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/questionnaire/QuestionType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/tools/Mail.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/tools/Mail.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/tools/Tools.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/tools/Tools.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/tools/ViewPath.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/tools/ViewPath.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/fcbeeceb-af64-4df5-8f35-3d2737fdbbcc.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/fcbeeceb-af64-4df5-8f35-3d2737fdbbcc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hibernate.iml" afterPath="$PROJECT_DIR$/hibernate.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/fields_en.properties" afterPath="$PROJECT_DIR$/src/main/java/fields_en.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/fields_ky.properties" afterPath="$PROJECT_DIR$/src/main/java/fields_ky.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/fields_ru.properties" afterPath="$PROJECT_DIR$/src/main/java/fields_ru.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/BmcController.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/BmcController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectController.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectMemberController.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectMemberController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectSession.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectSession.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/SegmentContainerController.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/SegmentContainerController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/SegmentContainerSession.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/SegmentContainerSession.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/facade/MemberRoleFacade.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/facade/MemberRoleFacade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/facade/MemberStatusFacade.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/facade/MemberStatusFacade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/facade/questionnaire/QuestionTypeFacade.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/facade/questionnaire/QuestionTypeFacade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/models/User.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/models/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/models/questionnaire/Question.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/models/questionnaire/Question.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/models/questionnaire/QuestionType.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/models/questionnaire/QuestionType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/tools/Mail.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/tools/Mail.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/HypothesisContainerController.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/HypothesisContainerController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/facade/bmc/SegmentFacade.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/facade/bmc/SegmentFacade.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/models/hypothesis/Hypothesis.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/models/hypothesis/Hypothesis.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/models/hypothesis/HypothesisContainer.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/models/hypothesis/HypothesisContainer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/models/project/Project.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/models/project/Project.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/tools/Tools.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/tools/Tools.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/tools/ViewPath.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/tools/ViewPath.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/pages/bmc/bmcOverview.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/pages/bmc/bmcOverview.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/pages/project/editProject.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/pages/project/editProject.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/pages/project/projectAddMember.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/pages/project/projectAddMember.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/pages/project/projectOverview.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/pages/project/projectOverview.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/pages/project/projectSettings.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/pages/project/projectSettings.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/sections/content-left.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/sections/content-left.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/template/projectTemplate.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/template/projectTemplate.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/hibernate/META-INF/MANIFEST.MF" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/META-INF/persistence.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/fields_en.properties" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/fields_en.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/fields_ky.properties" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/fields_ky.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/fields_ru.properties" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/fields_ru.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/index.xhtml" afterPath="$PROJECT_DIR$/target/hibernate/index.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/pages/bmc/bmcOverview.xhtml" afterPath="$PROJECT_DIR$/target/hibernate/pages/bmc/bmcOverview.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/pages/project/editProject.xhtml" afterPath="$PROJECT_DIR$/target/hibernate/pages/project/editProject.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/pages/project/projectAddMember.xhtml" afterPath="$PROJECT_DIR$/target/hibernate/pages/project/projectAddMember.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/pages/hypothesis/hypothesisOverview.xhtml" afterPath="$PROJECT_DIR$/target/hibernate/pages/hypothesis/hypothesisOverview.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/pages/project/projectOverview.xhtml" afterPath="$PROJECT_DIR$/target/hibernate/pages/project/projectOverview.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/pages/project/projectSettings.xhtml" afterPath="$PROJECT_DIR$/target/hibernate/pages/project/projectSettings.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/sections/content-left.xhtml" afterPath="$PROJECT_DIR$/target/hibernate/sections/content-left.xhtml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/facade/BmcFacade.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/facade/bmc/BmcFacade.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/facade/ProjectFacade.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/facade/project/ProjectFacade.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/facade/ProjectMemberFacade.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/facade/project/ProjectMemberFacade.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/facade/ProjectStatusFacade.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/facade/project/ProjectStatusFacade.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/facade/SegmentContainerFacade.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/facade/bmc/SegmentContainerFacade.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/facade/SegmentFacade.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/facade/bmc/SegmentFacade.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/facade/SegmentTypeFacade.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/facade/bmc/SegmentTypeFacade.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/models/Bmc.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/models/bmc/Bmc.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/models/MemberRole.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/models/project/MemberRole.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/models/MemberStatus.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/models/project/MemberStatus.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/models/Project.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/models/project/Project.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/models/ProjectMember.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/models/project/ProjectMember.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/models/ProjectStatus.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/models/project/ProjectStatus.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/models/Segment.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/models/bmc/Segment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/models/SegmentContainer.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/models/bmc/SegmentContainer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/models/SegmentType.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/models/bmc/SegmentType.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/pages/segmentContainer/addSegmentContainer.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/pages/bmc/addSegmentContainer.xhtml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/pages/segmentContainer/editSegmentContainer.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/pages/bmc/editSegmentContainer.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/template/projectTemplate.xhtml" afterPath="$PROJECT_DIR$/target/hibernate/template/projectTemplate.xhtml" />
     </list>
     <ignored path="archive.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -185,8 +114,18 @@
       <file leaf-file-name="hypothesisOverview.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/hypothesis/hypothesisOverview.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="37" column="28" lean-forward="true" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
+            <state relative-caret-position="144">
+              <caret line="13" column="46" lean-forward="false" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="projectOverview.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/project/projectOverview.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="21" column="67" lean-forward="false" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -195,63 +134,47 @@
       <file leaf-file-name="HypothesisContainerController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/HypothesisContainerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="119" column="9" lean-forward="true" selection-start-line="119" selection-start-column="9" selection-end-line="119" selection-end-column="9" />
+            <state relative-caret-position="-50">
+              <caret line="127" column="43" lean-forward="false" selection-start-line="127" selection-start-column="43" selection-end-line="127" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#setHypothesisContainer#0;class#HypothesisContainerController#0" expanded="false" />
                 <element signature="method#getCsHypList#0;class#HypothesisContainerController#0" expanded="false" />
-                <element signature="e#1086#1098#0" expanded="true" />
+                <element signature="e#1474#1486#0" expanded="true" />
                 <element signature="method#getVpHypList#0;class#HypothesisContainerController#0" expanded="false" />
-                <element signature="e#1517#1529#0" expanded="true" />
+                <element signature="e#1905#1917#0" expanded="true" />
                 <element signature="method#getDcHypList#0;class#HypothesisContainerController#0" expanded="false" />
-                <element signature="e#1938#1950#0" expanded="true" />
+                <element signature="e#2326#2338#0" expanded="true" />
                 <element signature="method#getCrHypList#0;class#HypothesisContainerController#0" expanded="false" />
-                <element signature="e#2360#2372#0" expanded="true" />
-                <marker date="1494687919906" expanded="false" signature="4217:4501" ph="{...}" />
-                <marker date="1494687919906" expanded="false" signature="4547:4831" ph="{...}" />
-                <marker date="1494687919906" expanded="false" signature="4877:5161" ph="{...}" />
-                <marker date="1494687919906" expanded="false" signature="5207:5491" ph="{...}" />
+                <element signature="e#2748#2760#0" expanded="true" />
+                <element signature="method#createHypothesisList#0;class#HypothesisContainerController#0" expanded="false" />
+                <marker date="1494753651991" expanded="false" signature="6248:6532" ph="{...}" />
+                <marker date="1494753651991" expanded="false" signature="6578:6862" ph="{...}" />
+                <marker date="1494753651991" expanded="false" signature="6908:7192" ph="{...}" />
+                <marker date="1494753651991" expanded="false" signature="7238:7522" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Project.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/models/project/Project.java">
+      <file leaf-file-name="fields_ru.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/fields_ru.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="37" column="59" lean-forward="true" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="59" />
+            <state relative-caret-position="272">
+              <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
               <folding />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProjectMember.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/models/project/ProjectMember.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-              <folding />
-            </state>
+          <provider editor-type-id="ResourceBundle">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HypothesisFacade.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/facade/hypothesis/HypothesisFacade.java">
+      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/fcbeeceb-af64-4df5-8f35-3d2737fdbbcc/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HypothesisContainerFacade.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/facade/hypothesis/HypothesisContainerFacade.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="71" column="0" lean-forward="true" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+            <state relative-caret-position="68">
+              <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -260,11 +183,10 @@
       <file leaf-file-name="HypothesisContainer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/models/hypothesis/HypothesisContainer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="237">
+              <caret line="25" column="47" lean-forward="false" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#816#828#0" expanded="true" />
                 <element signature="method#setHypothesisContainerId#0;class#HypothesisContainer#0" expanded="false" />
               </folding>
             </state>
@@ -274,46 +196,48 @@
       <file leaf-file-name="Hypothesis.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/models/hypothesis/Hypothesis.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="26" column="11" lean-forward="true" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+            <state relative-caret-position="325">
+              <caret line="57" column="23" lean-forward="false" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#787#788#0" expanded="true" />
-                <element signature="e#822#823#0" expanded="true" />
-                <element signature="e#875#876#0" expanded="true" />
-                <element signature="e#923#924#0" expanded="true" />
-                <element signature="e#958#959#0" expanded="true" />
-                <element signature="e#988#989#0" expanded="true" />
-                <element signature="e#1035#1036#0" expanded="true" />
-                <element signature="e#1073#1074#0" expanded="true" />
-                <element signature="e#1103#1104#0" expanded="true" />
-                <element signature="e#1132#1133#0" expanded="true" />
-                <element signature="e#1173#1174#0" expanded="true" />
-                <element signature="e#1209#1210#0" expanded="true" />
-                <element signature="e#1268#1269#0" expanded="true" />
-                <element signature="e#1310#1311#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProjectController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectController.java">
+      <file leaf-file-name="bmcOverview.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/bmc/bmcOverview.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+            <state relative-caret-position="136">
+              <caret line="53" column="34" lean-forward="false" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HypothesisController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/HypothesisController.java">
+      <file leaf-file-name="fields_ky.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/fields_ky.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+            <state relative-caret-position="272">
+              <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="ResourceBundle">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fields_en.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/fields_en.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="16" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="ResourceBundle">
+            <state />
           </provider>
         </entry>
       </file>
@@ -325,8 +249,8 @@
         <option value="JUnit5 Test Class" />
         <option value="AnnotationType" />
         <option value="Interface" />
-        <option value="jsf" />
         <option value="Class" />
+        <option value="jsf" />
       </list>
     </option>
   </component>
@@ -388,12 +312,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/pages/questionnaire/samplePage.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/pages/questionnaire/QuestionnaireOverview.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/kg/goent/controllers/MailController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/kg/goent/controllers/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kg/goent/tools/Mail2.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/tools/Mail.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/models/BmcStatus.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/facade/BmcStatusFacade.java" />
@@ -406,25 +324,17 @@
         <option value="$PROJECT_DIR$/src/main/webapp/pages/hypothesis/hypothesis.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/hypothesis/samplePage.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/sections/content-left.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/template/projectTemplate.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/project/editProject.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/project/projectAddMember.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/project/projectSettings.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/models/bmc/BmcStatus.java" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/bmc/addSegmentContainer.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/kg/goent/tools/ViewPath.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fields_ru.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/fields_en.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/fields_ky.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/bmc/editSegmentContainer.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/bmc/bmcOverview.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/pages/project/projectOverview.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectSession.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kg/goent/models/project/Project.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/models/segment/Segment.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/models/segment/SegmentContainer.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/fcbeeceb-af64-4df5-8f35-3d2737fdbbcc/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/models/segment/SegmentType.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/facade/SegmentTypeFacade.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/facade/bmc/BmcStatusFacade.java" />
@@ -432,12 +342,26 @@
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/facade/project/ProjectStatusFacade.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/models/bmc/SegmentType.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/facade/hypothesis/HypothesisFacade.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kg/goent/models/hypothesis/Hypothesis.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/controllers/SegmentContainerController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/hypothesis/hypothesisOverview.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/controllers/BmcController.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/facade/hypothesis/HypothesisContainerFacade.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kg/goent/facade/bmc/SegmentFacade.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kg/goent/tools/ViewPath.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kg/goent/models/Message.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kg/goent/models/message/Message.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kg/goent/controllers/MessagesViewController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/sections/messages.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/template/projectTemplate.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/kg/goent/models/project/Project.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kg/goent/tools/Tools.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/pages/project/projectOverview.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/fields_en.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/fields_ky.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/fields_ru.properties" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/fcbeeceb-af64-4df5-8f35-3d2737fdbbcc/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/models/hypothesis/HypothesisContainer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kg/goent/models/hypothesis/Hypothesis.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/controllers/HypothesisContainerController.java" />
       </list>
     </option>
@@ -686,6 +610,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
@@ -976,40 +901,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GoEnt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1045,116 +936,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GoEnt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hypothesis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GoEnt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="facade" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GoEnt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="goent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="facade" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -1198,7 +979,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2091,6 +1871,7 @@
       <workItem from="1494523238158" duration="5365000" />
       <workItem from="1494576287106" duration="15190000" />
       <workItem from="1494666485873" duration="16004000" />
+      <workItem from="1494739983243" duration="11539000" />
     </task>
     <task id="LOCAL-00002" summary="Создание объектов;&#10;Тикет #471">
       <created>1428297461221</created>
@@ -2439,7 +2220,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="828614000" />
+    <option name="totallyTimeSpent" value="840153000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2452,7 +2233,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2462,13 +2242,14 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12556732" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12556732" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22094926" sideWeight="0.48720682" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733223" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -2477,8 +2258,8 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7414075" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25416037" sideWeight="0.507365" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42389524" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26928896" sideWeight="0.492635" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39770868" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24810892" sideWeight="0.492635" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18552354" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -2489,7 +2270,6 @@
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22094926" sideWeight="0.48720682" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2589,54 +2369,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/models/hypothesis/HypoSegmentContainer.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/models/project/MemberRole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/models/project/MemberStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/hypothesis/hypothesis.xhtml" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/sections/content-left.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/template/projectTemplate.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-137">
-          <caret line="28" column="42" lean-forward="false" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/project/addProject.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="52" lean-forward="false" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/validators/EmailValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/facade/UserFacade.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -2684,60 +2416,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/tools/ViewPath.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fields_ru.properties">
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fields_ky.properties">
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fields_en.properties">
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="9" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/project/projectOverview.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="81" lean-forward="false" selection-start-line="19" selection-start-column="81" selection-end-line="19" selection-end-column="81" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2753,7 +2435,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="33" column="31" lean-forward="false" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2761,15 +2442,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="21" column="16" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/fcbeeceb-af64-4df5-8f35-3d2737fdbbcc/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2777,22 +2449,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/facade/bmc/BmcStatusFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="method#create#0;class#BmcStatusFacade#0" expanded="false" />
-            <element signature="method#update#0;class#BmcStatusFacade#0" expanded="false" />
-            <element signature="method#delete#0;class#BmcStatusFacade#0" expanded="false" />
-            <element signature="method#findAll#0;class#BmcStatusFacade#0" expanded="false" />
-            <element signature="method#findById#0;class#BmcStatusFacade#0" expanded="false" />
-            <element signature="method#findByStatus#0;class#BmcStatusFacade#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2800,15 +2456,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/facade/bmc/SegmentFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2834,7 +2481,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2900,51 +2546,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
           <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-          <folding>
-            <element signature="method#setSegmentContainerSession#0;class#SegmentContainerController#0" expanded="false" />
-            <element signature="method#addSegmentContainer#0;class#SegmentContainerController#0" expanded="false" />
-            <element signature="method#editSegmentContainer#0;class#SegmentContainerController#0" expanded="false" />
-            <element signature="method#saveSegmentContainer#0;class#SegmentContainerController#0" expanded="false" />
-            <element signature="method#createSegmentContainer#0;class#SegmentContainerController#0" expanded="false" />
-            <element signature="method#initSegmentContainer#0;class#SegmentContainerController#0" expanded="false" />
-            <element signature="method#destroySessions#0;class#SegmentContainerController#0" expanded="false" />
-            <marker date="1494686173821" expanded="false" signature="3645:3656" ph=" { " />
-            <marker date="1494686173821" expanded="false" signature="3670:3676" ph=" }" />
-            <marker date="1494686173821" expanded="false" signature="3725:3736" ph=" { " />
-            <marker date="1494686173821" expanded="false" signature="3757:3763" ph=" }" />
-            <marker date="1494686173821" expanded="false" signature="3801:3812" ph=" { " />
-            <marker date="1494686173821" expanded="false" signature="3826:3832" ph=" }" />
-            <marker date="1494686173821" expanded="false" signature="3881:3892" ph=" { " />
-            <marker date="1494686173821" expanded="false" signature="3913:3919" ph=" }" />
-            <marker date="1494686173821" expanded="false" signature="3957:3968" ph=" { " />
-            <marker date="1494686173821" expanded="false" signature="3982:3988" ph=" }" />
-            <marker date="1494686173821" expanded="false" signature="4037:4048" ph=" { " />
-            <marker date="1494686173821" expanded="false" signature="4069:4075" ph=" }" />
-            <marker date="1494686173821" expanded="false" signature="4113:4124" ph=" { " />
-            <marker date="1494686173821" expanded="false" signature="4138:4144" ph=" }" />
-            <marker date="1494686173821" expanded="false" signature="4193:4204" ph=" { " />
-            <marker date="1494686173821" expanded="false" signature="4225:4231" ph=" }" />
-            <marker date="1494686173821" expanded="false" signature="4269:4280" ph=" { " />
-            <marker date="1494686173821" expanded="false" signature="4294:4300" ph=" }" />
-            <marker date="1494686173821" expanded="false" signature="4349:4360" ph=" { " />
-            <marker date="1494686173821" expanded="false" signature="4381:4387" ph=" }" />
-            <marker date="1494686173821" expanded="false" signature="4425:4436" ph=" { " />
-            <marker date="1494686173821" expanded="false" signature="4450:4456" ph=" }" />
-            <marker date="1494686173821" expanded="false" signature="4505:4516" ph=" { " />
-            <marker date="1494686173821" expanded="false" signature="4537:4543" ph=" }" />
-            <marker date="1494686173821" expanded="false" signature="4581:4592" ph=" { " />
-            <marker date="1494686173821" expanded="false" signature="4606:4612" ph=" }" />
-            <marker date="1494686173821" expanded="false" signature="4661:4672" ph=" { " />
-            <marker date="1494686173821" expanded="false" signature="4693:4699" ph=" }" />
-            <marker date="1494686173821" expanded="false" signature="4737:4748" ph=" { " />
-            <marker date="1494686173821" expanded="false" signature="4762:4768" ph=" }" />
-            <marker date="1494686173821" expanded="false" signature="4817:4828" ph=" { " />
-            <marker date="1494686173821" expanded="false" signature="4849:4855" ph=" }" />
-            <marker date="1494686173821" expanded="false" signature="4898:4909" ph=" { " />
-            <marker date="1494686173821" expanded="false" signature="4928:4934" ph=" }" />
-            <marker date="1494686173821" expanded="false" signature="4993:5004" ph=" { " />
-            <marker date="1494686173821" expanded="false" signature="5035:5041" ph=" }" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2952,15 +2553,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
           <caret line="29" column="95" lean-forward="false" selection-start-line="29" selection-start-column="95" selection-end-line="29" selection-end-column="95" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/bmc/bmcOverview.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="53" column="34" lean-forward="false" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2968,7 +2560,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="27" column="42" lean-forward="false" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2976,22 +2567,56 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#972#973#0" expanded="false" />
+            <element signature="e#1011#1012#0" expanded="false" />
+            <element signature="e#1054#1055#0" expanded="false" />
+            <element signature="e#1088#1089#0" expanded="false" />
+            <element signature="e#1147#1148#0" expanded="false" />
+            <element signature="e#1193#1194#0" expanded="false" />
+            <element signature="e#1261#1262#0" expanded="false" />
+            <element signature="e#1313#1314#0" expanded="false" />
+            <element signature="e#1348#1349#0" expanded="false" />
+            <element signature="e#1378#1379#0" expanded="false" />
+            <element signature="e#1425#1426#0" expanded="false" />
+            <element signature="e#1463#1464#0" expanded="false" />
+            <element signature="e#1509#1510#0" expanded="false" />
+            <element signature="e#1564#1565#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/HypothesisController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
+        <state relative-caret-position="255">
           <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#916#917#0" expanded="false" />
+            <element signature="e#945#946#0" expanded="false" />
+            <element signature="e#996#997#0" expanded="false" />
+            <element signature="e#1032#1033#0" expanded="false" />
+            <element signature="e#1072#1073#0" expanded="false" />
+            <element signature="e#1101#1102#0" expanded="false" />
+            <element signature="e#1152#1153#0" expanded="false" />
+            <element signature="e#1188#1189#0" expanded="false" />
+            <element signature="e#1228#1229#0" expanded="false" />
+            <element signature="e#1257#1258#0" expanded="false" />
+            <element signature="e#1308#1309#0" expanded="false" />
+            <element signature="e#1344#1345#0" expanded="false" />
+            <element signature="e#1384#1385#0" expanded="false" />
+            <element signature="e#1413#1414#0" expanded="false" />
+            <element signature="e#1464#1465#0" expanded="false" />
+            <element signature="e#1500#1501#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/hypothesis/hypothesisOverview.xhtml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/facade/bmc/SegmentFacade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="37" column="28" lean-forward="true" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
+        <state relative-caret-position="102">
+          <caret line="17" column="54" lean-forward="false" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
           <folding />
         </state>
       </provider>
@@ -2999,90 +2624,252 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/facade/hypothesis/HypothesisContainerFacade.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
-          <caret line="71" column="0" lean-forward="true" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/facade/hypothesis/HypothesisFacade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="17">
           <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/models/hypothesis/Hypothesis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="26" column="11" lean-forward="true" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#787#788#0" expanded="true" />
-            <element signature="e#822#823#0" expanded="true" />
-            <element signature="e#875#876#0" expanded="true" />
-            <element signature="e#923#924#0" expanded="true" />
-            <element signature="e#958#959#0" expanded="true" />
-            <element signature="e#988#989#0" expanded="true" />
-            <element signature="e#1035#1036#0" expanded="true" />
-            <element signature="e#1073#1074#0" expanded="true" />
-            <element signature="e#1103#1104#0" expanded="true" />
-            <element signature="e#1132#1133#0" expanded="true" />
-            <element signature="e#1173#1174#0" expanded="true" />
-            <element signature="e#1209#1210#0" expanded="true" />
-            <element signature="e#1268#1269#0" expanded="true" />
-            <element signature="e#1310#1311#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/models/hypothesis/HypothesisContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#816#828#0" expanded="true" />
-            <element signature="method#setHypothesisContainerId#0;class#HypothesisContainer#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/models/project/ProjectMember.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
+        <state relative-caret-position="17">
           <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/SegmentContainerSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/facade/bmc/BmcStatusFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="80" column="49" lean-forward="true" selection-start-line="80" selection-start-column="49" selection-end-line="80" selection-end-column="49" />
+          <folding>
+            <element signature="method#create#0;class#BmcStatusFacade#0" expanded="false" />
+            <element signature="method#update#0;class#BmcStatusFacade#0" expanded="false" />
+            <element signature="method#delete#0;class#BmcStatusFacade#0" expanded="false" />
+            <element signature="method#findAll#0;class#BmcStatusFacade#0" expanded="false" />
+            <element signature="method#findById#0;class#BmcStatusFacade#0" expanded="false" />
+            <element signature="method#findByStatus#0;class#BmcStatusFacade#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/tools/ViewPath.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="18" column="58" lean-forward="false" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/models/message/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="46" lean-forward="false" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+          <folding>
+            <element signature="e#324#325#0" expanded="true" />
+            <element signature="e#354#355#0" expanded="true" />
+            <element signature="e#400#401#0" expanded="true" />
+            <element signature="e#438#439#0" expanded="true" />
+            <element signature="e#466#467#0" expanded="true" />
+            <element signature="e#493#494#0" expanded="true" />
+            <element signature="e#530#531#0" expanded="true" />
+            <element signature="e#562#563#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/MessageViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="36" column="45" lean-forward="false" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#422#431#0" expanded="false" />
+            <element signature="e#478#479#0" expanded="false" />
+            <element signature="e#512#513#0" expanded="false" />
+            <element signature="e#573#574#0" expanded="false" />
+            <element signature="e#619#620#0" expanded="false" />
+            <element signature="e#667#668#0" expanded="false" />
+            <element signature="e#722#723#0" expanded="false" />
+            <element signature="e#770#771#0" expanded="false" />
+            <element signature="e#825#826#0" expanded="false" />
+            <element signature="e#874#875#0" expanded="false" />
+            <element signature="e#929#930#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/sections/header.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/sections/messages.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/template/projectTemplate.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="26" column="56" lean-forward="false" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/models/project/Project.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="37" column="59" lean-forward="true" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="59" />
+        <state relative-caret-position="272">
+          <caret line="46" column="57" lean-forward="false" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="57" />
+          <folding>
+            <element signature="e#1285#1286#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/tools/Mail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/tools/Tools.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="62" column="16" lean-forward="false" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/hypothesis/hypothesisOverview.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="13" column="46" lean-forward="false" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/project/projectOverview.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="67" lean-forward="false" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fields_en.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="16" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fields_ky.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fields_ru.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/fcbeeceb-af64-4df5-8f35-3d2737fdbbcc/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/bmc/bmcOverview.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="53" column="34" lean-forward="false" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/models/hypothesis/Hypothesis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="57" column="23" lean-forward="false" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/models/hypothesis/HypothesisContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="25" column="47" lean-forward="false" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#setHypothesisContainerId#0;class#HypothesisContainer#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/HypothesisContainerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="119" column="9" lean-forward="true" selection-start-line="119" selection-start-column="9" selection-end-line="119" selection-end-column="9" />
+        <state relative-caret-position="-50">
+          <caret line="127" column="43" lean-forward="false" selection-start-line="127" selection-start-column="43" selection-end-line="127" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#setHypothesisContainer#0;class#HypothesisContainerController#0" expanded="false" />
             <element signature="method#getCsHypList#0;class#HypothesisContainerController#0" expanded="false" />
-            <element signature="e#1086#1098#0" expanded="true" />
+            <element signature="e#1474#1486#0" expanded="true" />
             <element signature="method#getVpHypList#0;class#HypothesisContainerController#0" expanded="false" />
-            <element signature="e#1517#1529#0" expanded="true" />
+            <element signature="e#1905#1917#0" expanded="true" />
             <element signature="method#getDcHypList#0;class#HypothesisContainerController#0" expanded="false" />
-            <element signature="e#1938#1950#0" expanded="true" />
+            <element signature="e#2326#2338#0" expanded="true" />
             <element signature="method#getCrHypList#0;class#HypothesisContainerController#0" expanded="false" />
-            <element signature="e#2360#2372#0" expanded="true" />
-            <marker date="1494687919906" expanded="false" signature="4217:4501" ph="{...}" />
-            <marker date="1494687919906" expanded="false" signature="4547:4831" ph="{...}" />
-            <marker date="1494687919906" expanded="false" signature="4877:5161" ph="{...}" />
-            <marker date="1494687919906" expanded="false" signature="5207:5491" ph="{...}" />
+            <element signature="e#2748#2760#0" expanded="true" />
+            <element signature="method#createHypothesisList#0;class#HypothesisContainerController#0" expanded="false" />
+            <marker date="1494753651991" expanded="false" signature="6248:6532" ph="{...}" />
+            <marker date="1494753651991" expanded="false" signature="6578:6862" ph="{...}" />
+            <marker date="1494753651991" expanded="false" signature="6908:7192" ph="{...}" />
+            <marker date="1494753651991" expanded="false" signature="7238:7522" ph="{...}" />
           </folding>
         </state>
       </provider>

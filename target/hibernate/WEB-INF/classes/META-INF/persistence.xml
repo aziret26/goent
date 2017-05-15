@@ -16,9 +16,9 @@
         <class>kg.goent.models.project.ProjectStatus</class>
         <class>kg.goent.models.bmc.Bmc</class>
         <class>kg.goent.models.bmc.BmcStatus</class>
-        <class>kg.goent.models.segment.Segment</class>
-        <class>kg.goent.models.segment.SegmentContainer</class>
-        <class>kg.goent.models.segment.SegmentType</class>
+        <class>kg.goent.models.bmc.Segment</class>
+        <class>kg.goent.models.bmc.SegmentContainer</class>
+        <class>kg.goent.models.bmc.SegmentType</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
