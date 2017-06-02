@@ -37,7 +37,7 @@
                             <h:outputText value="#{projectMember.user.fname} #{projectMember.user.lname}"/>
                         </h:column>
                     </h:dataTable>
-                    <h:dataTable value="#{projectSession.project.getTeamMembers()}" var="projectMember" >
+                    <h:dataTable value="#{projectController.project.getTeamMembers()}" var="projectMember" >
                         <f:facet name="caption">
                             <div style="font-weight:600">Team members</div>
                         </f:facet>
@@ -46,7 +46,7 @@
                                           rendered="#{projectMember.memberRole.memberRoleId == 2}"/>
                         </h:column>
                     </h:dataTable>
-                    <h:dataTable value="#{projectSession.project.getObservers()}" var="projectMember" >
+                    <h:dataTable value="#{projectController.project.getObservers()}" var="projectMember" >
                         <f:facet name="caption">
                             <div style="font-weight:600">Observers</div>
                         </f:facet>
