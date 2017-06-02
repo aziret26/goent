@@ -3,6 +3,7 @@ package kg.goent.controllers;
 import kg.goent.facade.bmc.SegmentContainerFacade;
 import kg.goent.facade.bmc.SegmentFacade;
 import kg.goent.facade.bmc.SegmentTypeFacade;
+import kg.goent.facade.project.ProjectFacade;
 import kg.goent.models.bmc.Segment;
 import kg.goent.models.bmc.SegmentContainer;
 import kg.goent.models.bmc.SegmentType;
@@ -11,6 +12,7 @@ import kg.goent.tools.ViewPath;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,17 +20,19 @@ import java.util.List;
  * Created by azire on 5/4/2017.
  */
 @ManagedBean
-@SessionScoped
-public class SegmentContainerController {
+@ViewScoped
+public class SegmentContainerController extends GenericController{
     private SegmentContainer segmentContainer;
 
     @ManagedProperty(value = "#{segmentContainerSession}")
     private SegmentContainerSession segmentContainerSession;
 
-    @ManagedProperty(value = "#{projectSession}")
-    private ProjectSession projectSession;
-
     private List<Segment> csLsit,vpList,dcList,crList,rsList,krList,kaList,kpList,cStructList;
+
+
+    public void setSegmentContainerSession(SegmentContainerSession segmentContainerSession) {
+        this.segmentContainerSession = segmentContainerSession;
+    }
 
     public SegmentContainer getSegmentContainer() {
         return segmentContainer;
@@ -36,14 +40,6 @@ public class SegmentContainerController {
 
     public void setSegmentContainer(SegmentContainer segmentContainer) {
         this.segmentContainer = segmentContainer;
-    }
-
-    public void setSegmentContainerSession(SegmentContainerSession segmentContainerSession) {
-        this.segmentContainerSession = segmentContainerSession;
-    }
-
-    public void setProjectSession(ProjectSession projectSession) {
-        this.projectSession = projectSession;
     }
 
     public String addSegmentContainer(){
@@ -62,9 +58,6 @@ public class SegmentContainerController {
             new SegmentFacade().update(segment);
         }
 
-        projectSession.getProject().getBmc().setSegmentContainerList(
-                new SegmentContainerFacade().findByBmc(projectSession.getProject().getBmc()));
-
         return ViewPath.BMC_OVERVIEW+ViewPath.REDIRECT;
     }
 
@@ -75,15 +68,12 @@ public class SegmentContainerController {
         }
         segmentContainer = new SegmentContainer();
 
-        projectSession.getProject().getBmc().setSegmentContainerList(
-                new SegmentContainerFacade().findByBmc(projectSession.getProject().getBmc()));
-
         return ViewPath.BMC_OVERVIEW + ViewPath.REDIRECT;
     }
 
     private void initSegmentContainer(){
         segmentContainer = new SegmentContainer();
-        segmentContainer.setBmc(projectSession.getProject().getBmc());
+        segmentContainer.setBmc(new ProjectFacade().findById(projectId).getBmc());
         segmentContainer.setSegmentList(new ArrayList<Segment>());
         List<SegmentType> segmentTypeList = new SegmentTypeFacade().findAllOrdered();
         for(SegmentType st : segmentTypeList){

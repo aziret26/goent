@@ -11,6 +11,9 @@ import java.util.List;
  * Created by azire on 5/2/2017.
  */
 @Entity
+@NamedQueries({@NamedQuery(name = "Bmc.findByProject",
+                query = "SELECT b FROM Bmc b WHERE b.project = :project")
+})
 public class Bmc implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +29,7 @@ public class Bmc implements Serializable {
     @ManyToOne
     @JoinColumn(name="bmcStatusId")
     private BmcStatus bmcStatus;
+
 
     public int getBmcId() {
         return bmcId;

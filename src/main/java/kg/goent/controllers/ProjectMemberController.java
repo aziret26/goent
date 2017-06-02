@@ -20,7 +20,7 @@ import java.util.List;
  */
 @ManagedBean
 @ViewScoped
-public class ProjectMemberController {
+public class ProjectMemberController extends GenericController{
     private ProjectMember projectMember;
 
     private String userEmail;
@@ -137,4 +137,9 @@ public class ProjectMemberController {
     public List<MemberRole> findAllSimpleUsers(){
         return new MemberRoleFacade().findAllSimpleUsers();
     }
+
+    public List<ProjectMember> getAllProjectMembers(){
+        return new ProjectMemberFacade().findByUser(userSession.getUser());
+    }
+
 }

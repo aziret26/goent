@@ -6,6 +6,7 @@ import kg.goent.facade.project.ProjectFacade;
 import kg.goent.facade.bmc.SegmentContainerFacade;
 import kg.goent.models.bmc.Bmc;
 import kg.goent.models.bmc.SegmentContainer;
+import kg.goent.models.project.Project;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -19,47 +20,58 @@ import static kg.goent.tools.ViewPath.*;
  */
 @ManagedBean
 @ViewScoped
-public class BmcController {
+public class BmcController extends GenericController{
+
+    private Bmc bmc;
 
     @ManagedProperty(value = "#{userSession}")
     private UserSession userSession;
 
-    @ManagedProperty(value = "#{projectSession}")
-    private ProjectSession projectSession;
 
     public void setUserSession(UserSession userSession) {
         this.userSession = userSession;
     }
 
-    public void setProjectSession(ProjectSession projectSession) {
-        this.projectSession = projectSession;
+    public Bmc getBmc() {
+        if(bmcId > 0){
+            bmc = new BmcFacade().findById(bmcId);
+        }
+        return bmc;
     }
 
-    public String getBmc(){
+    public void setBmc(Bmc bmc) {
+        this.bmc = bmc;
+    }
+
+    public int getBmcId() {
+        return bmcId;
+    }
+
+    public void setBmcId(int bmcId) {
+        this.bmcId = bmcId;
+    }
+
+    public String bmcOverview(Project project){
         /**
          * show PROJECT's bmc and if PROJECT doesn't have bmc
          * it will create one, then redirects to the bmc overview page
          */
-        if(projectSession.getProject().getBmc() == null){
-            Bmc bmc = new Bmc();
-            bmc.setProject(projectSession.getProject());
+        bmc = new BmcFacade().findByProject(project);
+        if (bmc == null) {
+            bmc = new Bmc();
+            bmc.setProject(project);
             bmc.setBmcStatus(new BmcStatusFacade().findById(2));
             new BmcFacade().create(bmc);
-            projectSession.setProject(new ProjectFacade().findById(projectSession.getProject().getProjectId()));
-            projectSession.getProject().setBmc(bmc);
         }
-        projectSession.getProject().getBmc().setSegmentContainerList(new SegmentContainerFacade().findByBmc(projectSession.getProject().getBmc()));
-
-        return BMC_OVERVIEW + REDIRECT;
+        System.out.println(BMC_OVERVIEW + REDIRECT+"bmcId="+bmc.getBmcId());
+        return BMC_OVERVIEW + REDIRECT+"bmcId="+bmc.getBmcId();
     }
     private List<SegmentContainer> loadSegmentContainer(Bmc bmc){
-    //    List<SegmentContainer> segmentContainerList = new ArrayList<SegmentContainer>();
         return new SegmentContainerFacade().findByBmc(bmc);
     }
 
     public String finishBmc(){
-        projectSession.getProject().getBmc().setBmcStatus(new BmcStatusFacade().findById(1));
-        new BmcFacade().update(projectSession.getProject().getBmc());
+        new BmcFacade().update(bmc);
         return PROJECT_OVERVIEW+REDIRECT;
     }
 }

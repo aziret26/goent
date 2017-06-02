@@ -29,9 +29,11 @@
                     </h:dataTable>
                     <h:form>
                         <h:inputText value="#{projectMemberController.userEmail}"/>
+
                         <h:selectOneMenu value="#{projectMemberController.memberRole}">
                             <f:selectItems value="#{projectMemberController.findAllSimpleUsers()}"/>
                         </h:selectOneMenu>
+
                         <br/>
                         <h:commandButton value="Submit" action="#{projectMemberController.addMember()}"/>
                         <br/>

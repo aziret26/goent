@@ -22,14 +22,11 @@ import java.util.List;
  */
 @ManagedBean
 @ViewScoped
-public class ProjectController {
+public class ProjectController extends GenericController{
     private Project project;
 
     @ManagedProperty(value = "#{userSession}")
     private UserSession userSession;
-
-    @ManagedProperty(value = "#{projectSession}")
-    private ProjectSession projectSession;
 
     private ProjectMember projectMember;
 
@@ -46,9 +43,6 @@ public class ProjectController {
         this.userSession = userSession;
     }
 
-    public void setProjectSession(ProjectSession projectSession) {
-        this.projectSession = projectSession;
-    }
 
     public Project getProject() {
         return project;
@@ -58,12 +52,22 @@ public class ProjectController {
         this.project = project;
     }
 
+    public int getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(int projectId) {
+        if(projectId != 0){
+            project = new ProjectFacade().findById(projectId);
+        }
+        this.projectId = projectId;
+    }
+
     public Project getFromDbProject(int id){
         return new ProjectFacade().findById(id);
     }
 
     public String addProject(){
-        //System.out.println("Path: "+ViewPath.ADD_PROJECT);
         return ViewPath.ADD_PROJECT;
     }
 
@@ -129,17 +133,24 @@ public class ProjectController {
             return "";
         }
 
-
         return "";
     }
 
     public String projectOverView(Project project){
-        projectSession.setProject(project);
-        return ViewPath.PROJECT_OVERVIEW + ViewPath.REDIRECT;
+        return ViewPath.PROJECT_OVERVIEW + ViewPath.REDIRECT+"projectId="+project.getProjectId();
     }
 
-    protected void destroySessions(){
-        //System.out.printf("DESTROYING PROJECT SESSION");
-        projectSession = new ProjectSession();
+    public boolean hasBmc() {
+        return project != null && project.getBmc() != null;
+    }
+    public boolean hasAccess(){
+        boolean hasAcccess = false;
+        for (ProjectMember pm : project.getMemberList()){
+            if(pm.getUser().getUserId() == userSession.getUser().getUserId()){
+                hasAcccess = true;
+                break;
+            }
+        }
+        return hasAcccess;
     }
 }

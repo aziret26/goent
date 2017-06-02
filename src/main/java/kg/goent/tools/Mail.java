@@ -32,7 +32,6 @@ public class Mail {
         mailText += ".\n\nOr follow given link bellow "+link+"\nto activate your account.";
 
         return sendMsg(mailTo, mailSubject, mailText) ? 1:0;
-
     }
 
     public void sendTestMail(String receiver){

@@ -6,6 +6,9 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
+    <f:metadata>
+        <f:viewParam name="bmcId" value="#{bmcController.bmcId}"/>
+    </f:metadata>
     <ui:composition template="/template/projectTemplate.xhtml">
         <ui:param name="pageTitle" value="#{field.bmcOverview}"/>
         <ui:define name="metadata">
@@ -17,14 +20,6 @@
                         <ui:repeat value="#{projectSession.project.bmc.segmentContainerList}" var="sc">
                             <div style="display: inline-block;margin-bottom: 20px;border-left:
                                     solid black 1px;border-right: solid black 1px;">
-                                <!--<ui:repeat value="#{sc.segmentList}" var="s">-->
-                                    <!--<h:panelGrid columns="2" width="300">-->
-
-                                        <!--<h:outputText value="#{s.segmentType.segmentTypeName}"/>-->
-                                        <!--<h:outputText value="#{s.segmentTitle}"/>-->
-                                    <!--</h:panelGrid>-->
-
-                                <!--</ui:repeat>-->
 
                                 <h:dataTable value="#{sc.segmentList}" var="segment">
                                     <h:column headerClass="table-header" footerClass="table-footer">
@@ -44,7 +39,7 @@
                                 </h:dataTable>
 
                                 <h:commandButton value="#{field.edit}"
-                                                     action="#{segmentContainerController.editSegmentContainer(sc)}"/>
+                                                 action="#{segmentContainerController.editSegmentContainer(sc)}"/>
                             </div>
                         </ui:repeat>
                     </h:panelGroup>
@@ -54,9 +49,11 @@
                     <h:panelGroup>
                         <h:commandButton value="#{field.add}" action="#{segmentContainerController.addSegmentContainer()}"/>
                     </h:panelGroup>
-                    <h:panelGroup>
-                        <h:commandButton value="#{field.finish} BMC" action="#{bmcController.finishBmc()}"/>
-                    </h:panelGroup>
+                    <div class="right">
+                        <h:panelGroup styleClass="right">
+                            <h:commandButton value="#{field.finish} BMC" action="#{bmcController.finishBmc()}"/>
+                        </h:panelGroup>
+                    </div>
                 </h:form>
             </div>
         </ui:define>

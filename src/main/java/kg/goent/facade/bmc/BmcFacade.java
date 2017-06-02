@@ -2,6 +2,7 @@ package kg.goent.facade.bmc;
 
 import kg.goent.dao.ObjectDao;
 import kg.goent.models.bmc.Bmc;
+import kg.goent.models.project.Project;
 
 /**
  * Created by azire on 4/20/2017.
@@ -45,6 +46,20 @@ public class BmcFacade {
         try {
             objectDao.beginTransaction();
             bmc = objectDao.getEntityManager().find(Bmc.class, id);
+        }catch (Exception ex){
+            bmc = null;
+        }finally {
+            objectDao.commitAndCloseTransaction();
+        }
+        return bmc;
+    }
+
+    public Bmc findByProject(Project project){
+        Bmc bmc;
+        try {
+            objectDao.beginTransaction();
+            bmc = objectDao.getEntityManager().createNamedQuery("Bmc.findByProject",Bmc.class)
+                    .setParameter("project",project).getSingleResult();
         }catch (Exception ex){
             bmc = null;
         }finally {

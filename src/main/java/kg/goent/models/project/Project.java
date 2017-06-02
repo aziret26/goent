@@ -15,9 +15,9 @@ import java.util.List;
 @Entity
 @NamedQueries({
         @NamedQuery(name = "Project.findAll",
-         query = "SELECT p FROM Project p"),
+            query = "SELECT p FROM Project p"),
         @NamedQuery(name = "Project.findByTitle",
-                query = "SELECT p FROM Project p WHERE p.title = :title")
+            query = "SELECT p FROM Project p WHERE p.title = :title")
 })
 public class Project implements Serializable{
     @Id
@@ -26,8 +26,10 @@ public class Project implements Serializable{
 
     @Column
     private String title;
+
     @Column
     private String description;
+
     @Column
     private Date projectDate;
 

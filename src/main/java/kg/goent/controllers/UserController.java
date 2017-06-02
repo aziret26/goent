@@ -21,7 +21,7 @@ import java.util.List;
  */
 @ManagedBean
 @ViewScoped
-public class UserController {
+public class UserController extends GenericController{
     private User user;
     private String activationKey;
 
@@ -79,7 +79,7 @@ public class UserController {
     }
 
     public String signout(){
-        new ProjectController().destroySessions();
+        //new ProjectController().destroySessions();
         new SegmentContainerController().destroySessions();
         this.destroySession();
         return "index";
