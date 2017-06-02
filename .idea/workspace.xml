@@ -2,85 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bff20c5a-e16e-4a2a-9384-4b36ec171dcd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/GenericController.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/kg/infocom/archive/actions/user/UserAction.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/kg/infocom/archive/dao/GenericDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/kg/infocom/archive/dao/UserDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/kg/infocom/archive/domain/User.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/kg/infocom/archive/facade/UserFacade.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/for_postgres.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/signin2.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/signup2.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/META-INF/for_postgres.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kg/infocom/archive/actions/user/UserAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kg/infocom/archive/dao/GenericDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kg/infocom/archive/dao/UserDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kg/infocom/archive/domain/User.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/kg/infocom/archive/facade/UserFacade.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/signin2.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/signup2.xhtml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/controllers/BmcController.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/controllers/BmcController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/controllers/HypothesisContainerController.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/controllers/HypothesisContainerController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/controllers/ProjectController.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/controllers/ProjectController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/controllers/ProjectMemberController.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/controllers/ProjectMemberController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/controllers/ProjectSession.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/controllers/ProjectSession.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/controllers/SegmentContainerController.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/controllers/SegmentContainerController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/controllers/SegmentContainerSession.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/controllers/SegmentContainerSession.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/META-INF/for_postgres.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/infocom/archive/actions/user/UserAction.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/infocom/archive/dao/GenericDao.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/infocom/archive/dao/UserDao.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/infocom/archive/domain/User.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/infocom/archive/facade/UserFacade.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/controllers/UserController.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/controllers/UserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/controllers/UserSession.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/controllers/UserSession.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/facade/bmc/BmcFacade.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/facade/bmc/BmcFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/models/bmc/Bmc.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/models/bmc/Bmc.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/models/project/Project.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/models/project/Project.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/tools/Mail.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/tools/Mail.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/tools/ViewPath.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/tools/ViewPath.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/validators/EmailValidator.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/validators/EmailValidator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/BmcController.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/BmcController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/HypothesisContainerController.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/HypothesisContainerController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/ProjectController.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/ProjectController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/ProjectMemberController.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/ProjectMemberController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/ProjectSession.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/ProjectSession.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/SegmentContainerController.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/SegmentContainerController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/SegmentContainerSession.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/SegmentContainerSession.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kg/goent/tools/Tools.class" afterPath="$PROJECT_DIR$/target/classes/kg/goent/tools/Tools.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/UserController.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/UserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/UserSession.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/controllers/UserSession.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/bmc/BmcFacade.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/facade/bmc/BmcFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/bmc/Bmc.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/bmc/Bmc.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/project/Project.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/models/project/Project.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/tools/Mail.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/tools/Mail.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/tools/ViewPath.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/tools/ViewPath.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/validators/EmailValidator.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/validators/EmailValidator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/tools/Tools.class" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/kg/goent/tools/Tools.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hibernate.iml" afterPath="$PROJECT_DIR$/hibernate.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/BmcController.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/BmcController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectController.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectMemberController.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectMemberController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectSession.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectSession.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/SegmentContainerController.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/SegmentContainerController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/SegmentContainerSession.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/SegmentContainerSession.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/fields_en.properties" afterPath="$PROJECT_DIR$/src/main/java/fields_en.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/fields_ky.properties" afterPath="$PROJECT_DIR$/src/main/java/fields_ky.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/fields_ru.properties" afterPath="$PROJECT_DIR$/src/main/java/fields_ru.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/UserSession.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/controllers/UserSession.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/facade/bmc/BmcFacade.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/facade/bmc/BmcFacade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/models/bmc/Bmc.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/models/bmc/Bmc.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/models/project/Project.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/models/project/Project.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/tools/Mail.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/tools/Mail.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/tools/Tools.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/tools/Tools.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/tools/ViewPath.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/tools/ViewPath.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/goent/validators/EmailValidator.java" afterPath="$PROJECT_DIR$/src/main/java/kg/goent/validators/EmailValidator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/pages/bmc/bmcOverview.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/pages/bmc/bmcOverview.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/pages/project/projectAddMember.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/pages/project/projectAddMember.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/pages/project/projectOverview.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/pages/project/projectOverview.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/sections/metadata.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/sections/metadata.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/template/projectTemplate.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/template/projectTemplate.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/activate.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/activate.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/hibernate/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/target/hibernate/WEB-INF/classes/META-INF/persistence.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/index.xhtml" afterPath="$PROJECT_DIR$/target/hibernate/index.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/pages/bmc/bmcOverview.xhtml" afterPath="$PROJECT_DIR$/target/hibernate/pages/bmc/bmcOverview.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/pages/project/projectAddMember.xhtml" afterPath="$PROJECT_DIR$/target/hibernate/pages/project/projectAddMember.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/pages/project/projectOverview.xhtml" afterPath="$PROJECT_DIR$/target/hibernate/pages/project/projectOverview.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hibernate/sections/metadata.xhtml" afterPath="$PROJECT_DIR$/target/hibernate/sections/metadata.xhtml" />
     </list>
     <ignored path="archive.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -125,152 +68,112 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="ProjectMemberController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectMemberController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="22" column="62" lean-forward="false" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1167#1168#0" expanded="false" />
-                <element signature="e#1219#1220#0" expanded="false" />
-                <element signature="e#1278#1279#0" expanded="false" />
-                <element signature="e#1324#1325#0" expanded="false" />
-                <element signature="e#1357#1358#0" expanded="false" />
-                <element signature="e#1389#1390#0" expanded="false" />
-                <element signature="e#1436#1437#0" expanded="false" />
-                <element signature="e#1478#1479#0" expanded="false" />
-                <element signature="e#1521#1522#0" expanded="false" />
-                <element signature="e#1555#1556#0" expanded="false" />
-                <element signature="e#1602#1603#0" expanded="false" />
-                <element signature="e#1638#1639#0" expanded="false" />
-                <element signature="e#1703#1704#0" expanded="false" />
-                <element signature="e#1753#1754#0" expanded="false" />
-                <element signature="e#1789#1790#0" expanded="false" />
-                <element signature="e#1821#1822#0" expanded="false" />
-                <element signature="e#1871#1872#0" expanded="false" />
-                <element signature="e#1913#1914#0" expanded="false" />
-                <element signature="e#1950#1951#0" expanded="false" />
-                <element signature="e#1983#1984#0" expanded="false" />
-                <element signature="e#2035#2036#0" expanded="false" />
-                <element signature="e#2079#2080#0" expanded="false" />
-                <element signature="e#4183#4184#0" expanded="false" />
-                <element signature="e#4249#4250#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProjectSession.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectSession.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="12" column="53" lean-forward="false" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="content-left.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/sections/content-left.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="projectTemplate.xhtml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/template/projectTemplate.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="37" column="35" lean-forward="true" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SegmentContainerSession.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/SegmentContainerSession.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="12" column="62" lean-forward="false" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#385#386#0" expanded="false" />
-                <element signature="e#424#425#0" expanded="false" />
-                <element signature="e#498#499#0" expanded="false" />
-                <element signature="e#554#555#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SegmentContainerController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/SegmentContainerController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/fcbeeceb-af64-4df5-8f35-3d2737fdbbcc/console.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="23" column="53" lean-forward="false" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
+            <state relative-caret-position="425">
+              <caret line="74" column="76" lean-forward="false" selection-start-line="74" selection-start-column="57" selection-end-line="74" selection-end-column="76" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#705#706#0" expanded="false" />
-                <element signature="e#738#739#0" expanded="false" />
-                <element signature="e#867#868#0" expanded="false" />
-                <element signature="e#901#902#0" expanded="false" />
-                <element signature="e#960#961#0" expanded="false" />
-                <element signature="e#1006#1007#0" expanded="false" />
-                <element signature="e#1035#1036#0" expanded="false" />
-                <element signature="e#1062#1063#0" expanded="false" />
-                <element signature="e#1100#1101#0" expanded="false" />
-                <element signature="e#1132#1133#0" expanded="false" />
-                <element signature="e#1172#1173#0" expanded="false" />
-                <element signature="e#1208#1209#0" expanded="false" />
-                <element signature="e#1266#1267#0" expanded="false" />
-                <element signature="e#1316#1317#0" expanded="false" />
-                <element signature="e#1354#1355#0" expanded="false" />
-                <element signature="e#1403#1404#0" expanded="false" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1542#1543#0" expanded="true" />
+                <element signature="e#1573#1574#0" expanded="true" />
+                <element signature="method#signin#0;class#UserController#0" expanded="false" />
+                <element signature="method#signout#0;class#UserController#0" expanded="false" />
+                <element signature="method#signup#0;class#UserController#0" expanded="false" />
+                <element signature="method#activateByKey#0;class#UserController#0" expanded="false" />
+                <element signature="method#activateAutomaticaly#0;class#UserController#0" expanded="false" />
+                <element signature="method#searchByEmailTop5#0;class#UserController#0" expanded="false" />
+                <element signature="method#destroySession#0;class#UserController#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserSession.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/UserSession.java">
+      <file leaf-file-name="fields_en.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/fields_en.properties">
+          <provider editor-type-id="ResourceBundle">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#359#360#0" expanded="false" />
-                <element signature="e#386#387#0" expanded="false" />
-                <element signature="e#424#425#0" expanded="false" />
-                <element signature="e#456#457#0" expanded="false" />
-                <element signature="e#489#490#0" expanded="false" />
-                <element signature="e#518#519#0" expanded="false" />
-                <element signature="e#563#564#0" expanded="false" />
-                <element signature="e#599#600#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="289">
+              <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fields_ky.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/fields_ky.properties">
+          <provider editor-type-id="ResourceBundle">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="33" lean-forward="true" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fields_ru.properties" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/fields_ru.properties">
+          <provider editor-type-id="ResourceBundle">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewPath.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/tools/ViewPath.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activate.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/activate.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserStatusFacade.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/facade/UserStatusFacade.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="77" column="41" lean-forward="true" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Mail.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/tools/Mail.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="30" column="76" lean-forward="false" selection-start-line="30" selection-start-column="76" selection-end-line="30" selection-end-column="76" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tools.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/tools/Tools.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="27" column="39" lean-forward="false" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -278,28 +181,11 @@
       <file leaf-file-name="GenericController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/GenericController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+            <state relative-caret-position="102">
+              <caret line="6" column="78" lean-forward="false" selection-start-line="6" selection-start-column="78" selection-end-line="6" selection-end-column="78" />
               <folding>
+                <element signature="e#217#218#0" expanded="true" />
                 <element signature="e#249#250#0" expanded="true" />
-                <element signature="e#296#297#0" expanded="true" />
-                <element signature="e#338#339#0" expanded="true" />
-                <element signature="e#367#368#0" expanded="true" />
-                <element signature="e#395#396#0" expanded="true" />
-                <element signature="e#434#435#0" expanded="true" />
-                <element signature="e#468#469#0" expanded="true" />
-                <element signature="e#501#502#0" expanded="true" />
-                <element signature="e#533#534#0" expanded="true" />
-                <element signature="e#580#581#0" expanded="true" />
-                <element signature="e#622#623#0" expanded="true" />
-                <element signature="e#664#665#0" expanded="true" />
-                <element signature="e#705#706#0" expanded="true" />
-                <element signature="e#770#771#0" expanded="true" />
-                <element signature="e#830#831#0" expanded="true" />
-                <element signature="e#869#870#0" expanded="true" />
-                <element signature="e#907#908#0" expanded="true" />
-                <element signature="e#966#967#0" expanded="true" />
-                <element signature="e#1020#1021#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -376,8 +262,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/kg/goent/facade/SegmentFacade.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kg/goent/controllers/HypothesisController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/hypothesis/hypothesis.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/hypothesis/samplePage.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/sections/content-left.xhtml" />
@@ -400,16 +284,11 @@
         <option value="$PROJECT_DIR$/src/main/webapp/pages/hypothesis/hypothesisOverview.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/facade/hypothesis/HypothesisContainerFacade.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/facade/bmc/SegmentFacade.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kg/goent/tools/ViewPath.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/models/Message.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/models/message/Message.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/controllers/MessagesViewController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/sections/messages.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/models/project/Project.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kg/goent/tools/Tools.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fields_en.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/fields_ky.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/fields_ru.properties" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/models/hypothesis/HypothesisContainer.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/models/hypothesis/Hypothesis.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/controllers/HypothesisContainerController.java" />
@@ -421,12 +300,19 @@
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectMemberController.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectSession.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/controllers/SegmentContainerSession.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kg/goent/controllers/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/controllers/UserSession.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kg/goent/controllers/GenericController.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/goent/controllers/SegmentContainerController.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/fcbeeceb-af64-4df5-8f35-3d2737fdbbcc/console.sql" />
         <option value="$PROJECT_DIR$/src/main/webapp/template/projectTemplate.xhtml" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/fcbeeceb-af64-4df5-8f35-3d2737fdbbcc/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/kg/goent/tools/Tools.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kg/goent/tools/Mail.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kg/goent/controllers/GenericController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/activate.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/kg/goent/tools/ViewPath.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kg/goent/controllers/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fields_en.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/fields_ru.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/fields_ky.properties" />
       </list>
     </option>
   </component>
@@ -467,7 +353,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1932" />
+    <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -681,8 +567,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -929,12 +813,74 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GoEnt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="goent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="goent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="facade" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GoEnt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="goent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="goent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -1832,6 +1778,7 @@
       <workItem from="1496308921986" duration="18000" />
       <workItem from="1496309064994" duration="6027000" />
       <workItem from="1496388981777" duration="1459000" />
+      <workItem from="1496384891182" duration="2101000" />
     </task>
     <task id="LOCAL-00002" summary="Создание объектов;&#10;Тикет #471">
       <created>1428297461221</created>
@@ -2180,7 +2127,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="847657000" />
+    <option name="totallyTimeSpent" value="849758000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2192,8 +2139,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2203,24 +2149,24 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21314102" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21268657" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22073579" sideWeight="0.48720682" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22048998" sideWeight="0.48720682" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733223" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34632516" sideWeight="0.4866453" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7414075" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34671125" sideWeight="0.4866453" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25416037" sideWeight="0.507365" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21962096" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.492635" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21937639" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25266525" sideWeight="0.492635" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18552354" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -2330,20 +2276,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/models/bmc/Bmc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="21" column="16" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/facade/bmc/BmcFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/facade/bmc/SegmentContainerFacade.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2398,14 +2330,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
           <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/MailController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2465,14 +2389,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/tools/ViewPath.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="58" lean-forward="false" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/models/message/Message.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -2509,20 +2425,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/tools/Mail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/tools/Tools.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="62" column="16" lean-forward="false" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/hypothesis/hypothesisOverview.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -2530,46 +2432,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fields_en.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="16" selection-end-column="9" />
-        </state>
-      </provider>
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fields_ky.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-        </state>
-      </provider>
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fields_ru.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-        </state>
-      </provider>
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/bmc/bmcOverview.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
           <caret line="48" column="34" lean-forward="false" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
-          <folding>
-            <marker date="1496308255130" expanded="true" signature="3093:3119" ph="..." />
-            <marker date="1496308255130" expanded="true" signature="3093:3138" ph="..." />
-            <marker date="1496308255130" expanded="true" signature="3093:3159" ph="..." />
-            <marker date="1496308255130" expanded="true" signature="3093:3181" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2690,33 +2557,36 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectMemberController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="22" column="62" lean-forward="false" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
+          <caret line="22" column="63" lean-forward="false" selection-start-line="22" selection-start-column="63" selection-end-line="22" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#1167#1168#0" expanded="false" />
-            <element signature="e#1219#1220#0" expanded="false" />
-            <element signature="e#1278#1279#0" expanded="false" />
-            <element signature="e#1324#1325#0" expanded="false" />
-            <element signature="e#1357#1358#0" expanded="false" />
-            <element signature="e#1389#1390#0" expanded="false" />
-            <element signature="e#1436#1437#0" expanded="false" />
-            <element signature="e#1478#1479#0" expanded="false" />
-            <element signature="e#1521#1522#0" expanded="false" />
-            <element signature="e#1555#1556#0" expanded="false" />
-            <element signature="e#1602#1603#0" expanded="false" />
-            <element signature="e#1638#1639#0" expanded="false" />
-            <element signature="e#1703#1704#0" expanded="false" />
-            <element signature="e#1753#1754#0" expanded="false" />
-            <element signature="e#1789#1790#0" expanded="false" />
-            <element signature="e#1821#1822#0" expanded="false" />
-            <element signature="e#1871#1872#0" expanded="false" />
-            <element signature="e#1913#1914#0" expanded="false" />
-            <element signature="e#1950#1951#0" expanded="false" />
-            <element signature="e#1983#1984#0" expanded="false" />
-            <element signature="e#2035#2036#0" expanded="false" />
-            <element signature="e#2079#2080#0" expanded="false" />
-            <element signature="e#4183#4184#0" expanded="false" />
-            <element signature="e#4249#4250#0" expanded="false" />
+            <marker date="1496384743704" expanded="true" signature="999:1100" ph="{...}" />
+            <marker date="1496384743704" expanded="false" signature="1166:1177" ph=" { " />
+            <marker date="1496384743704" expanded="false" signature="1214:1220" ph=" }" />
+            <marker date="1496384743704" expanded="false" signature="1277:1288" ph=" { " />
+            <marker date="1496384743704" expanded="false" signature="1319:1325" ph=" }" />
+            <marker date="1496384743704" expanded="false" signature="1356:1367" ph=" { " />
+            <marker date="1496384743704" expanded="false" signature="1384:1390" ph=" }" />
+            <marker date="1496384743704" expanded="false" signature="1435:1446" ph=" { " />
+            <marker date="1496384743704" expanded="false" signature="1473:1479" ph=" }" />
+            <marker date="1496384743704" expanded="false" signature="1520:1531" ph=" { " />
+            <marker date="1496384743704" expanded="false" signature="1550:1556" ph=" }" />
+            <marker date="1496384743704" expanded="false" signature="1601:1612" ph=" { " />
+            <marker date="1496384743704" expanded="false" signature="1633:1639" ph=" }" />
+            <marker date="1496384743704" expanded="false" signature="1702:1713" ph=" { " />
+            <marker date="1496384743704" expanded="false" signature="1748:1754" ph=" }" />
+            <marker date="1496384743704" expanded="false" signature="1788:1799" ph=" { " />
+            <marker date="1496384743704" expanded="false" signature="1816:1822" ph=" }" />
+            <marker date="1496384743704" expanded="false" signature="1870:1881" ph=" { " />
+            <marker date="1496384743704" expanded="false" signature="1908:1914" ph=" }" />
+            <marker date="1496384743704" expanded="false" signature="1949:1960" ph=" { " />
+            <marker date="1496384743704" expanded="false" signature="1978:1984" ph=" }" />
+            <marker date="1496384743704" expanded="false" signature="2034:2045" ph=" { " />
+            <marker date="1496384743704" expanded="false" signature="2074:2080" ph=" }" />
+            <marker date="1496384743704" expanded="true" signature="2111:4133" ph="{...}" />
+            <marker date="1496384743704" expanded="false" signature="4183:4193" ph=" { " />
+            <marker date="1496384743704" expanded="false" signature="4244:4250" ph=" }" />
+            <marker date="1496384743704" expanded="true" signature="4305:4388" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2724,39 +2594,13 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/SegmentContainerSession.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="12" column="62" lean-forward="false" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
+          <caret line="12" column="63" lean-forward="false" selection-start-line="12" selection-start-column="63" selection-end-line="12" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#385#386#0" expanded="false" />
-            <element signature="e#424#425#0" expanded="false" />
             <element signature="e#498#499#0" expanded="false" />
             <element signature="e#554#555#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="23" column="53" lean-forward="false" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#705#706#0" expanded="false" />
-            <element signature="e#738#739#0" expanded="false" />
-            <element signature="e#867#868#0" expanded="false" />
-            <element signature="e#901#902#0" expanded="false" />
-            <element signature="e#960#961#0" expanded="false" />
-            <element signature="e#1006#1007#0" expanded="false" />
-            <element signature="e#1035#1036#0" expanded="false" />
-            <element signature="e#1062#1063#0" expanded="false" />
-            <element signature="e#1100#1101#0" expanded="false" />
-            <element signature="e#1132#1133#0" expanded="false" />
-            <element signature="e#1172#1173#0" expanded="false" />
-            <element signature="e#1208#1209#0" expanded="false" />
-            <element signature="e#1266#1267#0" expanded="false" />
-            <element signature="e#1316#1317#0" expanded="false" />
-            <element signature="e#1354#1355#0" expanded="false" />
-            <element signature="e#1403#1404#0" expanded="false" />
+            <marker date="1496384743705" expanded="false" signature="384:395" ph=" { " />
+            <marker date="1496384743705" expanded="false" signature="419:425" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -2767,67 +2611,47 @@
           <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#359#360#0" expanded="false" />
-            <element signature="e#386#387#0" expanded="false" />
-            <element signature="e#424#425#0" expanded="false" />
-            <element signature="e#456#457#0" expanded="false" />
-            <element signature="e#489#490#0" expanded="false" />
-            <element signature="e#518#519#0" expanded="false" />
-            <element signature="e#563#564#0" expanded="false" />
-            <element signature="e#599#600#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/GenericController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-          <folding>
-            <element signature="e#249#250#0" expanded="true" />
-            <element signature="e#296#297#0" expanded="true" />
-            <element signature="e#338#339#0" expanded="true" />
-            <element signature="e#367#368#0" expanded="true" />
-            <element signature="e#395#396#0" expanded="true" />
-            <element signature="e#434#435#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-            <element signature="e#501#502#0" expanded="true" />
-            <element signature="e#533#534#0" expanded="true" />
-            <element signature="e#580#581#0" expanded="true" />
-            <element signature="e#622#623#0" expanded="true" />
-            <element signature="e#664#665#0" expanded="true" />
-            <element signature="e#705#706#0" expanded="true" />
-            <element signature="e#770#771#0" expanded="true" />
-            <element signature="e#830#831#0" expanded="true" />
-            <element signature="e#869#870#0" expanded="true" />
-            <element signature="e#907#908#0" expanded="true" />
-            <element signature="e#966#967#0" expanded="true" />
-            <element signature="e#1020#1021#0" expanded="true" />
+            <marker date="1496384743706" expanded="false" signature="358:369" ph=" { " />
+            <marker date="1496384743706" expanded="false" signature="381:387" ph=" }" />
+            <marker date="1496384743706" expanded="false" signature="423:434" ph=" { " />
+            <marker date="1496384743706" expanded="false" signature="451:457" ph=" }" />
+            <marker date="1496384743706" expanded="false" signature="488:499" ph=" { " />
+            <marker date="1496384743706" expanded="false" signature="513:519" ph=" }" />
+            <marker date="1496384743706" expanded="false" signature="562:573" ph=" { " />
+            <marker date="1496384743706" expanded="false" signature="594:600" ph=" }" />
+            <marker date="1496384743706" expanded="true" signature="626:717" ph="{...}" />
+            <marker date="1496384743706" expanded="true" signature="743:862" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/SegmentContainerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/fcbeeceb-af64-4df5-8f35-3d2737fdbbcc/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-          <folding />
+        <state relative-caret-position="612">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <marker date="1496384743705" expanded="true" signature="2564:2996" ph="{...}" />
+            <marker date="1496384743705" expanded="true" signature="3034:3175" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/ProjectSession.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="12" column="53" lean-forward="false" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
-          <folding />
+          <caret line="12" column="54" lean-forward="false" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#660#661#0" expanded="false" />
+            <marker date="1496384743705" expanded="false" signature="366:377" ph=" { " />
+            <marker date="1496384743705" expanded="false" signature="392:398" ph=" }" />
+            <marker date="1496384743705" expanded="false" signature="443:454" ph=" { " />
+            <marker date="1496384743705" expanded="false" signature="477:483" ph=" }" />
+            <marker date="1496384743705" expanded="false" signature="517:527" ph=" { " />
+            <marker date="1496384743705" expanded="false" signature="542:548" ph=" }" />
+            <marker date="1496384743705" expanded="false" signature="584:594" ph=" { " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2841,8 +2665,127 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/template/projectTemplate.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="35" lean-forward="true" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
+        <state relative-caret-position="524">
+          <caret line="49" column="48" lean-forward="false" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/fcbeeceb-af64-4df5-8f35-3d2737fdbbcc/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/MailController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/tools/Mail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="30" column="76" lean-forward="false" selection-start-line="30" selection-start-column="76" selection-end-line="30" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/GenericController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="78" lean-forward="false" selection-start-line="6" selection-start-column="78" selection-end-line="6" selection-end-column="78" />
+          <folding>
+            <element signature="e#217#218#0" expanded="true" />
+            <element signature="e#249#250#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/facade/UserStatusFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="77" column="41" lean-forward="true" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/activate.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/tools/Tools.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="27" column="39" lean-forward="false" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/tools/ViewPath.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kg/goent/controllers/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="74" column="76" lean-forward="false" selection-start-line="74" selection-start-column="57" selection-end-line="74" selection-end-column="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1542#1543#0" expanded="true" />
+            <element signature="e#1573#1574#0" expanded="true" />
+            <element signature="method#signin#0;class#UserController#0" expanded="false" />
+            <element signature="method#signout#0;class#UserController#0" expanded="false" />
+            <element signature="method#signup#0;class#UserController#0" expanded="false" />
+            <element signature="method#activateByKey#0;class#UserController#0" expanded="false" />
+            <element signature="method#activateAutomaticaly#0;class#UserController#0" expanded="false" />
+            <element signature="method#searchByEmailTop5#0;class#UserController#0" expanded="false" />
+            <element signature="method#destroySession#0;class#UserController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fields_en.properties">
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fields_ky.properties">
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="33" lean-forward="true" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fields_ru.properties">
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
           <folding />
         </state>
       </provider>

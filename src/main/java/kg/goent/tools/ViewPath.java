@@ -5,6 +5,7 @@ package kg.goent.tools;
  */
 public class ViewPath {
     public static final String
+        INDEX = "/INDEX",
         BMC_FOLDER = "/pages/bmc",
         BMC_OVERVIEW = BMC_FOLDER +"/bmcOverview?",
         ADD_SEGMENT_CONTAINER = BMC_FOLDER +"/addSegmentContainer?",

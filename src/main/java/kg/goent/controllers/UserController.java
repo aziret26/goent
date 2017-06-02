@@ -5,6 +5,7 @@ import kg.goent.facade.UserRoleFacade;
 import kg.goent.facade.UserStatusFacade;
 import kg.goent.models.User;
 //import kg.goent.tools.Mail;
+import kg.goent.models.UserStatus;
 import kg.goent.tools.Mail;
 import kg.goent.tools.Tools;
 
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static kg.goent.tools.ViewPath.*;
 /**
  * Created by timur on 13-Apr-17.
  */
@@ -24,6 +26,7 @@ import java.util.List;
 public class UserController extends GenericController{
     private User user;
     private String activationKey;
+    private String activate;
 
     @PostConstruct
     void init(){
@@ -32,7 +35,6 @@ public class UserController extends GenericController{
 
     @ManagedProperty(value = "#{userSession}")
     private UserSession userSession;
-
 
     public UserSession getUserSession() {
         return userSession;
@@ -60,6 +62,26 @@ public class UserController extends GenericController{
 
     public List<User> getAllUsers(){
         return new UserFacade().findAll();
+    }
+
+    public String getActivate() {
+        return activate;
+    }
+
+    public String setActivate(String activate) {
+        if(activate != null && activate.length() != 0){
+            User user = new UserFacade().findByEmail(Tools.decode(activate));
+            if(user == null){
+                Tools.faceMessageWarn(Tools.getFieldMsg("wrongActivationLink"),"");
+                return "";
+            }
+            user.setActivationKey("");
+            user.setUserStatus(new UserStatusFacade().findById(1));
+            new UserFacade().updateUser(user);
+            return INDEX+REDIRECT;
+        }
+        this.activate = activate;
+        return "";
     }
 
     public String signin(){
@@ -96,8 +118,9 @@ public class UserController extends GenericController{
         user.setActivationKey(Tools.generateRandomKey());
         UserFacade uf=new UserFacade();
         uf.createUser(user);
+        String activationLink = Tools.encode(user.getEmail());
         Mail m = new Mail();
-        m.sendActivationMail(user,"under_construction");
+        m.sendActivationMail(user,activationLink);
         System.out.println("successfully registered");
 
         return "signin?faces-redirect=true";
