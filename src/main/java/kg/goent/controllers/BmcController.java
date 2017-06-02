@@ -28,6 +28,7 @@ public class BmcController extends GenericController{
     private UserSession userSession;
 
 
+
     public void setUserSession(UserSession userSession) {
         this.userSession = userSession;
     }
@@ -48,6 +49,9 @@ public class BmcController extends GenericController{
     }
 
     public void setBmcId(int bmcId) {
+        if(bmcId != 0){
+            bmc = new BmcFacade().findById(bmcId);
+        }
         this.bmcId = bmcId;
     }
 
@@ -64,7 +68,7 @@ public class BmcController extends GenericController{
             new BmcFacade().create(bmc);
         }
         System.out.println(BMC_OVERVIEW + REDIRECT+"bmcId="+bmc.getBmcId());
-        return BMC_OVERVIEW + REDIRECT+"bmcId="+bmc.getBmcId();
+        return BMC_OVERVIEW + REDIRECT+"projectId"+bmc.getProject().getProjectId()+"&bmcId="+bmc.getBmcId();
     }
     private List<SegmentContainer> loadSegmentContainer(Bmc bmc){
         return new SegmentContainerFacade().findByBmc(bmc);

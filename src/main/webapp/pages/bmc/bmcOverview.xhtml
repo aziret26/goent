@@ -8,42 +8,32 @@
 <f:view>
     <f:metadata>
         <f:viewParam name="bmcId" value="#{bmcController.bmcId}"/>
+        <f:viewParam name="bmcId" value="#{segmentContainerController.bmcId}"/>
     </f:metadata>
     <ui:composition template="/template/projectTemplate.xhtml">
         <ui:param name="pageTitle" value="#{field.bmcOverview}"/>
         <ui:define name="metadata">
+            <f:metadata>
+                <f:viewParam name="projectId" value="#{projectController.projectId}"/>
+                <f:viewParam name="bmcId" value="#{bmcController.bmcId}"/>
+                <f:viewParam name="bmcId" value="#{segmentContainerController.bmcId}"/>
+            </f:metadata>
         </ui:define>
         <ui:define name="content-center">
             <div class="content-center">
                 <h:form>
-                    <h:panelGroup rendered="#{projectSession.project.bmc.segmentContainerList.size() != 0}">
-                        <ui:repeat value="#{projectSession.project.bmc.segmentContainerList}" var="sc">
+                    <h:panelGroup rendered="#{bmcController.bmc.segmentContainerList.size() != 0}">
+                        <ui:repeat value="#{bmcController.bmc.segmentContainerList}" var="sc">
                             <div style="display: inline-block;margin-bottom: 20px;border-left:
                                     solid black 1px;border-right: solid black 1px;">
 
-                                <h:dataTable value="#{sc.segmentList}" var="segment">
-                                    <h:column headerClass="table-header" footerClass="table-footer">
-                                        <f:facet name="header">
-                                            Название
-                                        </f:facet>
-                                        <h:outputText value="#{segment.segmentType.segmentTypeName}"/>
-                                    </h:column>
-
-                                    <h:column headerClass="table-header" footerClass="table-footer">
-                                        <f:facet name="header">
-                                            Значение
-                                        </f:facet>
-                                        <h:outputText value="#{segment.segmentTitle}"/>
-                                    </h:column>
-
-                                </h:dataTable>
 
                                 <h:commandButton value="#{field.edit}"
                                                  action="#{segmentContainerController.editSegmentContainer(sc)}"/>
                             </div>
                         </ui:repeat>
                     </h:panelGroup>
-                    <h:panelGroup rendered="#{projectSession.project.bmc.segmentContainerList.size() == 0}">
+                    <h:panelGroup rendered="#{bmcController.bmc.segmentContainerList.size() == 0}">
                         <h:outputText value="#{field.nothing}"/>
                     </h:panelGroup>
                     <h:panelGroup>

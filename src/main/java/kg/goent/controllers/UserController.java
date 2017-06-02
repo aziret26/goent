@@ -101,8 +101,6 @@ public class UserController extends GenericController{
     }
 
     public String signout(){
-        //new ProjectController().destroySessions();
-        new SegmentContainerController().destroySessions();
         this.destroySession();
         return "index";
     }

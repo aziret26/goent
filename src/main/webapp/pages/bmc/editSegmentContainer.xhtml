@@ -9,7 +9,13 @@
     <ui:composition template="/template/template.xhtml">
         <ui:param name="pageTitle" value="Edit Segments"/>
         <ui:define name="metadata">
+            <f:metadata>
+                <f:viewParam name="projectId" value="#{projectController.projectId}"/>
+                <f:viewParam name="bmcId" value="#{bmcController.bmcId}"/>
+                <f:viewParam name="segmentContainer" value="#{segmentContainerController.segmentContainerId}"/>
+            </f:metadata>
         </ui:define>
+
         <ui:define name="content-left">
             <div class="content-left">
                 <h:form>

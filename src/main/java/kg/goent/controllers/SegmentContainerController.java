@@ -24,14 +24,21 @@ import java.util.List;
 public class SegmentContainerController extends GenericController{
     private SegmentContainer segmentContainer;
 
+    private List<SegmentContainer> segmentContainerList;
+
     @ManagedProperty(value = "#{segmentContainerSession}")
     private SegmentContainerSession segmentContainerSession;
 
-    private List<Segment> csLsit,vpList,dcList,crList,rsList,krList,kaList,kpList,cStructList;
-
-
     public void setSegmentContainerSession(SegmentContainerSession segmentContainerSession) {
         this.segmentContainerSession = segmentContainerSession;
+    }
+
+    @Override
+    public void setBmcId(int bmcId) {
+        if(bmcId != 0){
+
+        }
+        super.setBmcId(bmcId);
     }
 
     public SegmentContainer getSegmentContainer() {
@@ -40,6 +47,14 @@ public class SegmentContainerController extends GenericController{
 
     public void setSegmentContainer(SegmentContainer segmentContainer) {
         this.segmentContainer = segmentContainer;
+    }
+
+    public List<SegmentContainer> getSegmentContainerList() {
+        return segmentContainerList;
+    }
+
+    public void setSegmentContainerList(List<SegmentContainer> segmentContainerList) {
+        this.segmentContainerList = segmentContainerList;
     }
 
     public String addSegmentContainer(){
@@ -84,18 +99,80 @@ public class SegmentContainerController extends GenericController{
         }
     }
 
-    protected void destroySessions(){
-        //System.out.printf("DESTROYING SEGMENT CONTAINER SESSION");
-        segmentContainerSession = new SegmentContainerSession();
+    public List<Segment> getSegmentList(int type){
+        /**
+         * 1 - Customer Segment
+         * 2 - Value Prop
+         * 3 - Distribution Channel
+         * 4 - Customer Relationship
+         * 5 - Revenue Stream
+         * 6 - Key Resources
+         * 7 - Key Activities
+         * 8 - Key Partners
+         * 9 - Cost Structure
+         */
+        List<Segment> list = new ArrayList<Segment>();
+        for(SegmentContainer sc : segmentContainerList){
+            for(Segment s : sc.getSegmentList()){
+                if(s.getSegmentType().getSegmentTypeId() == type){
+                    list.add(s);
+                }
+            }
+        }
+        return list;
+    }
+    public List<Segment> getSegments(int type){
+        /**
+         * 1 - Customer Segment
+         * 2 - Value Prop
+         * 3 - Distribution Channel
+         * 4 - Customer Relationship
+         * 5 - Revenue Stream
+         * 6 - Key Resources
+         * 7 - Key Activities
+         * 8 - Key Partners
+         * 9 - Cost Structure
+         */
+        List<Segment> list = new ArrayList<Segment>();
+        for(Segment s : segmentContainer.getSegmentList()){
+            if(s.getSegmentType().getSegmentTypeId() == type){
+                list.add(s);
+            }
+        }
+        return list;
+    }
+    public List<Segment> getSegmentsFrom(SegmentContainer sc,int type){
+        /**
+         * 1 - Customer Segment
+         * 2 - Value Prop
+         * 3 - Distribution Channel
+         * 4 - Customer Relationship
+         * 5 - Revenue Stream
+         * 6 - Key Resources
+         * 7 - Key Activities
+         * 8 - Key Partners
+         * 9 - Cost Structure
+         */
+        List<Segment> list = new ArrayList<Segment>();
+        for(Segment s : sc.getSegmentList()){
+            if(s.getSegmentType().getSegmentTypeId() == type){
+                list.add(s);
+            }
+        }
+        return list;
     }
 
+
+    public Segment getCS(){
+        return new Segment();
+    }
 /*
-    public List<Segment> getCsLsit() {
-        return csLsit;
+    public List<Segment> getCsList() {
+        return csList;
     }
 
-    public void setCsLsit(List<Segment> csLsit) {
-        this.csLsit = csLsit;
+    public void setCsList(List<Segment> csList) {
+        this.csList = csList;
     }
 
     public List<Segment> getVpList() {
