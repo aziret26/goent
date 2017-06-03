@@ -2,7 +2,6 @@ package kg.goent.controllers;
 
 import kg.goent.facade.bmc.BmcFacade;
 import kg.goent.facade.bmc.BmcStatusFacade;
-import kg.goent.facade.project.ProjectFacade;
 import kg.goent.facade.bmc.SegmentContainerFacade;
 import kg.goent.models.bmc.Bmc;
 import kg.goent.models.bmc.SegmentContainer;
@@ -20,17 +19,17 @@ import static kg.goent.tools.ViewPath.*;
  */
 @ManagedBean
 @ViewScoped
-public class BmcController extends GenericController{
+public class BmcController extends GetReqBean {
 
     private Bmc bmc;
 
-    @ManagedProperty(value = "#{userSession}")
-    private UserSession userSession;
+    @ManagedProperty(value = "#{sessionController}")
+    private SessionController sessionController;
 
 
 
-    public void setUserSession(UserSession userSession) {
-        this.userSession = userSession;
+    public void setSessionController(SessionController sessionController) {
+        this.sessionController = sessionController;
     }
 
     public Bmc getBmc() {
@@ -67,8 +66,7 @@ public class BmcController extends GenericController{
             bmc.setBmcStatus(new BmcStatusFacade().findById(2));
             new BmcFacade().create(bmc);
         }
-        System.out.println(BMC_OVERVIEW + REDIRECT+"bmcId="+bmc.getBmcId());
-        return BMC_OVERVIEW + REDIRECT+"projectId"+bmc.getProject().getProjectId()+"&bmcId="+bmc.getBmcId();
+        return BMC_OVERVIEW + REDIRECT+"projectId="+projectId+"&bmcId="+bmc.getBmcId();
     }
     private List<SegmentContainer> loadSegmentContainer(Bmc bmc){
         return new SegmentContainerFacade().findByBmc(bmc);

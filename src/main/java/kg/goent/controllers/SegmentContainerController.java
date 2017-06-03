@@ -1,5 +1,6 @@
 package kg.goent.controllers;
 
+import kg.goent.facade.bmc.BmcFacade;
 import kg.goent.facade.bmc.SegmentContainerFacade;
 import kg.goent.facade.bmc.SegmentFacade;
 import kg.goent.facade.bmc.SegmentTypeFacade;
@@ -11,17 +12,18 @@ import kg.goent.tools.ViewPath;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 import java.util.ArrayList;
 import java.util.List;
+
+import static kg.goent.tools.ViewPath.*;
 
 /**
  * Created by azire on 5/4/2017.
  */
 @ManagedBean
 @ViewScoped
-public class SegmentContainerController extends GenericController{
+public class SegmentContainerController extends GetReqBean {
     private SegmentContainer segmentContainer;
 
     private List<SegmentContainer> segmentContainerList;
@@ -29,14 +31,21 @@ public class SegmentContainerController extends GenericController{
     @ManagedProperty(value = "#{segmentContainerSession}")
     private SegmentContainerSession segmentContainerSession;
 
+    @ManagedProperty(value = "#{getReqBean}")
+    private GetReqBean getReqBean;
+
     public void setSegmentContainerSession(SegmentContainerSession segmentContainerSession) {
         this.segmentContainerSession = segmentContainerSession;
+    }
+
+    public void setGetReqBean(GetReqBean getReqBean) {
+        this.getReqBean = getReqBean;
     }
 
     @Override
     public void setBmcId(int bmcId) {
         if(bmcId != 0){
-
+            segmentContainerList = new SegmentContainerFacade().findByBmc(new BmcFacade().findById(bmcId));
         }
         super.setBmcId(bmcId);
     }
@@ -57,23 +66,35 @@ public class SegmentContainerController extends GenericController{
         this.segmentContainerList = segmentContainerList;
     }
 
+    @Override
+    public void setSegmentContainerId(int segmentContainerId) {
+        if(segmentContainerId != 0){
+            segmentContainer = new SegmentContainerFacade().findById(segmentContainerId);
+        }
+        super.setSegmentContainerId(segmentContainerId);
+    }
+
     public String addSegmentContainer(){
         initSegmentContainer();
         return ViewPath.ADD_SEGMENT_CONTAINER + ViewPath.REDIRECT;
     }
 
     public String editSegmentContainer(SegmentContainer sc){
-        segmentContainerSession.setSegmentContainer(sc);
-        return ViewPath.EDIT_SEGMENT_CONTAINER + ViewPath.REDIRECT;
+
+        String path = EDIT_SEGMENT_CONTAINER + REDIRECT+"projectId="+projectId+"&bmcId="+
+                bmcId+"&segmentContainerId="+sc.getSegmentContainerId();
+        System.out.println(path);
+        return path;
     }
 
     public String saveSegmentContainer(){
-        new SegmentContainerFacade().update(segmentContainerSession.getSegmentContainer());
-        for(Segment segment : segmentContainerSession.getSegmentContainer().getSegmentList()){
+//        new SegmentContainerFacade().update(segmentContainerSession.getSegmentContainer());
+        System.out.println("segment size: "+segmentContainer.getSegmentList().size());
+        for(Segment segment : segmentContainer.getSegmentList()){
+            System.out.println("Saving: "+segment.getSegmentTitle());
             new SegmentFacade().update(segment);
         }
-
-        return ViewPath.BMC_OVERVIEW+ViewPath.REDIRECT;
+        return BMC_OVERVIEW + REDIRECT+"projectId="+projectId+"&bmcId="+bmcId;
     }
 
     public String createSegmentContainer(){
@@ -162,87 +183,8 @@ public class SegmentContainerController extends GenericController{
         return list;
     }
 
-
     public Segment getCS(){
         return new Segment();
     }
-/*
-    public List<Segment> getCsList() {
-        return csList;
-    }
-
-    public void setCsList(List<Segment> csList) {
-        this.csList = csList;
-    }
-
-    public List<Segment> getVpList() {
-        return vpList;
-    }
-
-    public void setVpList(List<Segment> vpList) {
-        this.vpList = vpList;
-    }
-
-    public List<Segment> getDcList() {
-        return dcList;
-    }
-
-    public void setDcList(List<Segment> dcList) {
-        this.dcList = dcList;
-    }
-
-    public List<Segment> getCrList() {
-        return crList;
-    }
-
-    public void setCrList(List<Segment> crList) {
-        this.crList = crList;
-    }
-
-    public List<Segment> getRsList() {
-        return rsList;
-    }
-
-    public void setRsList(List<Segment> rsList) {
-        this.rsList = rsList;
-    }
-
-    public List<Segment> getKrList() {
-        return krList;
-    }
-
-    public void setKrList(List<Segment> krList) {
-        this.krList = krList;
-    }
-
-    public List<Segment> getKaList() {
-        return kaList;
-    }
-
-    public void setKaList(List<Segment> kaList) {
-        this.kaList = kaList;
-    }
-
-    public List<Segment> getKpList() {
-        return kpList;
-    }
-
-    public void setKpList(List<Segment> kpList) {
-        this.kpList = kpList;
-    }
-
-    public List<Segment> getcStructList() {
-        return cStructList;
-    }
-
-    public void setcStructList(List<Segment> cStructList) {
-        this.cStructList = cStructList;
-    }
-
-    public String getContainers(){
-
-        return "";
-    }
-*/
 
 }

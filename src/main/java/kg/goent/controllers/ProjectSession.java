@@ -10,7 +10,7 @@ import javax.faces.bean.SessionScoped;
  */
 @ManagedBean
 @SessionScoped
-public class ProjectSession extends GenericController{
+public class ProjectSession extends GetReqBean {
     private Project project;
     private boolean bmcReady;
 

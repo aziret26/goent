@@ -22,11 +22,11 @@ import java.util.List;
  */
 @ManagedBean
 @ViewScoped
-public class ProjectController extends GenericController{
+public class ProjectController extends GetReqBean {
     private Project project;
 
-    @ManagedProperty(value = "#{userSession}")
-    private UserSession userSession;
+    @ManagedProperty(value = "#{sessionController}")
+    private SessionController sessionController;
 
     private ProjectMember projectMember;
 
@@ -35,12 +35,12 @@ public class ProjectController extends GenericController{
         project = new Project();
     }
 
-    public UserSession getUserSession() {
-        return userSession;
+    public SessionController getSessionController() {
+        return sessionController;
     }
 
-    public void setUserSession(UserSession userSession) {
-        this.userSession = userSession;
+    public void setSessionController(SessionController sessionController) {
+        this.sessionController = sessionController;
     }
 
 
@@ -72,7 +72,7 @@ public class ProjectController extends GenericController{
     }
 
     public String createProject(){
-        if(!userSession.isLogged()){
+        if(!sessionController.isLogged()){
             Tools.faceMessageWarn("Операция невозможна.","");
             return "";
         }
@@ -87,7 +87,7 @@ public class ProjectController extends GenericController{
         projectMember.setMemberStatus(new MemberStatusFacade().findByStatus("accepted"));
         projectMember.setMemberRole(new MemberRoleFacade().findByRole("team leader"));
         projectMember.setActivationDate(new Date());
-        projectMember.setUser(userSession.getUser());
+        projectMember.setUser(sessionController.getUser());
 
         new ProjectFacade().create(project);
         System.out.print(project);
@@ -95,7 +95,7 @@ public class ProjectController extends GenericController{
 
         new ProjectMemberFacade().create(projectMember);
 
-        userSession.setUser(new UserFacade().findById(userSession.getUser().getUserId()));
+        sessionController.setUser(new UserFacade().findById(sessionController.getUser().getUserId()));
         return "/index?faces-redirect=true";
 
     }
@@ -110,7 +110,7 @@ public class ProjectController extends GenericController{
 
         new ProjectFacade().delete(project);
 
-        userSession.getUser().setProjectMemberList(pmFacade.findByUser(userSession.getUser()));
+        sessionController.getUser().setProjectMemberList(pmFacade.findByUser(sessionController.getUser()));
 
         return "index?faces-redirect=true";
     }
@@ -146,7 +146,7 @@ public class ProjectController extends GenericController{
     public boolean hasAccess(){
         boolean hasAcccess = false;
         for (ProjectMember pm : project.getMemberList()){
-            if(pm.getUser().getUserId() == userSession.getUser().getUserId()){
+            if(pm.getUser().getUserId() == sessionController.getUser().getUserId()){
                 hasAcccess = true;
                 break;
             }

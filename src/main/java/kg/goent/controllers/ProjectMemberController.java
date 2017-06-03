@@ -20,15 +20,15 @@ import java.util.List;
  */
 @ManagedBean
 @ViewScoped
-public class ProjectMemberController extends GenericController{
+public class ProjectMemberController extends GetReqBean {
     private ProjectMember projectMember;
 
     private String userEmail;
     private String memberRole;
     private int projectId;
 
-    @ManagedProperty(value = "#{userSession}")
-    private UserSession userSession;
+    @ManagedProperty(value = "#{sessionController}")
+    private SessionController sessionController;
 
     @ManagedProperty(value = "#{projectSession}")
     private ProjectSession projectSession;
@@ -44,8 +44,8 @@ public class ProjectMemberController extends GenericController{
         this.projectSession = projectSession;
     }
 
-    public void setUserSession(UserSession userSession) {
-        this.userSession = userSession;
+    public void setSessionController(SessionController sessionController) {
+        this.sessionController = sessionController;
     }
 
     public int getProjectId() {
@@ -56,8 +56,8 @@ public class ProjectMemberController extends GenericController{
         this.projectId = projectId;
     }
 
-    public UserSession getUserSession() {
-        return userSession;
+    public SessionController getSessionController() {
+        return sessionController;
     }
 
     public ProjectMember getProjectMember() {
@@ -114,7 +114,7 @@ public class ProjectMemberController extends GenericController{
             return "";
         }
 
-        ProjectMember pm = new ProjectMemberFacade().findByUserAndProject(userSession.getUser(),project);
+        ProjectMember pm = new ProjectMemberFacade().findByUserAndProject(sessionController.getUser(),project);
 
         if(pm == null || pm.getMemberRole().getMemberRoleId() != 1){
             Tools.faceMessageWarn("You do not have privileges","");
@@ -128,7 +128,7 @@ public class ProjectMemberController extends GenericController{
         projectMember.setProject(project);
         new ProjectMemberFacade().create(projectMember);
 
-        userSession.getUser().setProjectMemberList(new ProjectMemberFacade().findByUser(userSession.getUser()));
+        sessionController.getUser().setProjectMemberList(new ProjectMemberFacade().findByUser(sessionController.getUser()));
 
         Tools.faceMessageWarn("New team member has been added","Success");
         return "";
@@ -139,7 +139,7 @@ public class ProjectMemberController extends GenericController{
     }
 
     public List<ProjectMember> getAllProjectMembers(){
-        return new ProjectMemberFacade().findByUser(userSession.getUser());
+        return new ProjectMemberFacade().findByUser(sessionController.getUser());
     }
 
 }

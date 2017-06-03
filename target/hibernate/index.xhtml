@@ -12,29 +12,29 @@
             <ui:param name="pageTitle" value="Home"/>
             <ui:define name="content-center">
                 <div class="content-center">
-                    <h:panelGroup rendered="#{userSession.user != null and userSession.user.activationKey == ''}">
+                    <h:panelGroup rendered="#{sessionController.user != null and sessionController.user.activationKey == ''}">
                         <h:panelGrid columns="2">
                             <h:outputText value="Id"/>
-                            <h:outputText value="#{userSession.user.userId}"/>
+                            <h:outputText value="#{sessionController.user.userId}"/>
 
                             <h:outputText value="First name"/>
-                            <h:outputText value="#{userSession.user.fname}"/>
+                            <h:outputText value="#{sessionController.user.fname}"/>
 
                             <h:outputText value="Last name"/>
-                            <h:outputText value="#{userSession.user.lname}"/>
+                            <h:outputText value="#{sessionController.user.lname}"/>
 
                             <h:outputText value="email"/>
-                            <h:outputText value="#{userSession.user.email}"/>
+                            <h:outputText value="#{sessionController.user.email}"/>
 
                             <h:outputText value="phone"/>
-                            <h:outputText value="#{userSession.user.phoneF()}"/>
+                            <h:outputText value="#{sessionController.user.phoneF()}"/>
                         </h:panelGrid>
                         <h:form>
                             <h:commandButton value="Send Mail" action="#{mailController.sendMail()}"/><br/>
                         </h:form>
                     </h:panelGroup>
                     <br/><br/>
-                    <h:panelGroup rendered="#{userSession.logged and userSession.user.activationKey.length() == 0}">
+                    <h:panelGroup rendered="#{sessionController.logged and sessionController.user.activationKey.length() == 0}">
 
                         <h:panelGroup rendered="#{projectMemberController.getAllProjectMembers().size() != 0}">
                             <h:form>
@@ -57,7 +57,7 @@
                                 </h:dataTable>
                             </h:form>
                         </h:panelGroup>
-                        <h:panelGroup rendered="#{userSession.user.projectMemberList.size() == 0}" var="projectMember">
+                        <h:panelGroup rendered="#{sessionController.user.projectMemberList.size() == 0}" var="projectMember">
                             <h:outputText value="No projects to show"/>
                         </h:panelGroup>
 
@@ -65,12 +65,12 @@
                         <h:link value="Test" outcome="test"/><br/>
                     </h:panelGroup>
 
-                    <h:panelGroup rendered="#{userSession.isLogged() and userSession.user.activationKey.length() != 0}">
+                    <h:panelGroup rendered="#{sessionController.isLogged() and sessionController.user.activationKey.length() != 0}">
                         <h:link value="Activate account" outcome="activate"/>
                         <br/>
                     </h:panelGroup>
 
-                    <h:outputLabel value="user: #{userSession.user.email}"/>
+                    <h:outputLabel value="user: #{sessionController.user.email}"/>
                 </div>
             </ui:define>
         </ui:composition>

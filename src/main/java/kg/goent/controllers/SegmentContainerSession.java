@@ -10,7 +10,7 @@ import javax.faces.bean.SessionScoped;
  */
 @ManagedBean
 @SessionScoped
-public class SegmentContainerSession extends GenericController{
+public class SegmentContainerSession extends GetReqBean {
     private SegmentContainer segmentContainer;
 
     public SegmentContainer getSegmentContainer() {

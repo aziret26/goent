@@ -19,9 +19,9 @@
         <ui:define name="content-center">
             <h1>Test page</h1>
             <div class="content-center">
-                <h:panelGroup rendered="#{userSession.logged}">
-                    <h:panelGroup rendered="#{(userSession.user.userRole.userRoleId == 1
-                                                    or userSession.user.userRole.userRoleId == 2)}">
+                <h:panelGroup rendered="#{sessionController.logged}">
+                    <h:panelGroup rendered="#{(sessionController.user.userRole.userRoleId == 1
+                                                    or sessionController.user.userRole.userRoleId == 2)}">
                         <ui:repeat value="#{userController.getAllUsers()}" var="u">
                             <div style="display: inline-block;margin-bottom: 20px;border-left:
                                 solid black 1px;border-right: solid black 1px;">
@@ -51,11 +51,11 @@
 
                         </ui:repeat>
                     </h:panelGroup>
-                    <h:panelGroup rendered="#{userSession.user.userRole.userRoleId >= 3}">
+                    <h:panelGroup rendered="#{sessionController.user.userRole.userRoleId >= 3}">
                         <h2><h:outputText value="You don't have permission to look a list"/></h2>
                     </h:panelGroup>
                 </h:panelGroup>
-                <h:panelGroup rendered="#{!userSession.logged}">
+                <h:panelGroup rendered="#{!sessionController.logged}">
                     <h2><h:outputText value="Please sign in/up get persmission"/></h2>
                 </h:panelGroup>
                 <br/><br/>

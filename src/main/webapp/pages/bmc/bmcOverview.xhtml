@@ -6,39 +6,89 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
-    <f:metadata>
-        <f:viewParam name="bmcId" value="#{bmcController.bmcId}"/>
-        <f:viewParam name="bmcId" value="#{segmentContainerController.bmcId}"/>
-    </f:metadata>
     <ui:composition template="/template/projectTemplate.xhtml">
         <ui:param name="pageTitle" value="#{field.bmcOverview}"/>
         <ui:define name="metadata">
             <f:metadata>
                 <f:viewParam name="projectId" value="#{projectController.projectId}"/>
+
+                <f:viewParam name="projectId" value="#{bmcController.projectId}"/>
                 <f:viewParam name="bmcId" value="#{bmcController.bmcId}"/>
+
+                <f:viewParam name="projectId" value="#{segmentContainerController.projectId}"/>
                 <f:viewParam name="bmcId" value="#{segmentContainerController.bmcId}"/>
+                <f:viewParam name="segmentContainer" value="#{segmentContainerController.segmentContainerId}"/>
+
             </f:metadata>
         </ui:define>
         <ui:define name="content-center">
             <div class="content-center">
                 <h:form>
-                    <h:panelGroup rendered="#{bmcController.bmc.segmentContainerList.size() != 0}">
-                        <ui:repeat value="#{bmcController.bmc.segmentContainerList}" var="sc">
+                    <h:panelGroup rendered="#{segmentContainerController.segmentContainerList.size() != 0}">
+                        <ui:repeat value="#{segmentContainerController.segmentContainerList}" var="segmentContainer">
                             <div style="display: inline-block;margin-bottom: 20px;border-left:
                                     solid black 1px;border-right: solid black 1px;">
 
+                                <h:panelGrid columns="2">
+                                    <h:outputText value="Customer Segment"/>
+                                    <h:outputText value="#{segmentContainer.getCustomerSegment().segmentTitle}"/>
 
+                                    <h:outputText value="Value Proposition"/>
+                                    <ui:repeat value="#{segmentContainer.getSegments(2)}" var="segment">
+                                        <h:outputText value="#{segment.segmentTitle}"/><br/>
+                                    </ui:repeat>
+
+                                    <h:outputText value="Distibution Channel"/>
+                                    <ui:repeat value="#{segmentContainer.getSegments(3)}" var="segment">
+                                        <h:outputText value="#{segment.segmentTitle}"/><br/>
+                                    </ui:repeat>
+
+                                    <h:outputText value="Customer Relationship"/>
+                                    <ui:repeat value="#{segmentContainer.getSegments(4)}" var="segment">
+                                        <h:outputText value="#{segment.segmentTitle}"/><br/>
+                                    </ui:repeat>
+
+                                    <h:outputText value="Revenue Stream"/>
+                                    <ui:repeat value="#{segmentContainer.getSegments(5)}" var="segment">
+                                        <h:outputText value="#{segment.segmentTitle}"/><br/>
+                                    </ui:repeat>
+
+                                    <h:outputText value="Key Resources"/>
+                                    <ui:repeat value="#{segmentContainer.getSegments(6)}" var="segment">
+                                        <h:outputText value="#{segment.segmentTitle}"/><br/>
+                                    </ui:repeat>
+
+                                    <h:outputText value="Key Activities"/>
+                                    <ui:repeat value="#{segmentContainer.getSegments(7)}" var="segment">
+                                        <h:outputText value="#{segment.segmentTitle}"/><br/>
+                                    </ui:repeat>
+
+                                    <h:outputText value="Key Partners"/>
+                                    <ui:repeat value="#{segmentContainer.getSegments(8)}" var="segment">
+                                        <h:outputText value="#{segment.segmentTitle}"/><br/>
+                                    </ui:repeat>
+
+                                    <h:outputText value="Cost Structure"/>
+                                    <ui:repeat value="#{segmentContainer.getSegments(9)}" var="segment">
+                                        <h:outputText value="#{segment.segmentTitle}"/><br/>
+                                    </ui:repeat>
+
+
+                                </h:panelGrid>
                                 <h:commandButton value="#{field.edit}"
-                                                 action="#{segmentContainerController.editSegmentContainer(sc)}"/>
+                                                 action="#{segmentContainerController.editSegmentContainer(segmentContainer)}"/>
                             </div>
                         </ui:repeat>
                     </h:panelGroup>
-                    <h:panelGroup rendered="#{bmcController.bmc.segmentContainerList.size() == 0}">
+
+                    <h:panelGroup rendered="#{segmentContainerController.segmentContainerList.size() == 0}">
                         <h:outputText value="#{field.nothing}"/>
                     </h:panelGroup>
+
                     <h:panelGroup>
                         <h:commandButton value="#{field.add}" action="#{segmentContainerController.addSegmentContainer()}"/>
                     </h:panelGroup>
+
                     <div class="right">
                         <h:panelGroup styleClass="right">
                             <h:commandButton value="#{field.finish} BMC" action="#{bmcController.finishBmc()}"/>

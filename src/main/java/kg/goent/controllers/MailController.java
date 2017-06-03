@@ -15,11 +15,11 @@ import javax.faces.bean.ViewScoped;
 public class MailController {
     private Mail mail = new Mail();
 
-    @ManagedProperty(value = "#{userSession}")
-    private UserSession userSession;
+    @ManagedProperty(value = "#{sessionController}")
+    private SessionController sessionController;
 
-    public void setUserSession(UserSession userSession) {
-        this.userSession = userSession;
+    public void setSessionController(SessionController sessionController) {
+        this.sessionController = sessionController;
     }
 
     public Mail getMail() {
@@ -31,7 +31,7 @@ public class MailController {
     }
 
     public void sendMail(){
-        mail.sendTestMail(userSession.getUser().getEmail());
+        mail.sendTestMail(sessionController.getUser().getEmail());
         Tools.faceMessageWarn("Message has been sent.","See your email.");
     }
 }

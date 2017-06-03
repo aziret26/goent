@@ -10,7 +10,7 @@ import javax.faces.bean.SessionScoped;
  */
 @ManagedBean
 @SessionScoped
-public class UserSession extends GenericController{
+public class SessionController{
     private User user = new User();
     private boolean logged = false;
 
@@ -30,13 +30,13 @@ public class UserSession extends GenericController{
         this.logged = logged;
     }
 
-    public void signin(){
+    public void signIn(){
         /*
         * called from UserController
         * */
         logged = true;
     }
-    public void signout(){
+    public void signOut(){
         /*
         * called from UserController
         * */

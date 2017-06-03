@@ -21,5 +21,5 @@ public class ViewPath {
     HYPOTHESIS_FOLDER = "/pages/hypothesis",
         HYPOTHESIS_OVERVIEW = HYPOTHESIS_FOLDER+"/hypothesisOverview?";
 
-    public static final String REDIRECT = "faces-redirect=true&&";
+    public static final String REDIRECT = "faces-redirect=true&";
 }

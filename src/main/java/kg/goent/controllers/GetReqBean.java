@@ -1,9 +1,14 @@
 package kg.goent.controllers;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
 /**
  * Created by tosyak on 6/1/2017.
  */
-public class GenericController {
+@ManagedBean
+@ViewScoped
+public class GetReqBean {
     protected int projectId,bmcId,segmentId,segmentContainerId,projectMemberId;
 
     public int getProjectId() {

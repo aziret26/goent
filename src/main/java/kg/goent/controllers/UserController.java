@@ -5,7 +5,6 @@ import kg.goent.facade.UserRoleFacade;
 import kg.goent.facade.UserStatusFacade;
 import kg.goent.models.User;
 //import kg.goent.tools.Mail;
-import kg.goent.models.UserStatus;
 import kg.goent.tools.Mail;
 import kg.goent.tools.Tools;
 
@@ -23,7 +22,7 @@ import static kg.goent.tools.ViewPath.*;
  */
 @ManagedBean
 @ViewScoped
-public class UserController extends GenericController{
+public class UserController extends GetReqBean {
     private User user;
     private String activationKey;
     private String activate;
@@ -33,15 +32,15 @@ public class UserController extends GenericController{
         user = new User();
     }
 
-    @ManagedProperty(value = "#{userSession}")
-    private UserSession userSession;
+    @ManagedProperty(value = "#{sessionController}")
+    private SessionController sessionController;
 
-    public UserSession getUserSession() {
-        return userSession;
+    public SessionController getSessionController() {
+        return sessionController;
     }
 
-    public void setUserSession(UserSession userSession) {
-        this.userSession = userSession;
+    public void setSessionController(SessionController sessionController) {
+        this.sessionController = sessionController;
     }
 
     public User getUser() {
@@ -84,7 +83,7 @@ public class UserController extends GenericController{
         return "";
     }
 
-    public String signin(){
+    public String signIn(){
         String email=user.getEmail();
         String password=user.getPassword();
 
@@ -93,19 +92,25 @@ public class UserController extends GenericController{
 
         if(tempUser == null){
             Tools.faceMessageWarn("Wrong email or password.","Please, check if data are correct.");
-            return "signin";
+            return "signIn";
         }
-        userSession.setUser(tempUser);
-        userSession.signin();
+
+        sessionController.setUser(tempUser);
+        sessionController.setLogged(true);
+
+
+//        sessionController.signIn();
+//        System.out.println(sessionController.getUser());
+//        System.out.println("IsLogged: "+sessionController.isLogged());
         return "index?faces-redirect=true";
     }
 
-    public String signout(){
+    public String signOut(){
         this.destroySession();
-        return "index";
+        return "/index";
     }
 
-    public String signup(){
+    public String signUp(){
         user.setRegDate(new Date());
         if(user.getUserRole() == null){
             user.setUserRole(new UserRoleFacade().findById(3));
@@ -128,10 +133,10 @@ public class UserController extends GenericController{
         /*
         * method for account activation by providing activation key from web page
         * */
-        if(userSession.getUser().getActivationKey().equals(activationKey)){
-            userSession.getUser().setActivationKey("");
-            userSession.getUser().setUserStatus(new UserStatusFacade().findByStatus("activated"));
-            new UserFacade().updateUser(userSession.getUser());
+        if(sessionController.getUser().getActivationKey().equals(activationKey)){
+            sessionController.getUser().setActivationKey("");
+            sessionController.getUser().setUserStatus(new UserStatusFacade().findByStatus("activated"));
+            new UserFacade().updateUser(sessionController.getUser());
         }
         return "index?faces-redirect=true";
     }
@@ -155,6 +160,7 @@ public class UserController extends GenericController{
 
     public void destroySession(){
         //System.out.println("DESTROYING USER SESSION");
-        userSession.signout();
+        sessionController.signOut();
     }
+
 }
