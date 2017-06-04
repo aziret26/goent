@@ -46,6 +46,8 @@ public class Segment implements Serializable {
     }
 
     public void setSegmentTitle(String segmentTitle) {
+        if(segmentTitle != null)
+            System.out.println("set: "+segmentTitle);
         this.segmentTitle = segmentTitle;
     }
 

@@ -33,10 +33,11 @@
                         <h:panelGrid columns="1" width="300">
                             <h:commandLink value="#{sc.getCustomerSegment().segmentTitle}"
                              action="#{segmentContainerController.editSegmentContainer(sc)}"
-                             rendered="#{segmentContainerController.segmentId != sc.getCustomerSegment().segmentId}"/>
+                                           rendered="#{segmentContainerController.segmentContainer.customerSegment.segmentId != sc.getCustomerSegment().segmentId}"/>
 
                             <h:outputText value="#{sc.getCustomerSegment().segmentTitle}"
-                            rendered="#{segmentContainerController.segmentId == sc.getCustomerSegment().segmentId}"/>
+                                          rendered="#{segmentContainerController.segmentContainer.customerSegment.segmentId == sc.getCustomerSegment().segmentId}"/>
+
                         </h:panelGrid>
                     </ui:repeat>
                 </h:form>
@@ -86,7 +87,7 @@
                         </ui:repeat>
                         <br/>
                         <h:outputText value="Cost Structure"/>
-                        <ui:repeat value="#{segmentContainerController.segmentContainer.cStructList}" var="segment">
+                        <ui:repeat value="#{segmentContainerController.segmentContainer.costSList}" var="segment">
                             <h:inputText value="#{segment.segmentTitle}"/><br/>
                         </ui:repeat>
                         <br/>

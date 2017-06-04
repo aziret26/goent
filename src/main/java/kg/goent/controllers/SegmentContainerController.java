@@ -23,21 +23,16 @@ import static kg.goent.tools.ViewPath.*;
  * Created by azire on 5/4/2017.
  */
 @ManagedBean
-@SessionScoped
+@ViewScoped
 public class SegmentContainerController extends GetReqBean {
     private SegmentContainer segmentContainer;
 
-    private List<SegmentContainer> segmentContainerList;
+    private boolean create;
 
-    @ManagedProperty(value = "#{segmentContainerSession}")
-    private SegmentContainerSession segmentContainerSession;
+    private List<SegmentContainer> segmentContainerList;
 
     @ManagedProperty(value = "#{getReqBean}")
     private GetReqBean getReqBean;
-
-    public void setSegmentContainerSession(SegmentContainerSession segmentContainerSession) {
-        this.segmentContainerSession = segmentContainerSession;
-    }
 
     public void setGetReqBean(GetReqBean getReqBean) {
         this.getReqBean = getReqBean;
@@ -76,17 +71,59 @@ public class SegmentContainerController extends GetReqBean {
         super.setSegmentContainerId(segmentContainerId);
     }
 
+    public boolean isCreate() {
+        return create;
+    }
+
+    public void setCreate(boolean create) {
+        if(create){
+            initSegmentContainer();
+        }
+        this.create = create;
+    }
+
+    private void initSegmentContainer(){
+        segmentContainer = new SegmentContainer();
+        segmentContainer.setBmc(new BmcFacade().findById(bmcId));
+        segmentContainer.setSegmentList(new ArrayList<Segment>());
+        List<SegmentType> segmentTypeList = new SegmentTypeFacade().findAllOrdered();
+        for(SegmentType st : segmentTypeList){
+            Segment segment = new Segment();
+            segment.setSegmentType(st);
+            segment.setSegmentContainer(segmentContainer);
+            segmentContainer.getSegmentList().add(segment);
+        }
+        segmentContainer.initLists();
+        System.out.println("VP size: "+segmentContainer.getVpList().size());
+        System.out.println("DC size: "+segmentContainer.getDsList().size());
+        System.out.println("CR size: "+segmentContainer.getCrList().size());
+        System.out.println("RS size: "+segmentContainer.getRsList().size());
+        System.out.println("KR size: "+segmentContainer.getKrList().size());
+        System.out.println("KA size: "+segmentContainer.getKaList().size());
+        System.out.println("KP size: "+segmentContainer.getKpList().size());
+        System.out.println("CostS size: "+segmentContainer.getCostSList().size());
+    }
+
     public String addSegmentContainer(){
         initSegmentContainer();
-        return ViewPath.ADD_SEGMENT_CONTAINER + ViewPath.REDIRECT;
+        return ViewPath.ADD_SEGMENT_CONTAINER + ViewPath.REDIRECT+"projectId="+projectId+"&bmcId="+bmcId+"&create="+true;
+    }
+
+    public String createSegmentContainer(){
+        new SegmentContainerFacade().create(segmentContainer);
+        segmentContainer.refreshSegmentList();
+        for(Segment segment : segmentContainer.getSegmentList()){
+            new SegmentFacade().create(segment);
+        }
+        segmentContainer = new SegmentContainer();
+
+        return ViewPath.BMC_OVERVIEW + ViewPath.REDIRECT+"projectId="+projectId+"&bmcId="+bmcId;
     }
 
     public String editSegmentContainer(SegmentContainer sc){
 
-        String path = EDIT_SEGMENT_CONTAINER + REDIRECT+"projectId="+projectId+"&bmcId="+
+        return EDIT_SEGMENT_CONTAINER + REDIRECT+"projectId="+projectId+"&bmcId="+
                 bmcId+"&segmentContainerId="+sc.getSegmentContainerId();
-        System.out.println(path);
-        return path;
     }
 
     public String saveSegmentContainer(){
@@ -96,29 +133,6 @@ public class SegmentContainerController extends GetReqBean {
             new SegmentFacade().update(segment);
         }
         return BMC_OVERVIEW + REDIRECT+"projectId="+projectId+"&bmcId="+bmcId;
-    }
-
-    public String createSegmentContainer(){
-        new SegmentContainerFacade().create(segmentContainer);
-        for(Segment segment : segmentContainer.getSegmentList()){
-            new SegmentFacade().create(segment);
-        }
-        segmentContainer = new SegmentContainer();
-
-        return ViewPath.BMC_OVERVIEW + ViewPath.REDIRECT;
-    }
-
-    private void initSegmentContainer(){
-        segmentContainer = new SegmentContainer();
-        segmentContainer.setBmc(new ProjectFacade().findById(projectId).getBmc());
-        segmentContainer.setSegmentList(new ArrayList<Segment>());
-        List<SegmentType> segmentTypeList = new SegmentTypeFacade().findAllOrdered();
-        for(SegmentType st : segmentTypeList){
-            Segment segment = new Segment();
-            segment.setSegmentType(st);
-            segment.setSegmentContainer(segmentContainer);
-            segmentContainer.getSegmentList().add(segment);
-        }
     }
 
     public List<Segment> getSegmentList(int type){

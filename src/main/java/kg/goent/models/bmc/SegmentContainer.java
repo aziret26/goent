@@ -1,5 +1,7 @@
 package kg.goent.models.bmc;
 
+import kg.goent.facade.bmc.SegmentTypeFacade;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -28,9 +30,13 @@ public class SegmentContainer implements Serializable {
     private Bmc bmc;
 
     @Transient
-    private List<Segment> vpList,dsList,crList,rsList,krList,kaList,kpList,cStructList;
+    private List<Segment> vpList,dsList,crList,rsList,krList,kaList,kpList, costSList;
     @Transient
     private Segment customerSegment;
+
+    public SegmentContainer() {
+
+    }
 
     public int getSegmentContainerId() {
         return segmentContainerId;
@@ -60,6 +66,8 @@ public class SegmentContainer implements Serializable {
         for (Segment segment: segmentList){
             if(segment.getSegmentType().getSegmentTypeId()==1) {
                 customerSegment = segment;
+                if(vpList == null)
+                    initLists();
             }
         }
         return customerSegment;
@@ -168,17 +176,16 @@ public class SegmentContainer implements Serializable {
         this.kpList = kpList;
     }
 
-    public List<Segment> getcStructList() {
-        return cStructList;
+    public List<Segment> getCostSList() {
+        return costSList;
     }
 
-    public void setcStructList(List<Segment> cStructList) {
-        this.cStructList = cStructList;
+    public void setCostSList(List<Segment> costSList) {
+        this.costSList = costSList;
     }
 
     public void initLists(){
         if(segmentList.size() == 0){
-            System.out.println("size: "+segmentList.size());
             return;
         }
         vpList = new ArrayList<Segment>();
@@ -188,19 +195,20 @@ public class SegmentContainer implements Serializable {
         krList = new ArrayList<Segment>();
         kaList = new ArrayList<Segment>();
         kpList = new ArrayList<Segment>();
-        cStructList = new ArrayList<Segment>();
-        for(Segment segment : segmentList){
-            switch (segment.getSegmentType().getSegmentTypeId()){
-                case 2: vpList.add(segment);break;
-                case 3: dsList.add(segment);break;
-                case 4: crList.add(segment);break;
-                case 5: rsList.add(segment);break;
-                case 6: krList.add(segment);break;
-                case 7: kaList.add(segment);break;
-                case 8: kpList.add(segment);break;
-                case 9: cStructList.add(segment);break;
+        costSList = new ArrayList<Segment>();
+        if(segmentList.size() > 0)
+            for(Segment segment : segmentList){
+                switch (segment.getSegmentType().getSegmentTypeId()){
+                    case 2: vpList.add(segment);break;
+                    case 3: dsList.add(segment);break;
+                    case 4: crList.add(segment);break;
+                    case 5: rsList.add(segment);break;
+                    case 6: krList.add(segment);break;
+                    case 7: kaList.add(segment);break;
+                    case 8: kpList.add(segment);break;
+                    case 9: costSList.add(segment);break;
+                }
             }
-        }
     }
 
     public void refreshSegmentList(){
@@ -234,9 +242,55 @@ public class SegmentContainer implements Serializable {
             System.out.println("Saving: "+s.getSegmentTitle());
             segmentList.add(s);
         }
-        for(Segment s: cStructList){
+        for(Segment s: costSList){
             System.out.println("Saving: "+s.getSegmentTitle());
             segmentList.add(s);
+        }
+    }
+
+    public void initListsForCreation(){
+        for(int i = 2;i < 10;i++){
+            addSegment(i);
+        }
+
+    }
+    public void addSegment(int typeId){
+        Segment segment = new Segment();
+        segment.setSegmentType(new SegmentTypeFacade().findById(typeId));
+
+        switch (typeId){
+            case 2:
+                if(vpList == null)
+                    vpList =new ArrayList<Segment>();
+                vpList.add(segment);break;
+            case 3:
+                if(dsList == null)
+                    dsList = new ArrayList<Segment>();
+                dsList.add(segment);break;
+            case 4:
+                if(crList == null)
+                    crList = new ArrayList<Segment>();
+                crList.add(segment);break;
+            case 5:
+                if(rsList == null)
+                    rsList = new ArrayList<Segment>();
+                rsList.add(segment);break;
+            case 6:
+                if(krList == null)
+                    krList = new ArrayList<Segment>();
+                krList.add(segment);break;
+            case 7:
+                if(kaList == null)
+                    kaList = new ArrayList<Segment>();
+                kaList.add(segment);break;
+            case 8:
+                if(kpList == null)
+                    kpList = new ArrayList<Segment>();
+                kpList.add(segment);break;
+            case 9:
+                if(costSList == null)
+                    costSList = new ArrayList<Segment>();
+                costSList.add(segment);break;
         }
     }
 }
