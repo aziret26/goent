@@ -46,49 +46,50 @@
             <div class="content-center">
                 <h2>#{field.edit}</h2>
                 <h:form>
-                    <h:panelGrid columns="2">
+                    <h:panelGrid columns="3">
                         <h:outputText value="Customer Segment"/>
                         <h:inputText value="#{segmentContainerController.segmentContainer.getCustomerSegment().segmentTitle}"/>
-
+                        <br/>
                         <h:outputText value="Value Proposition"/>
                         <ui:repeat value="#{segmentContainerController.segmentContainer.vpList}" var="segment">
                             <h:inputText value="#{segment.segmentTitle}"/><br/>
                         </ui:repeat>
-
+                        <br/>
                         <h:outputText value="Distibution Channel"/>
                         <ui:repeat value="#{segmentContainerController.segmentContainer.dsList}" var="segment">
                             <h:inputText value="#{segment.segmentTitle}"/><br/>
                         </ui:repeat>
-
+                        <br/>
                         <h:outputText value="Customer Relationship"/>
                         <ui:repeat value="#{segmentContainerController.segmentContainer.crList}" var="segment">
                             <h:inputText value="#{segment.segmentTitle}"/><br/>
                         </ui:repeat>
-
+                        <br/>
                         <h:outputText value="Revenue Stream"/>
                         <ui:repeat value="#{segmentContainerController.segmentContainer.rsList}" var="segment">
                             <h:inputText value="#{segment.segmentTitle}"/><br/>
                         </ui:repeat>
-
+                        <br/>
                         <h:outputText value="Key Resources"/>
                         <ui:repeat value="#{segmentContainerController.segmentContainer.krList}" var="segment">
                             <h:inputText value="#{segment.segmentTitle}"/><br/>
                         </ui:repeat>
-
+                        <br/>
                         <h:outputText value="Key Activities"/>
                         <ui:repeat value="#{segmentContainerController.segmentContainer.kaList}" var="segment">
                             <h:inputText value="#{segment.segmentTitle}"/><br/>
                         </ui:repeat>
-
+                        <br/>
                         <h:outputText value="Key Partners"/>
                         <ui:repeat value="#{segmentContainerController.segmentContainer.kpList}" var="segment">
                             <h:inputText value="#{segment.segmentTitle}"/><br/>
                         </ui:repeat>
-
+                        <br/>
                         <h:outputText value="Cost Structure"/>
                         <ui:repeat value="#{segmentContainerController.segmentContainer.cStructList}" var="segment">
                             <h:inputText value="#{segment.segmentTitle}"/><br/>
                         </ui:repeat>
+                        <br/>
                     </h:panelGrid>
 
                     <ui:remove>

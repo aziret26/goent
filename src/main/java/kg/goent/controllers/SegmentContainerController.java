@@ -12,6 +12,7 @@ import kg.goent.tools.ViewPath;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,7 @@ import static kg.goent.tools.ViewPath.*;
  * Created by azire on 5/4/2017.
  */
 @ManagedBean
-@ViewScoped
+@SessionScoped
 public class SegmentContainerController extends GetReqBean {
     private SegmentContainer segmentContainer;
 
@@ -70,6 +71,7 @@ public class SegmentContainerController extends GetReqBean {
     public void setSegmentContainerId(int segmentContainerId) {
         if(segmentContainerId != 0){
             segmentContainer = new SegmentContainerFacade().findById(segmentContainerId);
+            segmentContainer.initLists();
         }
         super.setSegmentContainerId(segmentContainerId);
     }
@@ -88,10 +90,9 @@ public class SegmentContainerController extends GetReqBean {
     }
 
     public String saveSegmentContainer(){
-//        new SegmentContainerFacade().update(segmentContainerSession.getSegmentContainer());
+        segmentContainer.refreshSegmentList();
         System.out.println("segment size: "+segmentContainer.getSegmentList().size());
         for(Segment segment : segmentContainer.getSegmentList()){
-            System.out.println("Saving: "+segment.getSegmentTitle());
             new SegmentFacade().update(segment);
         }
         return BMC_OVERVIEW + REDIRECT+"projectId="+projectId+"&bmcId="+bmcId;

@@ -29,6 +29,8 @@ public class SegmentContainer implements Serializable {
 
     @Transient
     private List<Segment> vpList,dsList,crList,rsList,krList,kaList,kpList,cStructList;
+    @Transient
+    private Segment customerSegment;
 
     public int getSegmentContainerId() {
         return segmentContainerId;
@@ -43,18 +45,6 @@ public class SegmentContainer implements Serializable {
     }
 
     public void setSegmentList(List<Segment> segmentList) {
-        for(Segment segment : segmentList){
-            switch (segment.getSegmentType().getSegmentTypeId()){
-                case 2: vpList.add(segment);break;
-                case 3: dsList.add(segment);break;
-                case 4: crList.add(segment);break;
-                case 5: rsList.add(segment);break;
-                case 6: krList.add(segment);break;
-                case 7: kaList.add(segment);break;
-                case 8: kpList.add(segment);break;
-                case 9: cStructList.add(segment);break;
-            }
-        }
         this.segmentList = segmentList;
     }
 
@@ -66,13 +56,19 @@ public class SegmentContainer implements Serializable {
         this.bmc = bmc;
     }
 
-    public Segment getCustomerSegment(){
+    public Segment getCustomerSegment() {
         for (Segment segment: segmentList){
-            if(segment.getSegmentType().getSegmentTypeId()==1)
-                return segment;
+            if(segment.getSegmentType().getSegmentTypeId()==1) {
+                customerSegment = segment;
+            }
         }
-        return null;
+        return customerSegment;
     }
+
+    public void setCustomerSegment(Segment customerSegment) {
+        this.customerSegment = customerSegment;
+    }
+
     public List<Segment> getSegments(int type){
         /**
          * 1 - Customer Segment
@@ -181,6 +177,66 @@ public class SegmentContainer implements Serializable {
     }
 
     public void initLists(){
+        if(segmentList.size() == 0){
+            System.out.println("size: "+segmentList.size());
+            return;
+        }
+        vpList = new ArrayList<Segment>();
+        dsList = new ArrayList<Segment>();
+        crList = new ArrayList<Segment>();
+        rsList = new ArrayList<Segment>();
+        krList = new ArrayList<Segment>();
+        kaList = new ArrayList<Segment>();
+        kpList = new ArrayList<Segment>();
+        cStructList = new ArrayList<Segment>();
+        for(Segment segment : segmentList){
+            switch (segment.getSegmentType().getSegmentTypeId()){
+                case 2: vpList.add(segment);break;
+                case 3: dsList.add(segment);break;
+                case 4: crList.add(segment);break;
+                case 5: rsList.add(segment);break;
+                case 6: krList.add(segment);break;
+                case 7: kaList.add(segment);break;
+                case 8: kpList.add(segment);break;
+                case 9: cStructList.add(segment);break;
+            }
+        }
+    }
 
+    public void refreshSegmentList(){
+        segmentList = new ArrayList<Segment>();
+        segmentList.add(customerSegment);
+        for(Segment s : vpList){
+            System.out.println("Saving: "+s.getSegmentTitle());
+            segmentList.add(s);
+        }
+        for(Segment s: dsList){
+            System.out.println("Saving: "+s.getSegmentTitle());
+            segmentList.add(s);
+        }
+        for(Segment s: crList){
+            System.out.println("Saving: "+s.getSegmentTitle());
+            segmentList.add(s);
+        }
+        for(Segment s: rsList){
+            System.out.println("Saving: "+s.getSegmentTitle());
+            segmentList.add(s);
+        }
+        for(Segment s: krList){
+            System.out.println("Saving: "+s.getSegmentTitle());
+            segmentList.add(s);
+        }
+        for(Segment s: kaList){
+            System.out.println("Saving: "+s.getSegmentTitle());
+            segmentList.add(s);
+        }
+        for(Segment s: kpList){
+            System.out.println("Saving: "+s.getSegmentTitle());
+            segmentList.add(s);
+        }
+        for(Segment s: cStructList){
+            System.out.println("Saving: "+s.getSegmentTitle());
+            segmentList.add(s);
+        }
     }
 }
