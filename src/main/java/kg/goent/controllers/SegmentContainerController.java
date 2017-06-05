@@ -5,6 +5,7 @@ import kg.goent.facade.bmc.SegmentContainerFacade;
 import kg.goent.facade.bmc.SegmentFacade;
 import kg.goent.facade.bmc.SegmentTypeFacade;
 import kg.goent.facade.project.ProjectFacade;
+import kg.goent.models.bmc.Bmc;
 import kg.goent.models.bmc.Segment;
 import kg.goent.models.bmc.SegmentContainer;
 import kg.goent.models.bmc.SegmentType;
@@ -85,15 +86,7 @@ public class SegmentContainerController extends GetReqBean {
     private void initSegmentContainer(){
         segmentContainer = new SegmentContainer();
         segmentContainer.setBmc(new BmcFacade().findById(bmcId));
-        segmentContainer.setSegmentList(new ArrayList<Segment>());
-        List<SegmentType> segmentTypeList = new SegmentTypeFacade().findAllOrdered();
-        for(SegmentType st : segmentTypeList){
-            Segment segment = new Segment();
-            segment.setSegmentType(st);
-            segment.setSegmentContainer(segmentContainer);
-            segmentContainer.getSegmentList().add(segment);
-        }
-        segmentContainer.initLists();
+        segmentContainer.initSegmentContainer();
         System.out.println("VP size: "+segmentContainer.getVpList().size());
         System.out.println("DC size: "+segmentContainer.getDsList().size());
         System.out.println("CR size: "+segmentContainer.getCrList().size());
@@ -109,6 +102,47 @@ public class SegmentContainerController extends GetReqBean {
         return ViewPath.ADD_SEGMENT_CONTAINER + ViewPath.REDIRECT+"projectId="+projectId+"&bmcId="+bmcId+"&create="+true;
     }
 
+    public String addSegment(int typeId){
+        /*Segment segment = new Segment();
+        segment.setSegmentType(new SegmentTypeFacade().findById(typeId));
+        segment.setSegmentContainer(segmentContainer);
+        switch (typeId){
+            case 2:
+                if(segmentContainer.getVpList() == null)
+                    segmentContainer.setVpList(new ArrayList<Segment>());
+                segmentContainer.getVpList().add(segment);break;
+            case 3:
+                if(segmentContainer.getDsList() == null)
+                    segmentContainer.setDsList(new ArrayList<Segment>());
+                segmentContainer.getDsList().add(segment);break;
+            case 4:
+                if(segmentContainer.getCrList() == null)
+                    segmentContainer.setCrList(new ArrayList<Segment>());
+                segmentContainer.getCrList().add(segment);break;
+            case 5:
+                if(segmentContainer.getRsList() == null)
+                    segmentContainer.setRsList(new ArrayList<Segment>());
+                segmentContainer.getRsList().add(segment);break;
+            case 6:
+                if(segmentContainer.getKrList() == null)
+                    segmentContainer.setKrList(new ArrayList<Segment>());
+                segmentContainer.getKrList().add(segment);break;
+            case 7:
+                if(segmentContainer.getKaList() == null)
+                    segmentContainer.setKaList(new ArrayList<Segment>());
+                segmentContainer.getKaList().add(segment);break;
+            case 8:
+                if(segmentContainer.getKpList() == null)
+                    segmentContainer.setKpList(new ArrayList<Segment>());
+                segmentContainer.getKpList().add(segment);break;
+            case 9:
+                if(segmentContainer.getCostSList() == null)
+                    segmentContainer.setCostSList(new ArrayList<Segment>());
+                segmentContainer.getCostSList().add(segment);break;
+        }*/
+        segmentContainer.addSegment(typeId);
+        return ViewPath.ADD_SEGMENT_CONTAINER + ViewPath.REDIRECT+"projectId="+projectId+"&bmcId="+bmcId+"&create="+true;
+    }
     public String createSegmentContainer(){
         new SegmentContainerFacade().create(segmentContainer);
         segmentContainer.refreshSegmentList();

@@ -1,5 +1,6 @@
 package kg.goent.models.bmc;
 
+import kg.goent.facade.bmc.BmcFacade;
 import kg.goent.facade.bmc.SegmentTypeFacade;
 
 import javax.persistence.*;
@@ -248,16 +249,10 @@ public class SegmentContainer implements Serializable {
         }
     }
 
-    public void initListsForCreation(){
-        for(int i = 2;i < 10;i++){
-            addSegment(i);
-        }
-
-    }
     public void addSegment(int typeId){
         Segment segment = new Segment();
         segment.setSegmentType(new SegmentTypeFacade().findById(typeId));
-
+        segment.setSegmentContainer(this);
         switch (typeId){
             case 2:
                 if(vpList == null)
@@ -292,5 +287,17 @@ public class SegmentContainer implements Serializable {
                     costSList = new ArrayList<Segment>();
                 costSList.add(segment);break;
         }
+    }
+
+    public void initSegmentContainer(){
+        setSegmentList(new ArrayList<Segment>());
+        List<SegmentType> segmentTypeList = new SegmentTypeFacade().findAllOrdered();
+        for(SegmentType st : segmentTypeList){
+            Segment segment = new Segment();
+            segment.setSegmentType(st);
+            segment.setSegmentContainer(this);
+            this.getSegmentList().add(segment);
+        }
+        this.initLists();
     }
 }

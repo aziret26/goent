@@ -12,6 +12,7 @@
             <f:metadata>
                 <f:viewParam name="projectId" value="#{projectController.projectId}"/>
                 <f:viewParam name="bmcId" value="#{bmcController.bmcId}"/>
+                <f:viewParam name="bmcId" value="#{segmentContainerController.bmcId}"/>
                 <f:viewParam name="segmentContainer" value="#{segmentContainerController.segmentContainerId}"/>
                 <f:viewParam name="create" value="#{segmentContainerController.create}"/>
             </f:metadata>
@@ -42,70 +43,68 @@
                         <h:outputText value="Customer Segment"/>
                         <h:inputText value="#{segmentContainerController.segmentContainer.getCustomerSegment().segmentTitle}"/>
                         <br/>
-                        <h:outputText value="Value Proposition"/>
-                        <ui:repeat value="#{segmentContainerController.segmentContainer.vpList}" var="segment">
-                            <h:inputText value="#{segment.segmentTitle}"/><br/>
-                        </ui:repeat>
-                        <br/>
-                        <h:outputText value="Distibution Channel"/>
-                        <ui:repeat value="#{segmentContainerController.segmentContainer.dsList}" var="segment">
-                            <h:inputText value="#{segment.segmentTitle}"/><br/>
-                        </ui:repeat>
-                        <br/>
-                        <h:outputText value="Customer Relationship"/>
-                        <ui:repeat value="#{segmentContainerController.segmentContainer.crList}" var="segment">
-                            <h:inputText value="#{segment.segmentTitle}"/><br/>
-                        </ui:repeat>
-                        <br/>
-                        <h:outputText value="Revenue Stream"/>
-                        <ui:repeat value="#{segmentContainerController.segmentContainer.rsList}" var="segment">
-                            <h:inputText value="#{segment.segmentTitle}"/><br/>
-                        </ui:repeat>
-                        <br/>
-                        <h:outputText value="Key Resources"/>
-                        <ui:repeat value="#{segmentContainerController.segmentContainer.krList}" var="segment">
-                            <h:inputText value="#{segment.segmentTitle}"/><br/>
-                        </ui:repeat>
-                        <br/>
-                        <h:outputText value="Key Activities"/>
-                        <ui:repeat value="#{segmentContainerController.segmentContainer.kaList}" var="segment">
-                            <h:inputText value="#{segment.segmentTitle}"/><br/>
-                        </ui:repeat>
-                        <br/>
-                        <h:outputText value="Key Partners"/>
-                        <ui:repeat value="#{segmentContainerController.segmentContainer.kpList}" var="segment">
-                            <h:inputText value="#{segment.segmentTitle}"/><br/>
-                        </ui:repeat>
-                        <br/>
-                        <h:outputText value="Cost Structure"/>
-                        <ui:repeat value="#{segmentContainerController.segmentContainer.costSList}" var="segment">
-                            <h:inputText value="#{segment.segmentTitle}"/><br/>
-                        </ui:repeat>
-                        <br/>
-                    </h:panelGrid>
-
-
-                    <ui:remove>
-                    <ui:repeat value="#{segmentContainerController.segmentContainer}" var="sc">
-                        <h:dataTable value="#{segmentContainerController.segmentContainer.segmentList}" var="segment">
-                            <h:column headerClass="table-header" footerClass="table-footer">
-                                <f:facet name="header">
-                                    Название
-                                </f:facet>
-                                <h:outputText value="#{segment.segmentType.segmentTypeName}"/>
-                            </h:column>
-
-                            <h:column headerClass="table-header" footerClass="table-footer">
-                                <f:facet name="header">
-                                    Значение
-                                </f:facet>
+                            <h:outputText value="Value Proposition"/>
+                        <ui:remove>
+                            <ui:repeat value="#{segmentContainerController.segmentContainer.vpList}" var="segment">
+                                <h:inputText value="#{segment.segmentTitle}"/>
+                            </ui:repeat>
+                        </ui:remove>
+                        <h:dataTable value="#{segmentContainerController.segmentContainer.vpList}" var="segment">
+                            <h:column>
                                 <h:inputText value="#{segment.segmentTitle}"/>
                             </h:column>
-
                         </h:dataTable>
-
-                    </ui:repeat>
-                    </ui:remove>
+                        <br/>
+                        <h:outputText value="Distibution Channel"/>
+                        <h:dataTable value="#{segmentContainerController.segmentContainer.dsList}" var="segment">
+                            <h:column>
+                                <h:inputText value="#{segment.segmentTitle}"/>
+                            </h:column>
+                        </h:dataTable>
+                        <br/>
+                        <h:outputText value="Customer Relationship"/>
+                        <h:dataTable value="#{segmentContainerController.segmentContainer.crList}" var="segment">
+                            <h:column>
+                                <h:inputText value="#{segment.segmentTitle}"/>
+                            </h:column>
+                        </h:dataTable>
+                        <br/>
+                        <h:outputText value="Revenue Stream"/>
+                        <h:dataTable value="#{segmentContainerController.segmentContainer.rsList}" var="segment">
+                            <h:column>
+                                <h:inputText value="#{segment.segmentTitle}"/>
+                            </h:column>
+                        </h:dataTable>
+                        <br/>
+                        <h:outputText value="Key Resources"/>
+                        <h:dataTable value="#{segmentContainerController.segmentContainer.krList}" var="segment">
+                            <h:column>
+                                <h:inputText value="#{segment.segmentTitle}"/>
+                            </h:column>
+                        </h:dataTable>
+                        <br/>
+                        <h:outputText value="Key Activities"/>
+                        <h:dataTable value="#{segmentContainerController.segmentContainer.kaList}" var="segment">
+                            <h:column>
+                                <h:inputText value="#{segment.segmentTitle}"/>
+                            </h:column>
+                        </h:dataTable>
+                        <br/>
+                        <h:outputText value="Key Partners"/>
+                        <h:dataTable value="#{segmentContainerController.segmentContainer.kpList}" var="segment">
+                            <h:column>
+                                <h:inputText value="#{segment.segmentTitle}"/>
+                            </h:column>
+                        </h:dataTable>
+                        <br/>
+                        <h:outputText value="Cost Structure"/>
+                        <h:dataTable value="#{segmentContainerController.segmentContainer.costSList}" var="segment" binding="#{index}">
+                            <h:column>
+                                <h:inputText value="#{segment.segmentTitle}"/>
+                            </h:column>
+                        </h:dataTable>
+                        <h:commandButton value="Add" action="#{segmentContainerController.addSegment(9)}" />
+                    </h:panelGrid>
                     <br/>
                     <h:commandButton value="#{field.add}" action="#{segmentContainerController.createSegmentContainer}"/>
                 </h:form>
