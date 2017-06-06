@@ -3,19 +3,14 @@ package kg.goent.controllers;
 import kg.goent.facade.bmc.BmcFacade;
 import kg.goent.facade.bmc.SegmentContainerFacade;
 import kg.goent.facade.bmc.SegmentFacade;
-import kg.goent.facade.bmc.SegmentTypeFacade;
-import kg.goent.facade.project.ProjectFacade;
-import kg.goent.models.bmc.Bmc;
 import kg.goent.models.bmc.Segment;
 import kg.goent.models.bmc.SegmentContainer;
-import kg.goent.models.bmc.SegmentType;
 import kg.goent.tools.ViewPath;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
-import javax.faces.bean.ViewScoped;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static kg.goent.tools.ViewPath.*;
@@ -24,28 +19,11 @@ import static kg.goent.tools.ViewPath.*;
  * Created by azire on 5/4/2017.
  */
 @ManagedBean
-@ViewScoped
+@SessionScoped
 public class SegmentContainerController extends GetReqBean {
-    private SegmentContainer segmentContainer;
+    private SegmentContainer segmentContainer = new SegmentContainer();
 
-    private boolean create;
-
-    private List<SegmentContainer> segmentContainerList;
-
-    @ManagedProperty(value = "#{getReqBean}")
-    private GetReqBean getReqBean;
-
-    public void setGetReqBean(GetReqBean getReqBean) {
-        this.getReqBean = getReqBean;
-    }
-
-    @Override
-    public void setBmcId(int bmcId) {
-        if(bmcId != 0){
-            segmentContainerList = new SegmentContainerFacade().findByBmc(new BmcFacade().findById(bmcId));
-        }
-        super.setBmcId(bmcId);
-    }
+    private List<SegmentContainer> segmentContainerList = new ArrayList<SegmentContainer>(Arrays.asList(new SegmentContainer()));
 
     public SegmentContainer getSegmentContainer() {
         return segmentContainer;
@@ -56,6 +34,7 @@ public class SegmentContainerController extends GetReqBean {
     }
 
     public List<SegmentContainer> getSegmentContainerList() {
+        segmentContainerList = new SegmentContainerFacade().findByBmc(new BmcFacade().findById(bmcId));
         return segmentContainerList;
     }
 
@@ -63,38 +42,11 @@ public class SegmentContainerController extends GetReqBean {
         this.segmentContainerList = segmentContainerList;
     }
 
-    @Override
-    public void setSegmentContainerId(int segmentContainerId) {
-        if(segmentContainerId != 0){
-            segmentContainer = new SegmentContainerFacade().findById(segmentContainerId);
-            segmentContainer.initLists();
-        }
-        super.setSegmentContainerId(segmentContainerId);
-    }
-
-    public boolean isCreate() {
-        return create;
-    }
-
-    public void setCreate(boolean create) {
-        if(create){
-            initSegmentContainer();
-        }
-        this.create = create;
-    }
-
     private void initSegmentContainer(){
-        segmentContainer = new SegmentContainer();
-        segmentContainer.setBmc(new BmcFacade().findById(bmcId));
-        segmentContainer.initSegmentContainer();
-        System.out.println("VP size: "+segmentContainer.getVpList().size());
-        System.out.println("DC size: "+segmentContainer.getDsList().size());
-        System.out.println("CR size: "+segmentContainer.getCrList().size());
-        System.out.println("RS size: "+segmentContainer.getRsList().size());
-        System.out.println("KR size: "+segmentContainer.getKrList().size());
-        System.out.println("KA size: "+segmentContainer.getKaList().size());
-        System.out.println("KP size: "+segmentContainer.getKpList().size());
-        System.out.println("CostS size: "+segmentContainer.getCostSList().size());
+        if(bmcId != 0) {
+            segmentContainer.setBmc(new BmcFacade().findById(bmcId));
+            segmentContainer.initSegmentContainer();
+        }
     }
 
     public String addSegmentContainer(){
@@ -103,46 +55,10 @@ public class SegmentContainerController extends GetReqBean {
     }
 
     public String addSegment(int typeId){
-        /*Segment segment = new Segment();
-        segment.setSegmentType(new SegmentTypeFacade().findById(typeId));
-        segment.setSegmentContainer(segmentContainer);
-        switch (typeId){
-            case 2:
-                if(segmentContainer.getVpList() == null)
-                    segmentContainer.setVpList(new ArrayList<Segment>());
-                segmentContainer.getVpList().add(segment);break;
-            case 3:
-                if(segmentContainer.getDsList() == null)
-                    segmentContainer.setDsList(new ArrayList<Segment>());
-                segmentContainer.getDsList().add(segment);break;
-            case 4:
-                if(segmentContainer.getCrList() == null)
-                    segmentContainer.setCrList(new ArrayList<Segment>());
-                segmentContainer.getCrList().add(segment);break;
-            case 5:
-                if(segmentContainer.getRsList() == null)
-                    segmentContainer.setRsList(new ArrayList<Segment>());
-                segmentContainer.getRsList().add(segment);break;
-            case 6:
-                if(segmentContainer.getKrList() == null)
-                    segmentContainer.setKrList(new ArrayList<Segment>());
-                segmentContainer.getKrList().add(segment);break;
-            case 7:
-                if(segmentContainer.getKaList() == null)
-                    segmentContainer.setKaList(new ArrayList<Segment>());
-                segmentContainer.getKaList().add(segment);break;
-            case 8:
-                if(segmentContainer.getKpList() == null)
-                    segmentContainer.setKpList(new ArrayList<Segment>());
-                segmentContainer.getKpList().add(segment);break;
-            case 9:
-                if(segmentContainer.getCostSList() == null)
-                    segmentContainer.setCostSList(new ArrayList<Segment>());
-                segmentContainer.getCostSList().add(segment);break;
-        }*/
         segmentContainer.addSegment(typeId);
-        return ViewPath.ADD_SEGMENT_CONTAINER + ViewPath.REDIRECT+"projectId="+projectId+"&bmcId="+bmcId+"&create="+true;
+        return ADD_SEGMENT_CONTAINER + REDIRECT+"projectId="+projectId+"&bmcId="+bmcId;
     }
+
     public String createSegmentContainer(){
         new SegmentContainerFacade().create(segmentContainer);
         segmentContainer.refreshSegmentList();
@@ -152,21 +68,6 @@ public class SegmentContainerController extends GetReqBean {
         segmentContainer = new SegmentContainer();
 
         return ViewPath.BMC_OVERVIEW + ViewPath.REDIRECT+"projectId="+projectId+"&bmcId="+bmcId;
-    }
-
-    public String editSegmentContainer(SegmentContainer sc){
-
-        return EDIT_SEGMENT_CONTAINER + REDIRECT+"projectId="+projectId+"&bmcId="+
-                bmcId+"&segmentContainerId="+sc.getSegmentContainerId();
-    }
-
-    public String saveSegmentContainer(){
-        segmentContainer.refreshSegmentList();
-        System.out.println("segment size: "+segmentContainer.getSegmentList().size());
-        for(Segment segment : segmentContainer.getSegmentList()){
-            new SegmentFacade().update(segment);
-        }
-        return BMC_OVERVIEW + REDIRECT+"projectId="+projectId+"&bmcId="+bmcId;
     }
 
     public List<Segment> getSegmentList(int type){
@@ -231,9 +132,4 @@ public class SegmentContainerController extends GetReqBean {
         }
         return list;
     }
-
-    public Segment getCS(){
-        return new Segment();
-    }
-
 }

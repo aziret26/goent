@@ -12,9 +12,14 @@
             <f:metadata>
                 <f:viewParam name="projectId" value="#{projectController.projectId}"/>
                 <f:viewParam name="bmcId" value="#{bmcController.bmcId}"/>
+
                 <f:viewParam name="bmcId" value="#{segmentContainerController.bmcId}"/>
                 <f:viewParam name="segmentContainer" value="#{segmentContainerController.segmentContainerId}"/>
-                <f:viewParam name="create" value="#{segmentContainerController.create}"/>
+                <f:viewParam name="projectId" value="#{segmentContainerController.projectId}"/>
+
+                <f:viewParam name="bmcId" value="#{editSegmentContainerController.bmcId}"/>
+                <f:viewParam name="segmentContainer" value="#{editSegmentContainerController.segmentContainerId}"/>
+                <f:viewParam name="projectId" value="#{editSegmentContainerController.projectId}"/>
             </f:metadata>
         </ui:define>
         <ui:define name="content-left">
@@ -23,7 +28,7 @@
                 <ui:repeat value="#{projectSession.project.bmc.segmentContainerList}" var="sc">
                     <h:panelGrid columns="1" width="300">
                         <h:commandLink value="#{sc.getCustomerSegment().segmentTitle}"
-                                       action="#{segmentContainerController.editSegmentContainer(sc)}"
+                                       action="#{editSegmentContainerController.editSegmentContainer(sc)}"
                                        rendered="#{segmentContainerController.segmentContainer.customerSegment.segmentId != sc.getCustomerSegment().segmentId}"/>
 
                         <h:outputText value="#{sc.getCustomerSegment().segmentTitle}"
@@ -43,67 +48,71 @@
                         <h:outputText value="Customer Segment"/>
                         <h:inputText value="#{segmentContainerController.segmentContainer.getCustomerSegment().segmentTitle}"/>
                         <br/>
+
                             <h:outputText value="Value Proposition"/>
-                        <ui:remove>
-                            <ui:repeat value="#{segmentContainerController.segmentContainer.vpList}" var="segment">
-                                <h:inputText value="#{segment.segmentTitle}"/>
-                            </ui:repeat>
-                        </ui:remove>
                         <h:dataTable value="#{segmentContainerController.segmentContainer.vpList}" var="segment">
                             <h:column>
                                 <h:inputText value="#{segment.segmentTitle}"/>
                             </h:column>
                         </h:dataTable>
-                        <br/>
+                        <h:commandButton value="Add" action="#{segmentContainerController.addSegment(2)}" />
+
                         <h:outputText value="Distibution Channel"/>
                         <h:dataTable value="#{segmentContainerController.segmentContainer.dsList}" var="segment">
                             <h:column>
                                 <h:inputText value="#{segment.segmentTitle}"/>
                             </h:column>
                         </h:dataTable>
-                        <br/>
+                        <h:commandButton value="Add" action="#{segmentContainerController.addSegment(3)}" />
+
                         <h:outputText value="Customer Relationship"/>
                         <h:dataTable value="#{segmentContainerController.segmentContainer.crList}" var="segment">
                             <h:column>
                                 <h:inputText value="#{segment.segmentTitle}"/>
                             </h:column>
                         </h:dataTable>
-                        <br/>
+                        <h:commandButton value="Add" action="#{segmentContainerController.addSegment(4)}" />
+
                         <h:outputText value="Revenue Stream"/>
                         <h:dataTable value="#{segmentContainerController.segmentContainer.rsList}" var="segment">
                             <h:column>
                                 <h:inputText value="#{segment.segmentTitle}"/>
                             </h:column>
                         </h:dataTable>
-                        <br/>
+                        <h:commandButton value="Add" action="#{segmentContainerController.addSegment(5)}" />
+
                         <h:outputText value="Key Resources"/>
                         <h:dataTable value="#{segmentContainerController.segmentContainer.krList}" var="segment">
                             <h:column>
                                 <h:inputText value="#{segment.segmentTitle}"/>
                             </h:column>
                         </h:dataTable>
-                        <br/>
+                        <h:commandButton value="Add" action="#{segmentContainerController.addSegment(6)}" />
+
                         <h:outputText value="Key Activities"/>
                         <h:dataTable value="#{segmentContainerController.segmentContainer.kaList}" var="segment">
                             <h:column>
                                 <h:inputText value="#{segment.segmentTitle}"/>
                             </h:column>
                         </h:dataTable>
-                        <br/>
+                        <h:commandButton value="Add" action="#{segmentContainerController.addSegment(7)}" />
+
                         <h:outputText value="Key Partners"/>
                         <h:dataTable value="#{segmentContainerController.segmentContainer.kpList}" var="segment">
                             <h:column>
                                 <h:inputText value="#{segment.segmentTitle}"/>
                             </h:column>
                         </h:dataTable>
-                        <br/>
+                        <h:commandButton value="Add" action="#{segmentContainerController.addSegment(8)}" />
+
                         <h:outputText value="Cost Structure"/>
-                        <h:dataTable value="#{segmentContainerController.segmentContainer.costSList}" var="segment" binding="#{index}">
+                        <h:dataTable value="#{segmentContainerController.segmentContainer.costSList}" var="segment">
                             <h:column>
                                 <h:inputText value="#{segment.segmentTitle}"/>
                             </h:column>
                         </h:dataTable>
                         <h:commandButton value="Add" action="#{segmentContainerController.addSegment(9)}" />
+
                     </h:panelGrid>
                     <br/>
                     <h:commandButton value="#{field.add}" action="#{segmentContainerController.createSegmentContainer}"/>

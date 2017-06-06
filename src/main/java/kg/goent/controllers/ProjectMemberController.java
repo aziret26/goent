@@ -15,6 +15,8 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import java.util.List;
 
+import static kg.goent.tools.ViewPath.*;
+
 /**
  * Created by b-207 on 4/21/2017.
  */
@@ -30,18 +32,11 @@ public class ProjectMemberController extends GetReqBean {
     @ManagedProperty(value = "#{sessionController}")
     private SessionController sessionController;
 
-    @ManagedProperty(value = "#{projectSession}")
-    private ProjectSession projectSession;
-
     @PostConstruct
     public void init(){
         projectMember = new ProjectMember();
         userEmail = "";
         memberRole = "";
-    }
-
-    public void setProjectSession(ProjectSession projectSession) {
-        this.projectSession = projectSession;
     }
 
     public void setSessionController(SessionController sessionController) {
@@ -84,7 +79,7 @@ public class ProjectMemberController extends GetReqBean {
         this.memberRole = memberRole;
     }
 
-    public String addMember(){
+    public String createMember(){
         projectMember = new ProjectMember();
         User u = new UserFacade().findByEmail(userEmail);
         if(u == null || u.getEmail() == null){
@@ -97,8 +92,7 @@ public class ProjectMemberController extends GetReqBean {
             return "";
         }
 
-
-        Project project = new ProjectFacade().findById(projectSession.getProject().getProjectId());
+        Project project = new ProjectFacade().findById(projectId);
         if(project == null || project.getTitle() == null){
             Tools.faceMessageWarn("Invalid PROJECT id","");
             return "";
@@ -131,7 +125,11 @@ public class ProjectMemberController extends GetReqBean {
         sessionController.getUser().setProjectMemberList(new ProjectMemberFacade().findByUser(sessionController.getUser()));
 
         Tools.faceMessageWarn("New team member has been added","Success");
-        return "";
+        return PROJECT_ADD_MEMEBER + REDIRECT + "projectId="+projectId;
+    }
+
+    public String addMember(){
+        return PROJECT_ADD_MEMEBER + REDIRECT + "projectId="+projectId;
     }
 
     public List<MemberRole> findAllSimpleUsers(){

@@ -8,6 +8,7 @@
       </database-info>
       <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
       <user-name>goent</user-name>
+      <introspection-schemas>*:goent</introspection-schemas>
     </data-source>
   </component>
 </project>

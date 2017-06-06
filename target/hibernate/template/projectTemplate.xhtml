@@ -54,7 +54,7 @@
                             <h:outputText value="#{projectMember.user.fname} #{projectMember.user.lname}"/>
                         </h:column>
                     </h:dataTable>
-                    <h:link value="#{field.addMember}" outcome="project-add-member"/>
+                    <h:link value="#{field.addMember}" outcome="#{projectMemberController.addMember()}"/>
                 </div>
             </div>
         </ui:insert>

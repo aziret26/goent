@@ -19,6 +19,12 @@
                 <f:viewParam name="bmcId" value="#{segmentContainerController.bmcId}"/>
                 <f:viewParam name="segmentContainer" value="#{segmentContainerController.segmentContainerId}"/>
 
+
+                <f:viewParam name="bmcId" value="#{editSegmentContainerController.bmcId}"/>
+                <f:viewParam name="projectId" value="#{editSegmentContainerController.projectId}"/>
+
+                <f:viewParam name="projectId" value="#{projectMemberController.projectId}"/>
+
             </f:metadata>
         </ui:define>
         <ui:define name="content-center">
@@ -76,7 +82,7 @@
 
                                 </h:panelGrid>
                                 <h:commandButton value="#{field.edit}"
-                                                 action="#{segmentContainerController.editSegmentContainer(segmentContainer)}"/>
+                                                 action="#{editSegmentContainerController.editSegmentContainer(segmentContainer)}"/>
                             </div>
                         </ui:repeat>
                     </h:panelGroup>

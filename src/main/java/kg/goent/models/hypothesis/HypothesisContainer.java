@@ -30,6 +30,9 @@ public class HypothesisContainer {
     @JoinColumn(name = "projectId")
     private Project project;
 
+    @Transient
+    private List<Hypothesis> csList,vpList,dcList,crList;
+
     public int getHypothesisContainerId() {
         return hypothesisContainerId;
     }

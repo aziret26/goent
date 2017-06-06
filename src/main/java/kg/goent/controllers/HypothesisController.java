@@ -3,6 +3,8 @@ package kg.goent.controllers;
 import kg.goent.facade.bmc.SegmentFacade;
 import kg.goent.facade.bmc.SegmentTypeFacade;
 import kg.goent.models.bmc.Segment;
+import kg.goent.models.hypothesis.Hypothesis;
+import kg.goent.models.hypothesis.HypothesisContainer;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -17,6 +19,9 @@ import java.util.List;
 public class HypothesisController {
     private List<Segment> csList,vpList,dcList,crList;
 
+    private Hypothesis hypothesis;
+    private HypothesisContainer hypothesisContainer;
+
     @PostConstruct
     public void init(){
         csList = new SegmentFacade().findBySegmentType(new SegmentTypeFacade().findById(1));
@@ -24,6 +29,7 @@ public class HypothesisController {
         dcList = new SegmentFacade().findBySegmentType(new SegmentTypeFacade().findById(3));
         crList = new SegmentFacade().findBySegmentType(new SegmentTypeFacade().findById(4));
     }
+
 
     public List<Segment> getCsList() {
         return csList;

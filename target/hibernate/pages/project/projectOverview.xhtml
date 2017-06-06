@@ -20,6 +20,8 @@
                 <f:viewParam name="projectId" value="#{segmentContainerController.projectId}"/>
                 <f:viewParam name="bmcId" value="#{segmentContainerController.bmcId}"/>
                 <f:viewParam name="segmentContainer" value="#{segmentContainerController.segmentContainerId}"/>
+
+                <f:viewParam name="projectId" value="#{projectMemberController.projectId}"/>
             </f:metadata>
         </ui:define>
         <ui:define name="content-center">
@@ -53,7 +55,16 @@
 
                         </h:panelGroup>
                         <h:panelGroup rendered="#{0==0}">
-                            <h:outputText value="Создать CA"/>
+                            <h:panelGroup rendered="#{projectController.project.bmc.bmcStatus.bmcStatusId == 2}">
+                                <h:outputText value="Создать CA"/>
+                            </h:panelGroup>
+                            <h:panelGroup rendered="#{projectController.project.bmc.bmcStatus.bmcStatusId == 1}">
+                                <h:form>
+                                    <h:panelGroup>
+                                        <h:commandLink value="Создать CA" action="#{hypothesisContainerController.createHypothesisList()}"/>
+                                    </h:panelGroup>
+                                </h:form>
+                            </h:panelGroup>
                         </h:panelGroup>
                     </h:panelGroup>
                 </h:panelGroup>

@@ -215,38 +215,14 @@ public class SegmentContainer implements Serializable {
     public void refreshSegmentList(){
         segmentList = new ArrayList<Segment>();
         segmentList.add(customerSegment);
-        for(Segment s : vpList){
-            System.out.println("Saving: "+s.getSegmentTitle());
-            segmentList.add(s);
-        }
-        for(Segment s: dsList){
-            System.out.println("Saving: "+s.getSegmentTitle());
-            segmentList.add(s);
-        }
-        for(Segment s: crList){
-            System.out.println("Saving: "+s.getSegmentTitle());
-            segmentList.add(s);
-        }
-        for(Segment s: rsList){
-            System.out.println("Saving: "+s.getSegmentTitle());
-            segmentList.add(s);
-        }
-        for(Segment s: krList){
-            System.out.println("Saving: "+s.getSegmentTitle());
-            segmentList.add(s);
-        }
-        for(Segment s: kaList){
-            System.out.println("Saving: "+s.getSegmentTitle());
-            segmentList.add(s);
-        }
-        for(Segment s: kpList){
-            System.out.println("Saving: "+s.getSegmentTitle());
-            segmentList.add(s);
-        }
-        for(Segment s: costSList){
-            System.out.println("Saving: "+s.getSegmentTitle());
-            segmentList.add(s);
-        }
+        segmentList.addAll(vpList);
+        segmentList.addAll(dsList);
+        segmentList.addAll(crList);
+        segmentList.addAll(rsList);
+        segmentList.addAll(krList);
+        segmentList.addAll(kaList);
+        segmentList.addAll(kpList);
+        segmentList.addAll(costSList);
     }
 
     public void addSegment(int typeId){
@@ -296,7 +272,7 @@ public class SegmentContainer implements Serializable {
             Segment segment = new Segment();
             segment.setSegmentType(st);
             segment.setSegmentContainer(this);
-            this.getSegmentList().add(segment);
+            segmentList.add(segment);
         }
         this.initLists();
     }

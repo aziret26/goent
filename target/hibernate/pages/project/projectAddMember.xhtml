@@ -10,12 +10,24 @@
     <ui:composition template="/template/projectTemplate.xhtml">
         <ui:param name="pageTitle" value="Add members"/>
         <ui:define name="metadata">
+            <f:metadata>
+                <f:viewParam name="projectId" value="#{projectController.projectId}"/>
+
+                <f:viewParam name="projectId" value="#{bmcController.projectId}"/>
+                <f:viewParam name="bmcId" value="#{bmcController.bmcId}"/>
+
+                <f:viewParam name="projectId" value="#{segmentContainerController.projectId}"/>
+                <f:viewParam name="bmcId" value="#{segmentContainerController.bmcId}"/>
+                <f:viewParam name="segmentContainer" value="#{segmentContainerController.segmentContainerId}"/>
+
+                <f:viewParam name="projectId" value="#{projectMemberController.projectId}"/>
+            </f:metadata>
         </ui:define>
 
         <ui:define name="content-center">
             <div class="content-center">
-                <h:outputText value="project: '#{projectSession.project.title}'"/>
-                <h:panelGroup rendered="#{projectSession.project != null and projectController.existsProject(projectSession.project.projectId)}">
+                <h:outputText value="project: '#{projectController.project.title}'"/>
+                <h:panelGroup rendered="#{projectController.project != null}">
                     <h:dataTable value="#{projectSession.project.memberList}" var="projectMember" >
                         <f:facet name="caption">
                             TEAM
@@ -35,7 +47,7 @@
                         </h:selectOneMenu>
 
                         <br/>
-                        <h:commandButton value="Submit" action="#{projectMemberController.addMember()}"/>
+                        <h:commandButton value="Submit" action="#{projectMemberController.createMember()}"/>
                         <br/>
 
                         <h:messages errorClass="errorMessage" infoClass="infoMessage"
@@ -76,7 +88,7 @@
 
                     </script>
                 </h:panelGroup>
-                <h:panelGroup rendered="#{projectSession.project == null or !projectController.existsProject(projectSession.project.projectId)}">
+                <h:panelGroup rendered="#{projectController.project == null}">
                     <h3>Project doesn't exist.</h3>
                 </h:panelGroup>
             </div>
