@@ -1,21 +1,23 @@
 package kg.goent.controllers;
 
-import com.sun.org.apache.regexp.internal.RE;
+import kg.goent.facade.bmc.SegmentContainerFacade;
 import kg.goent.facade.hypothesis.HypothesisContainerFacade;
 import kg.goent.facade.hypothesis.HypothesisFacade;
+import kg.goent.facade.project.ProjectFacade;
 import kg.goent.models.bmc.Segment;
 import kg.goent.models.bmc.SegmentContainer;
 import kg.goent.models.hypothesis.Hypothesis;
 import kg.goent.models.hypothesis.HypothesisContainer;
+import kg.goent.models.project.Project;
 import kg.goent.tools.Tools;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
+import javax.faces.bean.ViewScoped;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle;
 
 import static kg.goent.tools.ViewPath.*;
 
@@ -23,18 +25,20 @@ import static kg.goent.tools.ViewPath.*;
  * Created by azire on 5/13/2017.
  */
 @ManagedBean
-@SessionScoped
-public class HypothesisContainerController {
+@ViewScoped
+public class HypothesisContainerController extends GetReqBean {
 
     private HypothesisContainer hypothesisContainer;
 
     private List<Hypothesis> csHypList,vpHypList,dcHypList,crHypList;
 
-    @ManagedProperty(value = "#{projectSession}")
-    private ProjectSession projectSession;
-
-    @ManagedProperty(value = "#{messageViewController}")
-    private MessageViewController messagesViewController;
+    @Override
+    public void setProjectId(int projectId) {
+        hypothesisContainer = new HypothesisContainerFacade().findByProject(new ProjectFacade().findById(projectId));
+        if(hypothesisContainer != null)
+            hypothesisContainer.setHypothesisList(new HypothesisFacade().findByContainer(hypothesisContainer));
+        super.setProjectId(projectId);
+    }
 
     public HypothesisContainer getHypothesisContainer() {
         return hypothesisContainer;
@@ -99,115 +103,75 @@ public class HypothesisContainerController {
 
     public String initializeHypothesisContainer() {
         /**
-         *
+         * Initializes hypothesisContainer object before using
          */
-        if (projectSession.getProject().getBmc().getBmcStatus().getBmcStatusId() == 2){
-            messagesViewController.addErrorMessage(Tools.getFieldMsg("bmcIsNotFinished"));
-            return PROJECT_OVERVIEW + REDIRECT;
+        Project project = new ProjectFacade().findById(projectId);
+        if (project.getBmc().getBmcStatus().getBmcStatusId() == 2){
+            Tools.faceMessageWarn(Tools.getFieldMsg("bmcIsNotFinished"),"");
+            return PROJECT_OVERVIEW + REDIRECT + "projectId="+projectId;
         }
-        if(projectSession.getProject().getHypothesisContainer() != null &&
-                projectSession.getProject().getHypothesisContainer().getHypothesisList().size() !=0 ){
-            hypothesisContainer = projectSession.getProject().getHypothesisContainer();
-        }else {
-            hypothesisContainer = new HypothesisContainerFacade().findByProject(projectSession.getProject());
-            if (hypothesisContainer == null || hypothesisContainer.getHypothesisList().size() == 0) {
-                createHypothesisList();
-            }
+        hypothesisContainer = new HypothesisContainerFacade().findByProject(project);
+        if(hypothesisContainer == null){
+            createHypothesisList();
+            hypothesisContainer = new HypothesisContainerFacade().findByProject(project);
         }
-        return HYPOTHESIS_OVERVIEW+REDIRECT;
+        hypothesisContainer.setHypothesisList(new HypothesisFacade().findByContainer(hypothesisContainer));
+        hypothesisContainer.initLists();
+        return HYPOTHESIS_OVERVIEW + REDIRECT + "projectId=" + projectId;
     }
-
 
     public String viewHypothesisOverView(){
         /**
          * initializes hypothesis lists
          */
+        String redirect = HYPOTHESIS_OVERVIEW + REDIRECT + "projectId=" + projectId;
+        hypothesisContainer = new HypothesisContainerFacade().findByProject(new ProjectFacade().findById(projectId));
+        if(hypothesisContainer != null)
+            hypothesisContainer.setHypothesisList(new HypothesisFacade().findByContainer(hypothesisContainer));
+
+        //= new HypothesisContainerFacade().findByProject(new ProjectFacade().findById(projectId));
 
         if(hypothesisContainer == null ||
                 hypothesisContainer.getHypothesisList().size() == 0){
-            initializeHypothesisContainer();
+            redirect = initializeHypothesisContainer();
         }
-
-        if(csHypList == null || csHypList.size() == 0){
-            for (Hypothesis h : hypothesisContainer.getHypothesisList()){
-                if(h.getSegment().getSegmentType().getSegmentTypeId() == 1)
-                    csHypList.add(h);
-            }
-        }
-        if(vpHypList == null || vpHypList.size() == 0){
-            for (Hypothesis h : hypothesisContainer.getHypothesisList()){
-                if(h.getSegment().getSegmentType().getSegmentTypeId() == 2)
-                    vpHypList.add(h);
-            }
-        }
-        if(dcHypList == null || dcHypList.size() == 0){
-            for (Hypothesis h : hypothesisContainer.getHypothesisList()){
-                if(h.getSegment().getSegmentType().getSegmentTypeId() == 3)
-                    dcHypList.add(h);
-            }
-        }
-        if(crHypList == null || crHypList.size() == 0){
-            for (Hypothesis h : hypothesisContainer.getHypothesisList()){
-                if(h.getSegment().getSegmentType().getSegmentTypeId() == 4)
-                    crHypList.add(h);
-            }
-        }
-        return "";
+        return redirect;
     }
 
-    public String createHypothesisList(){
-        HypothesisContainer hc = new HypothesisContainer();
-        for(SegmentContainer sc : projectSession.getProject().getBmc().getSegmentContainerList()){
+    private void createHypothesisList(){
+        hypothesisContainer = new HypothesisContainer();
+        hypothesisContainer.setProject(new ProjectFacade().findById(projectId));
+        new HypothesisContainerFacade().create(hypothesisContainer);
+        initializeHypothesisList();
+    }
+
+    public String refreshHypothesisList(){
+        clearHypothesisList();
+        initializeHypothesisList();
+        return HYPOTHESIS_OVERVIEW + REDIRECT + "projectId=" + projectId;
+    }
+
+    private void clearHypothesisList(){
+        HypothesisFacade hf = new HypothesisFacade();
+        for(Hypothesis h : hypothesisContainer.getHypothesisList()){
+            hf.delete(h);
+        }
+        hypothesisContainer.setHypothesisList(null);
+    }
+
+    private void initializeHypothesisList(){
+        List<SegmentContainer>  segmentContainerList = new SegmentContainerFacade().findByBmc(new ProjectFacade().findById(projectId).getBmc());
+        for(SegmentContainer sc : segmentContainerList){
             for(Segment s : sc.getSegmentList()){
                 if(s.getSegmentType().getSegmentTypeId() <= 4){
                     Hypothesis hypothesis = new Hypothesis();
                     hypothesis.setSegment(s);
-                    hypothesis.setStatus(1);
+                    hypothesis.setStatus(0);
+                    hypothesis.setHypothesisContainer(hypothesisContainer);
                     new HypothesisFacade().create(hypothesis);
-                    hc.getHypothesisList().add(hypothesis);
                 }
             }
         }
-        new HypothesisContainerFacade().create(hc);
-        projectSession.getProject().setHypothesisContainer(hc);
-        return HYPOTHESIS_OVERVIEW+ REDIRECT;
     }
-/*
-    public List<Hypothesis> getCSHypothesis(){
-        List<Hypothesis> list = new ArrayList<Hypothesis>();
-        for(Hypothesis h : hypothesisContainer.getHypothesisList()){
-            if(h.getSegment().getSegmentType().getSegmentTypeId() == 1){
-                list.add(h);
-            }
-        }
-        return list;
-    }
-    public List<Hypothesis> getVPHypothesis(){
-        List<Hypothesis> list = new ArrayList<Hypothesis>();
-        for(Hypothesis h : hypothesisContainer.getHypothesisList()){
-            if(h.getSegment().getSegmentType().getSegmentTypeId() == 2){
-                list.add(h);
-            }
-        }
-        return list;
-    }
-    public List<Hypothesis> getDCHypothesis(){
-        List<Hypothesis> list = new ArrayList<Hypothesis>();
-        for(Hypothesis h : hypothesisContainer.getHypothesisList()){
-            if(h.getSegment().getSegmentType().getSegmentTypeId() == 3){
-                list.add(h);
-            }
-        }
-        return list;
-    }
-    public List<Hypothesis> getCRHypothesis(){
-        List<Hypothesis> list = new ArrayList<Hypothesis>();
-        for(Hypothesis h : hypothesisContainer.getHypothesisList()){
-            if(h.getSegment().getSegmentType().getSegmentTypeId() == 4){
-                list.add(h);
-            }
-        }
-        return list;
-    }
-    */
+
 }

@@ -13,7 +13,9 @@ import java.util.List;
         @NamedQuery(name = "Hypothesis.findAll",
                 query = "SELECT h FROM Hypothesis h"),
         @NamedQuery(name = "Hypothesis.findBySegment",
-                query = "SELECT h FROM Hypothesis h WHERE h.segment = :segment")
+                query = "SELECT h FROM Hypothesis h WHERE h.segment = :segment"),
+        @NamedQuery(name = "Hypothesis.findByContainer",
+                query = "SELECT h FROM Hypothesis h WHERE h.hypothesisContainer = :container")
 })
 public class Hypothesis {
     @Id

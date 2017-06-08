@@ -31,7 +31,7 @@ public class HypothesisContainer {
     private Project project;
 
     @Transient
-    private List<Hypothesis> csList,vpList,dcList,crList;
+    private List<Hypothesis> csHypList,vpHypList,dcHypList,crHypList;
 
     public int getHypothesisContainerId() {
         return hypothesisContainerId;
@@ -47,6 +47,7 @@ public class HypothesisContainer {
 
     public void setHypothesisList(List<Hypothesis> hypothesisList) {
         this.hypothesisList = hypothesisList;
+        initLists();
     }
 
     public Project getProject() {
@@ -57,5 +58,53 @@ public class HypothesisContainer {
         this.project = project;
     }
 
+    public List<Hypothesis> getCsHypList() {
+        return csHypList;
+    }
+
+    public void setCsHypList(List<Hypothesis> csHypList) {
+        this.csHypList = csHypList;
+    }
+
+    public List<Hypothesis> getVpHypList() {
+        return vpHypList;
+    }
+
+    public void setVpHypList(List<Hypothesis> vpHypList) {
+        this.vpHypList = vpHypList;
+    }
+
+    public List<Hypothesis> getDcHypList() {
+        return dcHypList;
+    }
+
+    public void setDcHypList(List<Hypothesis> dcHypList) {
+        this.dcHypList = dcHypList;
+    }
+
+    public List<Hypothesis> getCrHypList() {
+        return crHypList;
+    }
+
+    public void setCrHypList(List<Hypothesis> crHypList) {
+        this.crHypList = crHypList;
+    }
+
+    public void initLists(){
+        if(hypothesisList == null || hypothesisList.size() == 0)
+            return;
+        csHypList = new ArrayList<Hypothesis>();
+        vpHypList = new ArrayList<Hypothesis>();
+        dcHypList = new ArrayList<Hypothesis>();
+        crHypList = new ArrayList<Hypothesis>();
+        for(Hypothesis h : hypothesisList){
+            switch (h.getSegment().getSegmentType().getSegmentTypeId()){
+                case 1: csHypList.add(h);break;
+                case 2: vpHypList.add(h);break;
+                case 3: dcHypList.add(h);break;
+                case 4: crHypList.add(h);break;
+            }
+        }
+    }
 
 }

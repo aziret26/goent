@@ -4,6 +4,7 @@ import kg.goent.facade.bmc.BmcFacade;
 import kg.goent.facade.bmc.BmcStatusFacade;
 import kg.goent.facade.bmc.SegmentContainerFacade;
 import kg.goent.models.bmc.Bmc;
+import kg.goent.models.bmc.BmcStatus;
 import kg.goent.models.bmc.SegmentContainer;
 import kg.goent.models.project.Project;
 
@@ -61,10 +62,7 @@ public class BmcController extends GetReqBean {
          */
         bmc = new BmcFacade().findByProject(project);
         if (bmc == null) {
-            bmc = new Bmc();
-            bmc.setProject(project);
-            bmc.setBmcStatus(new BmcStatusFacade().findById(2));
-            new BmcFacade().create(bmc);
+            bmc = createBmc(project);
         }
         return BMC_OVERVIEW + REDIRECT+"projectId="+projectId+"&bmcId="+bmc.getBmcId();
     }
@@ -73,7 +71,16 @@ public class BmcController extends GetReqBean {
     }
 
     public String finishBmc(){
+        bmc.setBmcStatus(new BmcStatusFacade().findById(1));
         new BmcFacade().update(bmc);
-        return PROJECT_OVERVIEW+REDIRECT;
+        return PROJECT_OVERVIEW+REDIRECT+"projectId="+projectId;
+    }
+
+    private Bmc createBmc(Project project){
+        Bmc bmc = new Bmc();
+        bmc.setProject(project);
+        bmc.setBmcStatus(new BmcStatusFacade().findById(2));
+        new BmcFacade().create(bmc);
+        return bmc;
     }
 }

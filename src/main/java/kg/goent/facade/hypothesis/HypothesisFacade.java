@@ -2,6 +2,7 @@ package kg.goent.facade.hypothesis;
 
 import kg.goent.dao.ObjectDao;
 import kg.goent.models.hypothesis.Hypothesis;
+import kg.goent.models.hypothesis.HypothesisContainer;
 
 import java.util.List;
 
@@ -54,7 +55,19 @@ public class HypothesisFacade {
         }
         return hypothesis;
     }
-
+    public List<Hypothesis> findByContainer(HypothesisContainer hypothesisContainer){
+        List<Hypothesis> objectList;
+        try {
+            objectDao.beginTransaction();
+            objectList = objectDao.getEntityManager().createNamedQuery("Hypothesis.findByContainer",Hypothesis.class).
+                    setParameter("container",hypothesisContainer).getResultList();
+        }catch (Exception ex){
+            objectList = null;
+        }finally {
+            objectDao.commitAndCloseTransaction();
+        }
+        return objectList;
+    }
 //    public Hypothesis findByStatus(String status){
 //        Hypothesis ms;
 //        try {

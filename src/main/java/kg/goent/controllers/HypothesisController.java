@@ -2,6 +2,8 @@ package kg.goent.controllers;
 
 import kg.goent.facade.bmc.SegmentFacade;
 import kg.goent.facade.bmc.SegmentTypeFacade;
+import kg.goent.facade.hypothesis.HypothesisContainerFacade;
+import kg.goent.facade.project.ProjectFacade;
 import kg.goent.models.bmc.Segment;
 import kg.goent.models.hypothesis.Hypothesis;
 import kg.goent.models.hypothesis.HypothesisContainer;
@@ -16,7 +18,7 @@ import java.util.List;
  */
 @ManagedBean
 @SessionScoped
-public class HypothesisController {
+public class HypothesisController extends GetReqBean{
     private List<Segment> csList,vpList,dcList,crList;
 
     private Hypothesis hypothesis;
@@ -30,6 +32,27 @@ public class HypothesisController {
         crList = new SegmentFacade().findBySegmentType(new SegmentTypeFacade().findById(4));
     }
 
+    @Override
+    public void setProjectId(int projectId) {
+        hypothesisContainer = new HypothesisContainerFacade().findByProject(new ProjectFacade().findById(projectId));
+        super.setProjectId(projectId);
+    }
+
+    public Hypothesis getHypothesis() {
+        return hypothesis;
+    }
+
+    public void setHypothesis(Hypothesis hypothesis) {
+        this.hypothesis = hypothesis;
+    }
+
+    public HypothesisContainer getHypothesisContainer() {
+        return hypothesisContainer;
+    }
+
+    public void setHypothesisContainer(HypothesisContainer hypothesisContainer) {
+        this.hypothesisContainer = hypothesisContainer;
+    }
 
     public List<Segment> getCsList() {
         return csList;
