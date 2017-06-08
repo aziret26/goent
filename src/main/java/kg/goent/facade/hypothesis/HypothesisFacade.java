@@ -1,6 +1,7 @@
 package kg.goent.facade.hypothesis;
 
 import kg.goent.dao.ObjectDao;
+import kg.goent.models.bmc.Segment;
 import kg.goent.models.hypothesis.Hypothesis;
 import kg.goent.models.hypothesis.HypothesisContainer;
 
@@ -67,6 +68,19 @@ public class HypothesisFacade {
             objectDao.commitAndCloseTransaction();
         }
         return objectList;
+    }
+    public Hypothesis findBySegment(Segment segment){
+        Hypothesis hypothesis;
+        try {
+            objectDao.beginTransaction();
+            hypothesis = objectDao.getEntityManager().createNamedQuery("Hypothesis.findBySegment",Hypothesis.class).
+                    setParameter("segment",segment).getSingleResult();
+        }catch (Exception ex){
+            hypothesis = null;
+        }finally {
+            objectDao.commitAndCloseTransaction();
+        }
+        return hypothesis;
     }
 //    public Hypothesis findByStatus(String status){
 //        Hypothesis ms;

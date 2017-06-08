@@ -80,7 +80,7 @@ public class QuestionTypeFacade {
         create(qt);
         qt = new QuestionType("True/False");
         create(qt);
-        qt = new QuestionType("Scaling");
+        qt = new QuestionType("Numerical");
         create(qt);
         
     }

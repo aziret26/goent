@@ -3,11 +3,13 @@ package kg.goent.controllers;
 import kg.goent.facade.UserFacade;
 import kg.goent.facade.bmc.SegmentContainerFacade;
 import kg.goent.facade.bmc.SegmentFacade;
+import kg.goent.facade.hypothesis.HypothesisFacade;
 import kg.goent.facade.project.ProjectFacade;
 import kg.goent.facade.project.ProjectMemberFacade;
 import kg.goent.models.User;
 import kg.goent.models.bmc.Segment;
 import kg.goent.models.bmc.SegmentContainer;
+import kg.goent.models.hypothesis.Hypothesis;
 import kg.goent.models.project.ProjectMember;
 
 import javax.faces.bean.ManagedBean;
@@ -40,6 +42,9 @@ public class EditSegmentContainerController extends GetReqBean {
     public void setSegmentContainerId(int segmentContainerId) {
         if(segmentContainerId != segmentContainer.getSegmentContainerId()){
             segmentContainer = new SegmentContainerFacade().findById(segmentContainerId);
+            if(segmentContainer.getSegmentList() == null ||segmentContainer.getSegmentList().size() == 0){
+                new SegmentContainerFacade().delete(segmentContainer);
+            }
         }
         super.setSegmentContainerId(segmentContainerId);
     }
@@ -82,12 +87,19 @@ public class EditSegmentContainerController extends GetReqBean {
 
         }
         SegmentContainer sc = new SegmentContainerFacade().findById(segmentContainerId);
-        System.out.println("removeContId: "+sc.getSegmentContainerId());
+        if(sc == null)
+            return BMC_OVERVIEW + REDIRECT + "projectId=" + projectId + "&bmcId=" + bmcId;
+//        System.out.println("removeContId: "+sc.getSegmentContainerId());
         if(sc.getSegmentList().size() > 0)
             for(Segment s : sc.getSegmentList()){
-                new SegmentFacade().delete(s);
+                if(s != null) {
+                    Hypothesis hypothesis = new HypothesisFacade().findBySegment(s);
+                    if (hypothesis != null)
+                        new HypothesisFacade().delete(hypothesis);
+                    new SegmentFacade().delete(s);
+                }
             }
-        new SegmentContainerFacade().delete(sc);
+        new SegmentContainerFacade().delete(new SegmentContainerFacade().findById(segmentContainerId));
         return BMC_OVERVIEW + REDIRECT + "projectId=" + projectId + "&bmcId=" + bmcId;
     }
 

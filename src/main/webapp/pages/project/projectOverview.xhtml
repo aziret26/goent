@@ -39,7 +39,7 @@
                             </div>
                         </h:panelGroup>
                         <h:form>
-                            <h:panelGroup rendered="#{projectController.project.bmc == null or projectController.project.bmc.bmcStatus.bmcStatusId == 1}">
+                            <h:panelGroup rendered="#{projectController.project.bmc == null or projectController.project.bmc.bmcStatus.bmcStatusId == 2}">
                                 <h:panelGroup rendered='#{not projectController.hasBmc()}'>
                                     <h:commandLink value="#{field.createBmc}" action="#{bmcController.bmcOverview(projectController.project)}"/>
                                 </h:panelGroup>
@@ -48,7 +48,7 @@
                                     <h:commandLink value="#{field.editBmc}" action="#{bmcController.bmcOverview(projectController.project)}"/>
                                 </h:panelGroup>
                             </h:panelGroup>
-                            <h:panelGroup rendered="#{projectController.project.bmc.bmcStatus.bmcStatusId == 2}">
+                            <h:panelGroup rendered="#{projectController.project.bmc.bmcStatus.bmcStatusId == 1}">
                                 <h:commandLink value="#{field.viewBmc}" action="#{bmcController.bmcOverview(projectController.project)}"/>
                             </h:panelGroup>
                         </h:form>
